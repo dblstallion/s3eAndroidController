@@ -1,0 +1,339 @@
+Archive member included because of file (symbol)
+
+C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                              debug\s3eFireTV_platform.os (IwDebugTraceSetTraceChannel)
+C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                              debug\s3eFireTV_platform.os (s3eEdkThreadRunOnOS)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+                              C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o) (__aeabi_ldivmod)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o) (__gnu_ldivmod_helper)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__divdi3)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__udivdi3)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o) (__aeabi_uidiv)
+
+Discarded input sections
+
+ .text          0x00000000       0x14 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .group         0x00000000        0x8 debug\s3eFireTV_platform.os
+ .text          0x00000000        0x0 debug\s3eFireTV_platform.os
+ .data          0x00000000        0x0 debug\s3eFireTV_platform.os
+ .text._Z23s3eFireTV_init_platformv
+                0x00000000       0x48 debug\s3eFireTV_platform.os
+ .text._Z45s3eFireTV_selectControllerByDeviceId_platformi
+                0x00000000       0x68 debug\s3eFireTV_platform.os
+ .text._Z34s3eFireTV_getPlayerNumber_platformv
+                0x00000000       0x50 debug\s3eFireTV_platform.os
+ .note.GNU-stack
+                0x00000000        0x0 debug\s3eFireTV_platform.os
+ .text          0x00000000        0x0 debug\s3eFireTV.os
+ .data          0x00000000        0x0 debug\s3eFireTV.os
+ .bss           0x00000000        0x0 debug\s3eFireTV.os
+ .text._Z14s3eFireTV_initv
+                0x00000000        0xc debug\s3eFireTV.os
+ .text._Z36s3eFireTV_selectControllerByDeviceIdi
+                0x00000000       0x24 debug\s3eFireTV.os
+ .text._Z25s3eFireTV_getPlayerNumberv
+                0x00000000       0x14 debug\s3eFireTV.os
+ .note.GNU-stack
+                0x00000000        0x0 debug\s3eFireTV.os
+ .text          0x00000000        0x0 debug\s3eFireTV_register.os
+ .data          0x00000000        0x0 debug\s3eFireTV_register.os
+ .bss           0x00000000        0x0 debug\s3eFireTV_register.os
+ .note.GNU-stack
+                0x00000000        0x0 debug\s3eFireTV_register.os
+ .text          0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .data          0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwAssertRegisterTextCallback
+                0x00000000       0x1c C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwAssertRegisterCallback
+                0x00000000       0x1c C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugErrorRegisterCallback
+                0x00000000       0x1c C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugAssertSetUID
+                0x00000000       0x14 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugClearConfigCache
+                0x00000000       0x80 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugErrorShow
+                0x00000000       0xec C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugTraceLineVPrintf
+                0x00000000       0xfc C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugAssertIsChannelOn
+                0x00000000      0x204 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugTraceDisable
+                0x00000000       0x10 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugAssertSetMessage
+                0x00000000       0xfc C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugAssertSetSolution
+                0x00000000       0xa0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugAssertShow
+                0x00000000      0x2d0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugTraceChannelSwitch
+                0x00000000      0x4c4 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .note.GNU-stack
+                0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text          0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .data          0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .bss           0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text.s3eEdkThreadRunOnOSAsync
+                0x00000000       0x30 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text.s3eEdkErrorSetString
+                0x00000000       0x30 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .note.GNU-stack
+                0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .note.GNU-stack
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .note.GNU-stack
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .note.GNU-stack
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .text          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .data          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .note.GNU-stack
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034      0x100
+
+.interp         0x00000134       0x13
+ ** fill        0x00000134       0x13
+
+.dynsym         0x00000148      0x280
+ ** dynsym      0x00000148      0x280
+
+.dynstr         0x000003c8      0x253
+ ** string table
+                0x000003c8      0x253
+
+.hash           0x0000061c      0x13c
+ ** hash        0x0000061c      0x13c
+
+.rel.dyn        0x00000758       0x48
+ ** dynamic relocs
+                0x00000758       0x48
+
+.rel.plt        0x000007a0       0x78
+ ** dynamic relocs
+                0x000007a0       0x78
+
+.plt            0x00000818       0xc8
+ ** PLT         0x00000818       0xc8
+
+.text           0x000008e0     0x1eb0
+ .text.exit     0x000008e0       0x10 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x000008e0                __on_dlclose
+ .text._ZN7_JNIEnv9FindClassEPKc
+                0x000008f0       0x38 debug\s3eFireTV_platform.os
+                0x000008f0                _JNIEnv::FindClass(char const*)
+ .text._ZN7_JNIEnv17ExceptionOccurredEv
+                0x00000928       0x30 debug\s3eFireTV_platform.os
+                0x00000928                _JNIEnv::ExceptionOccurred()
+ .text._ZN7_JNIEnv17ExceptionDescribeEv
+                0x00000958       0x28 debug\s3eFireTV_platform.os
+                0x00000958                _JNIEnv::ExceptionDescribe()
+ .text._ZN7_JNIEnv14ExceptionClearEv
+                0x00000980       0x28 debug\s3eFireTV_platform.os
+                0x00000980                _JNIEnv::ExceptionClear()
+ .text._ZN7_JNIEnv12NewGlobalRefEP8_jobject
+                0x000009a8       0x38 debug\s3eFireTV_platform.os
+                0x000009a8                _JNIEnv::NewGlobalRef(_jobject*)
+ .text._ZN7_JNIEnv15DeleteGlobalRefEP8_jobject
+                0x000009e0       0x30 debug\s3eFireTV_platform.os
+                0x000009e0                _JNIEnv::DeleteGlobalRef(_jobject*)
+ .text._ZN7_JNIEnv14DeleteLocalRefEP8_jobject
+                0x00000a10       0x30 debug\s3eFireTV_platform.os
+                0x00000a10                _JNIEnv::DeleteLocalRef(_jobject*)
+ .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
+                0x00000a40       0x58 debug\s3eFireTV_platform.os
+                0x00000a40                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv11GetMethodIDEP7_jclassPKcS3_
+                0x00000a98       0x48 debug\s3eFireTV_platform.os
+                0x00000a98                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
+ .text._ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
+                0x00000ae0       0x5c debug\s3eFireTV_platform.os
+                0x00000ae0                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
+                0x00000b3c       0x58 debug\s3eFireTV_platform.os
+                0x00000b3c                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv15CallFloatMethodEP8_jobjectP10_jmethodIDz
+                0x00000b94       0x58 debug\s3eFireTV_platform.os
+                0x00000b94                _JNIEnv::CallFloatMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
+                0x00000bec       0x4c debug\s3eFireTV_platform.os
+                0x00000bec                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JavaVM6GetEnvEPPvi
+                0x00000c38       0x40 debug\s3eFireTV_platform.os
+                0x00000c38                _JavaVM::GetEnv(void**, int)
+ .text._ZL15s3eEdkJNIGetEnvv
+                0x00000c78       0x40 debug\s3eFireTV_platform.os
+ .text._ZL27s3eEdkAndroidFindClass_realPKc
+                0x00000cb8       0x8c debug\s3eFireTV_platform.os
+ .text._ZL22s3eEdkAndroidFindClassPKc
+                0x00000d44       0x38 debug\s3eFireTV_platform.os
+ .text._Z22s3eFireTVInit_platformv
+                0x00000d7c      0x498 debug\s3eFireTV_platform.os
+                0x00000d7c                s3eFireTVInit_platform()
+ .text._Z27s3eFireTVTerminate_platformv
+                0x00001214        0x4 debug\s3eFireTV_platform.os
+                0x00001214                s3eFireTVTerminate_platform()
+ .text._Z29s3eFireTV_startFrame_platformv
+                0x00001218       0x48 debug\s3eFireTV_platform.os
+                0x00001218                s3eFireTV_startFrame_platform()
+ .text._Z43s3eFireTV_selectControllerByPlayer_platformi
+                0x00001260       0x68 debug\s3eFireTV_platform.os
+                0x00001260                s3eFireTV_selectControllerByPlayer_platform(int)
+ .text._Z33s3eFireTV_getPlayerCount_platformv
+                0x000012c8       0x50 debug\s3eFireTV_platform.os
+                0x000012c8                s3eFireTV_getPlayerCount_platform()
+ .text._Z33s3eFireTV_getButtonState_platformi
+                0x00001318       0x68 debug\s3eFireTV_platform.os
+                0x00001318                s3eFireTV_getButtonState_platform(int)
+ .text._Z31s3eFireTV_getAxisValue_platformi
+                0x00001380       0x58 debug\s3eFireTV_platform.os
+                0x00001380                s3eFireTV_getAxisValue_platform(int)
+ .text._Z13s3eFireTVInitv
+                0x000013d8       0x14 debug\s3eFireTV.os
+                0x000013d8                s3eFireTVInit()
+ .text._Z18s3eFireTVTerminatev
+                0x000013ec        0xc debug\s3eFireTV.os
+                0x000013ec                s3eFireTVTerminate()
+ .text.s3eFireTV_startFrame
+                0x000013f8        0xc debug\s3eFireTV.os
+                0x000013f8                s3eFireTV_startFrame
+ .text.s3eFireTV_selectControllerByPlayer
+                0x00001404       0x24 debug\s3eFireTV.os
+                0x00001404                s3eFireTV_selectControllerByPlayer
+ .text.s3eFireTV_getPlayerCount
+                0x00001428       0x14 debug\s3eFireTV.os
+                0x00001428                s3eFireTV_getPlayerCount
+ .text.s3eFireTV_getButtonState
+                0x0000143c       0x24 debug\s3eFireTV.os
+                0x0000143c                s3eFireTV_getButtonState
+ .text.s3eFireTV_getAxisValue
+                0x00001460       0x24 debug\s3eFireTV.os
+                0x00001460                s3eFireTV_getAxisValue
+ .text._ZL25s3eFireTV_startFrame_wrapv
+                0x00001484       0x88 debug\s3eFireTV_register.os
+ .text._ZL39s3eFireTV_selectControllerByPlayer_wrapi
+                0x0000150c       0xb0 debug\s3eFireTV_register.os
+ .text._ZL29s3eFireTV_getPlayerCount_wrapv
+                0x000015bc       0x90 debug\s3eFireTV_register.os
+ .text._ZL29s3eFireTV_getButtonState_wrapi
+                0x0000164c       0xb0 debug\s3eFireTV_register.os
+ .text._ZL27s3eFireTV_getAxisValue_wrapi
+                0x000016fc       0xac debug\s3eFireTV_register.os
+ .text._Z20s3eFireTVRegisterExtv
+                0x000017a8       0xf8 debug\s3eFireTV_register.os
+                0x000017a8                s3eFireTVRegisterExt()
+ .text.RegisterExt
+                0x000018a0        0xc debug\s3eFireTV_register.os
+                0x000018a0                RegisterExt
+ .text.IwDebugTraceSetTraceChannel
+                0x000018ac       0x1c C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x000018ac                IwDebugTraceSetTraceChannel
+ .text._GLOBAL__I_Y__sdk_modules_iwcore_source_IwDebug.cpp
+                0x000018c8       0xa4 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .text.IwDebugTraceIsChannelOn
+                0x0000196c      0x2b8 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x0000196c                IwDebugTraceIsChannelOn
+ .text.IwDebugTraceLinePrintf
+                0x00001c24      0x10c C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00001c24                IwDebugTraceLinePrintf
+ .text.s3eEdkThreadRunOnOS
+                0x00001d30       0x30 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00001d30                s3eEdkThreadRunOnOS
+ .text          0x00001d60       0x44 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+                0x00001d60                __aeabi_ldivmod
+ .text          0x00001da4       0x10 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                0x00001da4                __aeabi_idiv0
+                0x00001da4                __aeabi_ldiv0
+ .text          0x00001db4       0x78 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                0x00001db4                __gnu_ldivmod_helper
+                0x00001df0                __gnu_uldivmod_helper
+ .text          0x00001e2c      0x498 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                0x00001e2c                __divdi3
+ .text          0x000022c4      0x404 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                0x000022c4                __udivdi3
+ .text          0xffffffffffffffff       0xc8 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                0x000026c8                __udivsi3
+                0x000026c8                __aeabi_uidiv
+                0x00002770                __aeabi_uidivmod
+
+.rodata         0x00002790      0x3d4
+ .rodata        0x00002790      0x154 debug\s3eFireTV_platform.os
+ .rodata        0x000028e4      0x164 debug\s3eFireTV_register.os
+ ** merge strings
+                0x00002a48      0x11c
+
+.ARM.exidx      0x00002b64        0x8
+ .ARM.exidx     0x00002b64        0x8 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+
+.fini_array     0x00003eac        0x8
+ .fini_array    0x00003eac        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00003eb0        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+.init_array     0x00003eb4        0x8
+ .init_array    0x00003eb4        0x4 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .init_array    0x00003eb8        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00003ebc       0xe0
+ ** dynamic     0x00003ebc       0xe0
+
+.got            0x00003f9c       0x64
+ ** GOT         0x00003f9c       0x1c
+ ** GOT PLT     0x00003fb8       0x48
+
+.data           0x00004000        0x4
+ .data          0x00004000        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00004000                __dso_handle
+
+.bss            0x00004004     0x1a4c
+ .bss           0x00004004       0x24 debug\s3eFireTV_platform.os
+ .bss           0x00004028     0x1a28 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00004028                g_DebugGlobals

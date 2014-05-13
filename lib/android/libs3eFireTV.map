@@ -1,0 +1,193 @@
+Archive member included because of file (symbol)
+
+C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                              release\s3eFireTV_platform.os (s3eEdkThreadRunOnOS)
+
+Discarded input sections
+
+ .text          0x00000000       0x14 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .group         0x00000000        0x8 release\s3eFireTV_platform.os
+ .group         0x00000000        0x8 release\s3eFireTV_platform.os
+ .group         0x00000000        0x8 release\s3eFireTV_platform.os
+ .group         0x00000000        0x8 release\s3eFireTV_platform.os
+ .group         0x00000000        0x8 release\s3eFireTV_platform.os
+ .text          0x00000000        0x0 release\s3eFireTV_platform.os
+ .data          0x00000000        0x0 release\s3eFireTV_platform.os
+ .text._Z23s3eFireTV_init_platformv
+                0x00000000       0x50 release\s3eFireTV_platform.os
+ .text._Z45s3eFireTV_selectControllerByDeviceId_platformi
+                0x00000000       0x60 release\s3eFireTV_platform.os
+ .text._Z34s3eFireTV_getPlayerNumber_platformv
+                0x00000000       0x50 release\s3eFireTV_platform.os
+ .note.GNU-stack
+                0x00000000        0x0 release\s3eFireTV_platform.os
+ .text          0x00000000        0x0 release\s3eFireTV.os
+ .data          0x00000000        0x0 release\s3eFireTV.os
+ .bss           0x00000000        0x0 release\s3eFireTV.os
+ .text._Z14s3eFireTV_initv
+                0x00000000        0x4 release\s3eFireTV.os
+ .text._Z36s3eFireTV_selectControllerByDeviceIdi
+                0x00000000        0x4 release\s3eFireTV.os
+ .text._Z25s3eFireTV_getPlayerNumberv
+                0x00000000        0x4 release\s3eFireTV.os
+ .note.GNU-stack
+                0x00000000        0x0 release\s3eFireTV.os
+ .text          0x00000000        0x0 release\s3eFireTV_register.os
+ .data          0x00000000        0x0 release\s3eFireTV_register.os
+ .bss           0x00000000        0x0 release\s3eFireTV_register.os
+ .text._Z20s3eFireTVRegisterExtv
+                0x00000000       0xc0 release\s3eFireTV_register.os
+ .note.GNU-stack
+                0x00000000        0x0 release\s3eFireTV_register.os
+ .text          0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .data          0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .bss           0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text.s3eEdkThreadRunOnOSAsync
+                0x00000000       0x30 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text.s3eEdkErrorSetString
+                0x00000000       0x30 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .note.GNU-stack
+                0x00000000        0x0 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .data          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .note.GNU-stack
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034       0xe0
+
+.interp         0x00000114       0x13
+ ** fill        0x00000114       0x13
+
+.dynsym         0x00000128       0xc0
+ ** dynsym      0x00000128       0xc0
+
+.dynstr         0x000001e8       0xea
+ ** string table
+                0x000001e8       0xea
+
+.hash           0x000002d4       0x44
+ ** hash        0x000002d4       0x44
+
+.rel.dyn        0x00000318       0x40
+ ** dynamic relocs
+                0x00000318       0x40
+
+.rel.plt        0x00000358       0x20
+ ** dynamic relocs
+                0x00000358       0x20
+
+.plt            0x00000378       0x44
+ ** PLT         0x00000378       0x44
+
+.text           0x000003bc      0x874
+ .text.exit     0x000003bc       0x10 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x000003bc                __on_dlclose
+ .text._ZL27s3eEdkAndroidFindClass_realPKc
+                0x000003cc       0xb8 release\s3eFireTV_platform.os
+ .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
+                0x00000484       0x38 release\s3eFireTV_platform.os
+                0x00000484                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
+                0x000004bc       0x38 release\s3eFireTV_platform.os
+                0x000004bc                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
+                0x000004f4       0x38 release\s3eFireTV_platform.os
+                0x000004f4                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv15CallFloatMethodEP8_jobjectP10_jmethodIDz
+                0x0000052c       0x38 release\s3eFireTV_platform.os
+                0x0000052c                _JNIEnv::CallFloatMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
+                0x00000564       0x38 release\s3eFireTV_platform.os
+                0x00000564                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+ .text._Z22s3eFireTVInit_platformv
+                0x0000059c      0x2ec release\s3eFireTV_platform.os
+                0x0000059c                s3eFireTVInit_platform()
+ .text._Z27s3eFireTVTerminate_platformv
+                0x00000888        0x4 release\s3eFireTV_platform.os
+                0x00000888                s3eFireTVTerminate_platform()
+ .text._Z29s3eFireTV_startFrame_platformv
+                0x0000088c       0x50 release\s3eFireTV_platform.os
+                0x0000088c                s3eFireTV_startFrame_platform()
+ .text._Z43s3eFireTV_selectControllerByPlayer_platformi
+                0x000008dc       0x60 release\s3eFireTV_platform.os
+                0x000008dc                s3eFireTV_selectControllerByPlayer_platform(int)
+ .text._Z33s3eFireTV_getPlayerCount_platformv
+                0x0000093c       0x50 release\s3eFireTV_platform.os
+                0x0000093c                s3eFireTV_getPlayerCount_platform()
+ .text._Z33s3eFireTV_getButtonState_platformi
+                0x0000098c       0x60 release\s3eFireTV_platform.os
+                0x0000098c                s3eFireTV_getButtonState_platform(int)
+ .text._Z31s3eFireTV_getAxisValue_platformi
+                0x000009ec       0x58 release\s3eFireTV_platform.os
+                0x000009ec                s3eFireTV_getAxisValue_platform(int)
+ .text._Z13s3eFireTVInitv
+                0x00000a44        0x4 release\s3eFireTV.os
+                0x00000a44                s3eFireTVInit()
+ .text._Z18s3eFireTVTerminatev
+                0x00000a48        0x4 release\s3eFireTV.os
+                0x00000a48                s3eFireTVTerminate()
+ .text.s3eFireTV_startFrame
+                0x00000a4c        0x4 release\s3eFireTV.os
+                0x00000a4c                s3eFireTV_startFrame
+ .text.s3eFireTV_selectControllerByPlayer
+                0x00000a50        0x4 release\s3eFireTV.os
+                0x00000a50                s3eFireTV_selectControllerByPlayer
+ .text.s3eFireTV_getPlayerCount
+                0x00000a54        0x4 release\s3eFireTV.os
+                0x00000a54                s3eFireTV_getPlayerCount
+ .text.s3eFireTV_getButtonState
+                0x00000a58        0x4 release\s3eFireTV.os
+                0x00000a58                s3eFireTV_getButtonState
+ .text.s3eFireTV_getAxisValue
+                0x00000a5c        0x4 release\s3eFireTV.os
+                0x00000a5c                s3eFireTV_getAxisValue
+ .text._ZL27s3eFireTV_getAxisValue_wrapi
+                0x00000a60       0x38 release\s3eFireTV_register.os
+ .text._ZL29s3eFireTV_getButtonState_wrapi
+                0x00000a98       0x34 release\s3eFireTV_register.os
+ .text._ZL29s3eFireTV_getPlayerCount_wrapv
+                0x00000acc       0x20 release\s3eFireTV_register.os
+ .text._ZL39s3eFireTV_selectControllerByPlayer_wrapi
+                0x00000aec       0x34 release\s3eFireTV_register.os
+ .text._ZL25s3eFireTV_startFrame_wrapv
+                0x00000b20       0x20 release\s3eFireTV_register.os
+ .text.RegisterExt
+                0x00000b40       0xc0 release\s3eFireTV_register.os
+                0x00000b40                RegisterExt
+ .text.s3eEdkThreadRunOnOS
+                0xffffffffffffffff       0x30 C:\marmalade\7.1\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00000c00                s3eEdkThreadRunOnOS
+
+.rodata         0x00000c30      0x109
+ ** merge strings
+                0x00000c30      0x109
+
+.fini_array     0x00001edc        0x8
+ .fini_array    0x00001edc        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00001ee0        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+.init_array     0x00001ee4        0x4
+ .init_array    0x00001ee4        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00001ee8       0xe0
+ ** dynamic     0x00001ee8       0xe0
+
+.got            0x00001fc8       0x38
+ ** GOT         0x00001fc8       0x1c
+ ** GOT PLT     0x00001fe4       0x1c
+
+.data           0x00002000        0x4
+ .data          0x00002000        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00002000                __dso_handle
+
+.bss            0x00002004       0x24
+ .bss           0x00002004       0x24 release\s3eFireTV_platform.os
