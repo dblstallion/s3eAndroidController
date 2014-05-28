@@ -47,13 +47,13 @@ public class s3eFireTV extends LoaderActivity
     
     public void s3eFireTV_startFrame()
     {
-        //Log.v(LOG_TAG, "s3eFireTV_startFrame");
+        Log.v(LOG_TAG, "s3eFireTV_startFrame");
         GameController.startFrame();
     }
     
     public boolean s3eFireTV_selectControllerByPlayer(int player)
     {
-        //Log.v(LOG_TAG, "s3eFireTV_selectControllerByPlayer");
+        Log.v(LOG_TAG, "s3eFireTV_selectControllerByPlayer");
         try
         {
             m_SelectedController = GameController.getControllerByPlayer(player);
@@ -61,6 +61,7 @@ public class s3eFireTV extends LoaderActivity
         catch (PlayerNumberNotFoundException e)
         {
             // TODO: Do something more intelligent once we have the dev kit for testing.
+            Log.v(LOG_TAG, "PlayerNumberNotFoundException");
         }
         
         return (m_SelectedController != null);
@@ -68,7 +69,7 @@ public class s3eFireTV extends LoaderActivity
     
     public int s3eFireTV_getPlayerCount()
     {
-        //Log.v(LOG_TAG, "s3eFireTV_getPlayerCount");
+        Log.v(LOG_TAG, "s3eFireTV_getPlayerCount");
         if (m_SelectedController != null)
         {
             return GameController.getPlayerCount();
@@ -81,7 +82,7 @@ public class s3eFireTV extends LoaderActivity
     
     public boolean s3eFireTV_getButtonState(int button)
     {
-        //Log.v(LOG_TAG, "s3eFireTV_getButtonState");
+        Log.v(LOG_TAG, "s3eFireTV_getButtonState");
         if (m_SelectedController != null)
         {
             return m_SelectedController.isButtonPressed(button);
@@ -94,7 +95,7 @@ public class s3eFireTV extends LoaderActivity
     
     public float s3eFireTV_getAxisValue(int axis)
     {
-        //Log.v(LOG_TAG, "s3eFireTV_getAxisValue");
+        Log.v(LOG_TAG, "s3eFireTV_getAxisValue");
         if (m_SelectedController != null)
         {
             return m_SelectedController.getAxisValue(axis);

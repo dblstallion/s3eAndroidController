@@ -40,5 +40,4 @@ deployments
     android-external-jars="lib/android/s3eFireTV.jar"
     android-external-jars="libs/gamecontroller.jar"
     android-so="lib/android/libs3eFireTV.so"
-    android-custom-activity = 'com.s3eFireTV.s3eFireTV'
 }
