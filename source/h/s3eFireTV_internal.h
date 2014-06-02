@@ -42,17 +42,11 @@ void s3eFireTVTerminate();
  * Platform-specific termination, implemented on each platform
  */
 void s3eFireTVTerminate_platform();
-void s3eFireTV_init_platform();
-
 void s3eFireTV_startFrame_platform();
 
 bool s3eFireTV_selectControllerByPlayer_platform(int player);
 
-bool s3eFireTV_selectControllerByDeviceId_platform(int deviceId);
-
 int s3eFireTV_getPlayerCount_platform();
-
-int s3eFireTV_getPlayerNumber_platform();
 
 bool s3eFireTV_getButtonState_platform(int button);
 

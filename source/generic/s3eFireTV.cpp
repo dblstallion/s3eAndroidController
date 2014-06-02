@@ -23,11 +23,6 @@ void s3eFireTVTerminate()
     s3eFireTVTerminate_platform();
 }
 
-void s3eFireTV_init()
-{
-	s3eFireTV_init_platform();
-}
-
 void s3eFireTV_startFrame()
 {
 	s3eFireTV_startFrame_platform();
@@ -38,19 +33,9 @@ bool s3eFireTV_selectControllerByPlayer(int player)
 	return s3eFireTV_selectControllerByPlayer_platform(player);
 }
 
-bool s3eFireTV_selectControllerByDeviceId(int deviceId)
-{
-	return s3eFireTV_selectControllerByDeviceId_platform(deviceId);
-}
-
 int s3eFireTV_getPlayerCount()
 {
 	return s3eFireTV_getPlayerCount_platform();
-}
-
-int s3eFireTV_getPlayerNumber()
-{
-	return s3eFireTV_getPlayerNumber_platform();
 }
 
 bool s3eFireTV_getButtonState(int button)
