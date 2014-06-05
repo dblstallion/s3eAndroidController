@@ -14,12 +14,9 @@
 #include "IwDebug.h"
 
 static jobject g_Obj;
-static jmethodID g_s3eFireTV_init;
 static jmethodID g_s3eFireTV_startFrame;
 static jmethodID g_s3eFireTV_selectControllerByPlayer;
-static jmethodID g_s3eFireTV_selectControllerByDeviceId;
 static jmethodID g_s3eFireTV_getPlayerCount;
-static jmethodID g_s3eFireTV_getPlayerNumber;
 static jmethodID g_s3eFireTV_getButtonState;
 static jmethodID g_s3eFireTV_getAxisValue;
 
@@ -31,7 +28,7 @@ s3eResult s3eFireTVInit_platform()
     jmethodID cons = NULL;
 
     // Get the extension class
-    jclass cls = s3eEdkAndroidFindClass("s3eFireTV");
+    jclass cls = s3eEdkAndroidFindClass("com/s3eFireTV/s3eFireTV");
     if (!cls)
         goto fail;
 
@@ -46,10 +43,6 @@ s3eResult s3eFireTVInit_platform()
         goto fail;
 
     // Get all the extension methods
-    g_s3eFireTV_init = env->GetMethodID(cls, "s3eFireTV_init", "()V");
-    if (!g_s3eFireTV_init)
-        goto fail;
-
     g_s3eFireTV_startFrame = env->GetMethodID(cls, "s3eFireTV_startFrame", "()V");
     if (!g_s3eFireTV_startFrame)
         goto fail;
@@ -58,16 +51,8 @@ s3eResult s3eFireTVInit_platform()
     if (!g_s3eFireTV_selectControllerByPlayer)
         goto fail;
 
-    g_s3eFireTV_selectControllerByDeviceId = env->GetMethodID(cls, "s3eFireTV_selectControllerByDeviceId", "(I)Z");
-    if (!g_s3eFireTV_selectControllerByDeviceId)
-        goto fail;
-
     g_s3eFireTV_getPlayerCount = env->GetMethodID(cls, "s3eFireTV_getPlayerCount", "()I");
     if (!g_s3eFireTV_getPlayerCount)
-        goto fail;
-
-    g_s3eFireTV_getPlayerNumber = env->GetMethodID(cls, "s3eFireTV_getPlayerNumber", "()I");
-    if (!g_s3eFireTV_getPlayerNumber)
         goto fail;
 
     g_s3eFireTV_getButtonState = env->GetMethodID(cls, "s3eFireTV_getButtonState", "(I)Z");
@@ -105,12 +90,6 @@ void s3eFireTVTerminate_platform()
     // Add any platform-specific termination code here
 }
 
-void s3eFireTV_init_platform()
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eFireTV_init);
-}
-
 void s3eFireTV_startFrame_platform()
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
@@ -123,22 +102,10 @@ bool s3eFireTV_selectControllerByPlayer_platform(int player)
     return (bool)env->CallBooleanMethod(g_Obj, g_s3eFireTV_selectControllerByPlayer, player);
 }
 
-bool s3eFireTV_selectControllerByDeviceId_platform(int deviceId)
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    return (bool)env->CallBooleanMethod(g_Obj, g_s3eFireTV_selectControllerByDeviceId, deviceId);
-}
-
 int s3eFireTV_getPlayerCount_platform()
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
     return (int)env->CallIntMethod(g_Obj, g_s3eFireTV_getPlayerCount);
-}
-
-int s3eFireTV_getPlayerNumber_platform()
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    return (int)env->CallIntMethod(g_Obj, g_s3eFireTV_getPlayerNumber);
 }
 
 bool s3eFireTV_getButtonState_platform(int button)

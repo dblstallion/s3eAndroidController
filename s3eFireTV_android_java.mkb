@@ -6,6 +6,7 @@ files
 {
     (source/android)
     s3eFireTV.java
+    s3eFireTVActivity.java
 }
 
 librarypath "$MARMALADE_ROOT/s3e/deploy/plugins/android/android.jar"

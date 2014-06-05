@@ -22,46 +22,24 @@ import com.amazon.device.gamecontroller.GameController.PlayerNumberNotFoundExcep
 import com.ideaworks3d.marmalade.LoaderAPI;
 import com.ideaworks3d.marmalade.LoaderActivity;
 
-public class s3eFireTV extends LoaderActivity
+public class s3eFireTV
 {
-    private static final String LOG_TAG = "s3eFireTV";
-    
-    public static s3eFireTV 		m_Activity = null;
-	public static GameController	m_SelectedController = null;
-    
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-	{
-        Log.v(LOG_TAG, "onCreate");
-        super.onCreate(savedInstanceState);
-        m_Activity = this;
-
-		s3eFireTV_init();
-    }
-    
-    private void s3eFireTV_init()
-    {
-        Log.v(LOG_TAG, "s3eFireTV_init");
-        GameController.init(getApplicationContext());
-    }
+	GameController m_SelectedController = null;
     
     public void s3eFireTV_startFrame()
     {
-        Log.v(LOG_TAG, "s3eFireTV_startFrame");
         GameController.startFrame();
     }
     
     public boolean s3eFireTV_selectControllerByPlayer(int player)
     {
-        Log.v(LOG_TAG, "s3eFireTV_selectControllerByPlayer");
         try
         {
             m_SelectedController = GameController.getControllerByPlayer(player);
         }
         catch (PlayerNumberNotFoundException e)
         {
-            // TODO: Do something more intelligent once we have the dev kit for testing.
-            Log.v(LOG_TAG, "PlayerNumberNotFoundException");
+            m_SelectedController = null;
         }
         
         return (m_SelectedController != null);
@@ -69,7 +47,6 @@ public class s3eFireTV extends LoaderActivity
     
     public int s3eFireTV_getPlayerCount()
     {
-        Log.v(LOG_TAG, "s3eFireTV_getPlayerCount");
         if (m_SelectedController != null)
         {
             return GameController.getPlayerCount();
@@ -82,7 +59,6 @@ public class s3eFireTV extends LoaderActivity
     
     public boolean s3eFireTV_getButtonState(int button)
     {
-        Log.v(LOG_TAG, "s3eFireTV_getButtonState");
         if (m_SelectedController != null)
         {
             return m_SelectedController.isButtonPressed(button);
@@ -95,7 +71,6 @@ public class s3eFireTV extends LoaderActivity
     
     public float s3eFireTV_getAxisValue(int axis)
     {
-        Log.v(LOG_TAG, "s3eFireTV_getAxisValue");
         if (m_SelectedController != null)
         {
             return m_SelectedController.getAxisValue(axis);

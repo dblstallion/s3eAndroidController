@@ -28,8 +28,8 @@ include:
 
 functions:
 
-void    s3eFireTV_startFrame() run_on_os_thread
-bool    s3eFireTV_selectControllerByPlayer(int player) false run_on_os_thread
-int     s3eFireTV_getPlayerCount() 0 run_on_os_thread
-bool    s3eFireTV_getButtonState(int button) false run_on_os_thread
-float   s3eFireTV_getAxisValue(int axis) 0 run_on_os_thread
+void    s3eFireTV_startFrame()
+bool    s3eFireTV_selectControllerByPlayer(int player) false
+int     s3eFireTV_getPlayerCount() 0
+bool    s3eFireTV_getButtonState(int button) false
+float   s3eFireTV_getAxisValue(int axis) 0

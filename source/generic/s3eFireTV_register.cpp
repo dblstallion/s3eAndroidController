@@ -10,7 +10,6 @@
  * to nothing if this extension is not enabled in the loader
  * at build time.
  */
-#include "IwDebug.h"
 #include "s3eFireTV_autodefs.h"
 #include "s3eEdk.h"
 #include "s3eFireTV.h"
@@ -18,49 +17,6 @@
 extern s3eResult s3eFireTVInit();
 extern void s3eFireTVTerminate();
 
-
-// On platforms that use a seperate UI/OS thread we can autowrap functions
-// here.   Note that we can't use the S3E_USE_OS_THREAD define since this
-// code is oftern build standalone, outside the main loader build.
-#if defined I3D_OS_IPHONE || defined I3D_OS_OSX || defined I3D_OS_LINUX || defined I3D_OS_WINDOWS
-
-static void s3eFireTV_startFrame_wrap()
-{
-    IwTrace(FIRETV_VERBOSE, ("calling s3eFireTV func on main thread: s3eFireTV_startFrame"));
-    s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eFireTV_startFrame, 0);
-}
-
-static bool s3eFireTV_selectControllerByPlayer_wrap(int player)
-{
-    IwTrace(FIRETV_VERBOSE, ("calling s3eFireTV func on main thread: s3eFireTV_selectControllerByPlayer"));
-    return (bool)(intptr_t)s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eFireTV_selectControllerByPlayer, 1, player);
-}
-
-static int s3eFireTV_getPlayerCount_wrap()
-{
-    IwTrace(FIRETV_VERBOSE, ("calling s3eFireTV func on main thread: s3eFireTV_getPlayerCount"));
-    return (int)(intptr_t)s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eFireTV_getPlayerCount, 0);
-}
-
-static bool s3eFireTV_getButtonState_wrap(int button)
-{
-    IwTrace(FIRETV_VERBOSE, ("calling s3eFireTV func on main thread: s3eFireTV_getButtonState"));
-    return (bool)(intptr_t)s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eFireTV_getButtonState, 1, button);
-}
-
-static float s3eFireTV_getAxisValue_wrap(int axis)
-{
-    IwTrace(FIRETV_VERBOSE, ("calling s3eFireTV func on main thread: s3eFireTV_getAxisValue"));
-    return (float)(intptr_t)s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eFireTV_getAxisValue, 1, axis);
-}
-
-#define s3eFireTV_startFrame s3eFireTV_startFrame_wrap
-#define s3eFireTV_selectControllerByPlayer s3eFireTV_selectControllerByPlayer_wrap
-#define s3eFireTV_getPlayerCount s3eFireTV_getPlayerCount_wrap
-#define s3eFireTV_getButtonState s3eFireTV_getButtonState_wrap
-#define s3eFireTV_getAxisValue s3eFireTV_getAxisValue_wrap
-
-#endif
 
 void s3eFireTVRegisterExt()
 {
