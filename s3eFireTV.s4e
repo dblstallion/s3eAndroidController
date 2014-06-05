@@ -9,11 +9,13 @@ include:
 #define s3eFireTV_AXIS_STICK_RIGHT_Y        14
 #define s3eFireTV_AXIS_TRIGGER_LEFT         23
 #define s3eFireTV_AXIS_TRIGGER_RIGHT        22
-#define s3eFireTV_AXIS_DPAD_X               15
-#define s3eFireTV_AXIS_DPAD_Y               16
-
 #define s3eFireTV_BUTTON_A                  96
 #define s3eFireTV_BUTTON_B                  97
+#define s3eFireTV_BUTTON_DPAD_CENTER        23
+#define s3eFireTV_BUTTON_DPAD_DOWN          20
+#define s3eFireTV_BUTTON_DPAD_LEFT          21
+#define s3eFireTV_BUTTON_DPAD_RIGHT         22
+#define s3eFireTV_BUTTON_DPAD_UP            19
 #define s3eFireTV_BUTTON_SHOULDER_LEFT      102
 #define s3eFireTV_BUTTON_SHOULDER_RIGHT     103
 #define s3eFireTV_BUTTON_STICK_LEFT         106
