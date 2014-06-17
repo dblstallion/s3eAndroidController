@@ -12,6 +12,7 @@ These functions are called via JNI from native code.
  
 package com.s3eFireTV;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -28,28 +29,45 @@ public class s3eFireTV
     
     public void s3eFireTV_startFrame()
     {
-        GameController.startFrame();
+        if (isAmazonDevice())
+        {
+            GameController.startFrame();
+        }
     }
     
     public boolean s3eFireTV_selectControllerByPlayer(int player)
     {
-        try
+        if (isAmazonDevice())
         {
-            m_SelectedController = GameController.getControllerByPlayer(player);
+            try
+            {
+                m_SelectedController = GameController.getControllerByPlayer(player);
+            }
+            catch (PlayerNumberNotFoundException e)
+            {
+                m_SelectedController = null;
+            }
+            
+            return (m_SelectedController != null);
         }
-        catch (PlayerNumberNotFoundException e)
+        else
         {
-            m_SelectedController = null;
+            return false;
         }
-        
-        return (m_SelectedController != null);
     }
     
     public int s3eFireTV_getPlayerCount()
     {
-        if (m_SelectedController != null)
+        if (isAmazonDevice())
         {
-            return GameController.getPlayerCount();
+            if (m_SelectedController != null)
+            {
+                return GameController.getPlayerCount();
+            }
+            else
+            {
+                return 0;
+            }
         }
         else
         {
@@ -59,9 +77,16 @@ public class s3eFireTV
     
     public boolean s3eFireTV_getButtonState(int button)
     {
-        if (m_SelectedController != null)
+        if (isAmazonDevice())
         {
-            return m_SelectedController.isButtonPressed(button);
+            if (m_SelectedController != null)
+            {
+                return m_SelectedController.isButtonPressed(button);
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
@@ -71,13 +96,25 @@ public class s3eFireTV
     
     public float s3eFireTV_getAxisValue(int axis)
     {
-        if (m_SelectedController != null)
+        if (isAmazonDevice())
         {
-            return m_SelectedController.getAxisValue(axis);
+            if (m_SelectedController != null)
+            {
+                return m_SelectedController.getAxisValue(axis);
+            }
+            else
+            {
+                return 0.0f;
+            }
         }
         else
         {
             return 0.0f;
         }
+    }
+    
+    public static boolean isAmazonDevice()
+    {
+        return android.os.Build.MANUFACTURER.equals("Amazon");
     }
 }

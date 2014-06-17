@@ -4,25 +4,25 @@ C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
                               debug\s3eFireTV_platform.os (IwDebugTraceSetTraceChannel)
 C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
                               debug\s3eFireTV_platform.os (s3eEdkThreadRunOnOS)
-c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
                               C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(IwDebug.o) (__aeabi_ldivmod)
-c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
-                              c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
-c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
-                              c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o) (__gnu_ldivmod_helper)
-c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
-                              c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__divdi3)
-c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
-                              c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__udivdi3)
-c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
-                              c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o) (__aeabi_uidiv)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o) (__gnu_ldivmod_helper)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__divdi3)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o) (__udivdi3)
+c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                              c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o) (__aeabi_uidiv)
 
 Discarded input sections
 
- .text          0x00000000       0x14 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
- .bss           0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .text          0x00000000       0x14 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  .note.GNU-stack
-                0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  .group         0x00000000        0x8 debug\s3eFireTV_platform.os
  .group         0x00000000        0x8 debug\s3eFireTV_platform.os
  .group         0x00000000        0x8 debug\s3eFireTV_platform.os
@@ -90,37 +90,37 @@ Discarded input sections
                 0x00000000       0x30 C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
  .note.GNU-stack
                 0x00000000        0x0 C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
- .data          0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
- .bss           0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
  .note.GNU-stack
-                0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
- .data          0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
- .bss           0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
  .note.GNU-stack
-                0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
- .data          0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
- .bss           0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
  .note.GNU-stack
-                0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
- .data          0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
- .bss           0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
- .ARM.extab     0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
  .note.GNU-stack
-                0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
- .data          0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
- .bss           0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
- .ARM.extab     0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
  .note.GNU-stack
-                0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
- .data          0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
- .bss           0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .data          0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
  .note.GNU-stack
-                0x00000000        0x0 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
- .text          0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
- .data          0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
- .bss           0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+                0x00000000        0x0 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .text          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .data          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
  .note.GNU-stack
-                0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 Memory map
 
@@ -154,7 +154,7 @@ Memory map
  ** PLT         0x00000818       0xc8
 
 .text           0x000008e0     0x1a84
- .text.exit     0x000008e0       0x10 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .text.exit     0x000008e0       0x10 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x000008e0                __on_dlclose
  .text._ZN7_JNIEnv9FindClassEPKc
                 0x000008f0       0x38 debug\s3eFireTV_platform.os
@@ -266,19 +266,19 @@ Memory map
  .text.s3eEdkThreadRunOnOS
                 0x00001904       0x30 C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
                 0x00001904                s3eEdkThreadRunOnOS
- .text          0x00001934       0x44 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+ .text          0x00001934       0x44 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
                 0x00001934                __aeabi_ldivmod
- .text          0x00001978       0x10 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .text          0x00001978       0x10 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
                 0x00001978                __aeabi_idiv0
                 0x00001978                __aeabi_ldiv0
- .text          0x00001988       0x78 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+ .text          0x00001988       0x78 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
                 0x00001988                __gnu_ldivmod_helper
                 0x000019c4                __gnu_uldivmod_helper
- .text          0x00001a00      0x498 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .text          0x00001a00      0x498 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
                 0x00001a00                __divdi3
- .text          0x00001e98      0x404 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+ .text          0x00001e98      0x404 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
                 0x00001e98                __udivdi3
- .text          0xffffffffffffffff       0xc8 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
+ .text          0xffffffffffffffff       0xc8 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
                 0x0000229c                __udivsi3
                 0x0000229c                __aeabi_uidiv
                 0x00002344                __aeabi_uidivmod
@@ -290,15 +290,15 @@ Memory map
                 0x00002488      0x11c
 
 .ARM.exidx      0x000025a4        0x8
- .ARM.exidx     0x000025a4        0x8 c:/program files (x86)/android sdk/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.exidx     0x000025a4        0x8 c:/android-ndk-r9/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
 
 .fini_array     0x00003eac        0x8
- .fini_array    0x00003eac        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
- .fini_array    0x00003eb0        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .fini_array    0x00003eac        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00003eb0        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .init_array     0x00003eb4        0x8
  .init_array    0x00003eb4        0x4 C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
- .init_array    0x00003eb8        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .init_array    0x00003eb8        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .dynamic        0x00003ebc       0xe0
  ** dynamic     0x00003ebc       0xe0
@@ -308,7 +308,7 @@ Memory map
  ** GOT PLT     0x00003fb8       0x48
 
 .data           0x00004000        0x4
- .data          0x00004000        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .data          0x00004000        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x00004000                __dso_handle
 
 .bss            0x00004004     0x1a40

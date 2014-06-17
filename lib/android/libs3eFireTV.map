@@ -5,10 +5,10 @@ C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
 
 Discarded input sections
 
- .text          0x00000000       0x14 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
- .bss           0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .text          0x00000000       0x14 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  .note.GNU-stack
-                0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  .group         0x00000000        0x8 release\s3eFireTV_platform.os
  .group         0x00000000        0x8 release\s3eFireTV_platform.os
  .group         0x00000000        0x8 release\s3eFireTV_platform.os
@@ -39,11 +39,11 @@ Discarded input sections
                 0x00000000       0x30 C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
  .note.GNU-stack
                 0x00000000        0x0 C:\marmalade\7.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
- .text          0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
- .data          0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
- .bss           0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .text          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .data          0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .bss           0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
  .note.GNU-stack
-                0x00000000        0x0 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+                0x00000000        0x0 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 Memory map
 
@@ -77,7 +77,7 @@ Memory map
  ** PLT         0x00000378       0x44
 
 .text           0x000003bc      0x6f4
- .text.exit     0x000003bc       0x10 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .text.exit     0x000003bc       0x10 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x000003bc                __on_dlclose
  .text._ZL27s3eEdkAndroidFindClass_realPKc
                 0x000003cc       0xb8 release\s3eFireTV_platform.os
@@ -150,11 +150,11 @@ Memory map
                 0x00000ab0       0xce
 
 .fini_array     0x00001edc        0x8
- .fini_array    0x00001edc        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
- .fini_array    0x00001ee0        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .fini_array    0x00001edc        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00001ee0        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .init_array     0x00001ee4        0x4
- .init_array    0x00001ee4        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
+ .init_array    0x00001ee4        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .dynamic        0x00001ee8       0xe0
  ** dynamic     0x00001ee8       0xe0
@@ -164,7 +164,7 @@ Memory map
  ** GOT PLT     0x00001fe4       0x1c
 
 .data           0x00002000        0x4
- .data          0x00002000        0x4 C:/Program Files (x86)/Android SDK/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .data          0x00002000        0x4 C:/android-ndk-r9/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x00002000                __dso_handle
 
 .bss            0x00002004       0x18

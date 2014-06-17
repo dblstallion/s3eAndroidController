@@ -29,46 +29,70 @@ public class s3eFireTVActivity extends LoaderActivity
     {
         super.onCreate(savedInstanceState);
         
-        //Initialize GameController with the context to attach to the game controller service
-        GameController.init(this);
+        if (s3eFireTV.isAmazonDevice())
+        {
+            //Initialize GameController with the context to attach to the game controller service
+            GameController.init(this);
+        }
     }
     
     //Forward key down events to GameController so it can manage state
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
-        boolean handled = false;
-        try {
-            handled = GameController.onKeyDown(keyCode, event);
+        if (s3eFireTV.isAmazonDevice())
+        {
+            boolean handled = false;
+            try {
+                handled = GameController.onKeyDown(keyCode, event);
+            }
+            catch (DeviceNotFoundException e) {
+            }
+            return handled || super.onKeyDown(keyCode, event);
         }
-        catch (DeviceNotFoundException e) {
+        else
+        {
+            return super.onKeyDown(keyCode, event);
         }
-        return handled || super.onKeyDown(keyCode, event);
     }
     
     //Forward key up events to GameController so it can manage state
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event)
     {
-        boolean handled = false;
-        try {
-            handled = GameController.onKeyUp(keyCode, event);
+        if (s3eFireTV.isAmazonDevice())
+        {
+            boolean handled = false;
+            try {
+                handled = GameController.onKeyUp(keyCode, event);
+            }
+            catch (DeviceNotFoundException e) {
+            }
+            return handled || super.onKeyUp(keyCode, event);
         }
-        catch (DeviceNotFoundException e) {
+        else
+        {
+            return super.onKeyUp(keyCode, event);
         }
-        return handled || super.onKeyUp(keyCode, event);
     }
     
     //Forward motion events to GameController so it can manage state
     @Override
     public boolean onGenericMotionEvent(MotionEvent event)
     {
-        boolean handled = false;
-        try {
-            handled = GameController.onGenericMotionEvent(event);
+        if (s3eFireTV.isAmazonDevice())
+        {
+            boolean handled = false;
+            try {
+                handled = GameController.onGenericMotionEvent(event);
+            }
+            catch (DeviceNotFoundException e) {
+            }
+            return handled || super.onGenericMotionEvent(event);
         }
-        catch (DeviceNotFoundException e) {
+        else
+        {
+            return super.onGenericMotionEvent(event);
         }
-        return handled || super.onGenericMotionEvent(event);
     }
 }
