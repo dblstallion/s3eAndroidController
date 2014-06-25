@@ -29,7 +29,7 @@ public class s3eFireTVActivity extends LoaderActivity
     {
         super.onCreate(savedInstanceState);
         
-        if (s3eFireTV.isAmazonDevice())
+        if (s3eFireTV.isAmazonFireTVDevice())
         {
             //Initialize GameController with the context to attach to the game controller service
             GameController.init(this);
@@ -40,7 +40,7 @@ public class s3eFireTVActivity extends LoaderActivity
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
-        if (s3eFireTV.isAmazonDevice())
+        if (s3eFireTV.isAmazonFireTVDevice())
         {
             boolean handled = false;
             try {
@@ -60,7 +60,7 @@ public class s3eFireTVActivity extends LoaderActivity
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event)
     {
-        if (s3eFireTV.isAmazonDevice())
+        if (s3eFireTV.isAmazonFireTVDevice())
         {
             boolean handled = false;
             try {
@@ -80,7 +80,7 @@ public class s3eFireTVActivity extends LoaderActivity
     @Override
     public boolean onGenericMotionEvent(MotionEvent event)
     {
-        if (s3eFireTV.isAmazonDevice())
+        if (s3eFireTV.isAmazonFireTVDevice())
         {
             boolean handled = false;
             try {

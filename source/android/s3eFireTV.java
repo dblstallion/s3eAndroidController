@@ -29,7 +29,7 @@ public class s3eFireTV
     
     public void s3eFireTV_startFrame()
     {
-        if (isAmazonDevice())
+        if (isAmazonFireTVDevice())
         {
             GameController.startFrame();
         }
@@ -37,7 +37,7 @@ public class s3eFireTV
     
     public boolean s3eFireTV_selectControllerByPlayer(int player)
     {
-        if (isAmazonDevice())
+        if (isAmazonFireTVDevice())
         {
             try
             {
@@ -58,7 +58,7 @@ public class s3eFireTV
     
     public int s3eFireTV_getPlayerCount()
     {
-        if (isAmazonDevice())
+        if (isAmazonFireTVDevice())
         {
             if (m_SelectedController != null)
             {
@@ -77,7 +77,7 @@ public class s3eFireTV
     
     public boolean s3eFireTV_getButtonState(int button)
     {
-        if (isAmazonDevice())
+        if (isAmazonFireTVDevice())
         {
             if (m_SelectedController != null)
             {
@@ -96,7 +96,7 @@ public class s3eFireTV
     
     public float s3eFireTV_getAxisValue(int axis)
     {
-        if (isAmazonDevice())
+        if (isAmazonFireTVDevice())
         {
             if (m_SelectedController != null)
             {
@@ -113,8 +113,9 @@ public class s3eFireTV
         }
     }
     
-    public static boolean isAmazonDevice()
+    public static boolean isAmazonFireTVDevice()
     {
-        return android.os.Build.MANUFACTURER.equals("Amazon");
+        return android.os.Build.MANUFACTURER.equals("Amazon") &&
+            android.os.Build.MODEL.substring(0, 3).equals("AFT");
     }
 }
