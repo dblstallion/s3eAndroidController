@@ -1,6 +1,6 @@
-# Subproject file for extension s3eFireTV.
+# Subproject file for extension s3eAndroidController.
 #
-# Include this subproject in your App to enable access to the s3eFireTV API
+# Include this subproject in your App to enable access to the s3eAndroidController API
 #
 # NOTE: This file was originally written by the extension builder, but will not
 # be overwritten (unless --force is specified) and is intended to be modified.
@@ -9,24 +9,24 @@
 # Running the extension builder with --platform can cause additions to this file
 # even after modification, to support additional platforms
 
-display_name "Extensions/s3eFireTV"
+display_name "Extensions/s3eAndroidController"
 
 includepath h
 
 files
 {
     (h)
-    s3eFireTV.h
+    s3eAndroidController.h
 
     ["interface"]
     (interface)
-    s3eFireTV_interface.cpp
-    s3eFireTV.defines.txt
+    s3eAndroidController_interface.cpp
+    s3eAndroidController.defines.txt
 }
 
 defines
 {
-    IW_TRACE_CHANNEL_FIRETV_VERBOSE=2
+    IW_TRACE_CHANNEL_ANDROIDCONTROLLER_VERBOSE=2
 }
 
 if {{ not defined IW_MKF_IWCRT}}
@@ -37,7 +37,6 @@ if {{ not defined IW_MKF_IWCRT}}
 #Include the extension's jar file during deployment
 deployments
 {
-    android-external-jars="lib/android/s3eFireTV.jar"
-    android-external-jars="libs/gamecontroller.jar"
-    android-so="lib/android/libs3eFireTV.so"
+    android-external-jars="lib/android/s3eAndroidController.jar"
+    android-so="lib/android/libs3eAndroidController.so"
 }

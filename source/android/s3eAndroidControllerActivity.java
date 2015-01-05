@@ -1,5 +1,5 @@
 /*
-java implementation of the s3eFireTV extension.
+java implementation of the s3eAndroidController extension.
 
 Add android-specific functionality here.
 
@@ -10,7 +10,7 @@ These functions are called via JNI from native code.
  * be overwritten (unless --force is specified) and is intended to be modified.
  */
  
-package com.s3eFireTV;
+package com.s3eAndroidController;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -22,14 +22,14 @@ import com.amazon.device.gamecontroller.GameController.PlayerNumberNotFoundExcep
 import com.ideaworks3d.marmalade.LoaderAPI;
 import com.ideaworks3d.marmalade.LoaderActivity;
 
-public class s3eFireTVActivity extends LoaderActivity
+public class s3eAndroidControllerActivity extends LoaderActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         
-        if (s3eFireTV.isAmazonFireTVDevice())
+        if (s3eAndroidController.isAmazonFireTVDevice())
         {
             //Initialize GameController with the context to attach to the game controller service
             GameController.init(this);
@@ -40,7 +40,7 @@ public class s3eFireTVActivity extends LoaderActivity
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
-        if (s3eFireTV.isAmazonFireTVDevice())
+        if (s3eAndroidController.isAmazonFireTVDevice())
         {
             boolean handled = false;
             try {
@@ -60,7 +60,7 @@ public class s3eFireTVActivity extends LoaderActivity
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event)
     {
-        if (s3eFireTV.isAmazonFireTVDevice())
+        if (s3eAndroidController.isAmazonFireTVDevice())
         {
             boolean handled = false;
             try {
@@ -80,7 +80,7 @@ public class s3eFireTVActivity extends LoaderActivity
     @Override
     public boolean onGenericMotionEvent(MotionEvent event)
     {
-        if (s3eFireTV.isAmazonFireTVDevice())
+        if (s3eAndroidController.isAmazonFireTVDevice())
         {
             boolean handled = false;
             try {

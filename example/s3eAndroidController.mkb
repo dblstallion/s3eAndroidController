@@ -1,0 +1,16 @@
+#!/usr/bin/env mkb
+files
+{
+    s3eAndroidController.cpp
+}
+
+subprojects
+{
+    iwutil
+    s3eAndroidController
+}
+
+deployment
+{
+	android-custom-activity='com.s3eAndroidController.s3eAndroidControllerActivity'
+}

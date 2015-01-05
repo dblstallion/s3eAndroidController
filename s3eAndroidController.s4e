@@ -1,0 +1,40 @@
+include:
+#include <s3eTypes.h>
+
+#define S3E_ANDROID_CONTROLLER_MAX_PLAYERS               4
+
+#define S3E_ANDROID_CONTROLLER_AXIS_COUNT                6
+#define S3E_ANDROID_CONTROLLER_BUTTON_COUNT              15
+
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_LEFT_X         0
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_LEFT_Y         1
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_RIGHT_X        11
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_RIGHT_Y        14
+#define S3E_ANDROID_CONTROLLER_AXIS_TRIGGER_LEFT         23
+#define S3E_ANDROID_CONTROLLER_AXIS_TRIGGER_RIGHT        22
+#define S3E_ANDROID_CONTROLLER_BUTTON_A                  96
+#define S3E_ANDROID_CONTROLLER_BUTTON_B                  97
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_CENTER        23
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_DOWN          20
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_LEFT          21
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_RIGHT         22
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_UP            19
+#define S3E_ANDROID_CONTROLLER_BUTTON_SHOULDER_LEFT      102
+#define S3E_ANDROID_CONTROLLER_BUTTON_SHOULDER_RIGHT     103
+#define S3E_ANDROID_CONTROLLER_BUTTON_STICK_LEFT         106
+#define S3E_ANDROID_CONTROLLER_BUTTON_STICK_RIGHT        107
+#define S3E_ANDROID_CONTROLLER_BUTTON_TRIGGER_LEFT       104
+#define S3E_ANDROID_CONTROLLER_BUTTON_TRIGGER_RIGHT      105
+#define S3E_ANDROID_CONTROLLER_BUTTON_X                  99
+#define S3E_ANDROID_CONTROLLER_BUTTON_Y                  100
+
+
+functions:
+
+void    s3eAndroidControllerStartFrame()
+bool    s3eAndroidControllerSelectControllerByPlayer(int player) false
+int     s3eAndroidControllerGetPlayerCount() 0
+bool    s3eAndroidControllerGetButtonState(int button) false
+float   s3eAndroidControllerGetAxisValue(int axis) 0
+s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBool terminateString S3E_DEFAULT(S3E_TRUE)) S3E_RESULT_ERROR
+s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool terminateString S3E_DEFAULT(S3E_TRUE)) S3E_RESULT_ERROR
