@@ -19,6 +19,9 @@ static jmethodID g_s3eAndroidControllerSelectControllerByPlayer;
 static jmethodID g_s3eAndroidControllerGetPlayerCount;
 static jmethodID g_s3eAndroidControllerGetButtonState;
 static jmethodID g_s3eAndroidControllerGetAxisValue;
+static jmethodID g_s3eAndroidControllerSetPropagateButtonsToKeyboard;
+
+static jmethodID supportedFn; 
 
 s3eResult s3eAndroidControllerInit_platform()
 {
@@ -26,8 +29,7 @@ s3eResult s3eAndroidControllerInit_platform()
     JNIEnv* env = s3eEdkJNIGetEnv();
     jobject obj = NULL;
     jmethodID cons = NULL;
-    jmethodID isFireTV = NULL; //cant declare pointers between goto and fail!
-    bool supportedDevice;
+    bool supportedDevice; //cant declare pointers between goto and fail...
 
     // Get the extension class
     jclass cls = s3eEdkAndroidFindClass("com/s3eAndroidController/s3eAndroidController");
@@ -65,12 +67,19 @@ s3eResult s3eAndroidControllerInit_platform()
     if (!g_s3eAndroidControllerGetAxisValue)
         goto fail;
     
+    g_s3eAndroidControllerSetPropagateButtonsToKeyboard = env->GetMethodID(cls, "s3eAndroidControllerSetPropagateButtonsToKeyboard", "(Z)V");
+    if (!g_s3eAndroidControllerSetPropagateButtonsToKeyboard)
+        goto fail;    
 
-    isFireTV = env->GetMethodID(cls, "isAmazonFireTVDevice", "()Z");
-    if (!isFireTV)
+    // For now, amazon lib missing -> polling not supported -> extension not supported
+    // In future will extend to pump Android axis anbd button events to callbacks
+    // on all devices and just disable polling.
+    
+    supportedFn = env->GetStaticMethodID(cls, "isPollingSupported", "()Z");
+    if (!supportedFn)
         goto fail;
     
-    supportedDevice = (bool)env->CallBooleanMethod(obj, isFireTV);
+    supportedDevice = (bool)env->CallStaticBooleanMethod(cls, supportedFn);
     if (supportedDevice)
     {
         IwTrace(ANDROIDCONTROLLER, ("supported"));
@@ -133,4 +142,10 @@ float s3eAndroidControllerGetAxisValue_platform(int axis)
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
     return (float)env->CallFloatMethod(g_Obj, g_s3eAndroidControllerGetAxisValue, axis);
+}
+
+void s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool propagate)
+{
+    JNIEnv* env = s3eEdkJNIGetEnv();
+    env->CallVoidMethod(g_Obj, g_s3eAndroidControllerSetPropagateButtonsToKeyboard, propagate);
 }

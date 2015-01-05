@@ -21,7 +21,7 @@ extern void s3eAndroidControllerTerminate();
 void s3eAndroidControllerRegisterExt()
 {
     /* fill in the function pointer struct for this extension */
-    void* funcPtrs[7];
+    void* funcPtrs[8];
     funcPtrs[0] = (void*)s3eAndroidControllerStartFrame;
     funcPtrs[1] = (void*)s3eAndroidControllerSelectControllerByPlayer;
     funcPtrs[2] = (void*)s3eAndroidControllerGetPlayerCount;
@@ -29,11 +29,12 @@ void s3eAndroidControllerRegisterExt()
     funcPtrs[4] = (void*)s3eAndroidControllerGetAxisValue;
     funcPtrs[5] = (void*)s3eAndroidControllerGetButtonDisplayName;
     funcPtrs[6] = (void*)s3eAndroidControllerGetAxisDisplayName;
+    funcPtrs[7] = (void*)s3eAndroidControllerSetPropagateButtonsToKeyboard;
 
     /*
      * Flags that specify the extension's use of locking and stackswitching
      */
-    int flags[7] = { 0 };
+    int flags[8] = { 0 };
 
     /*
      * Register the extension

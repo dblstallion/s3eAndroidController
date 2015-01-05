@@ -81,6 +81,9 @@ int main()
 
 
 	bool gotController = s3eAndroidControllerAvailable();
+	
+	// Use to disable s3eKeyboard events
+	//if (gotController) s3eAndroidControllerSetPropagateButtonsToKeyboard(false);
 
     while (!s3eDeviceCheckQuitRequest())
     {
@@ -94,7 +97,6 @@ int main()
 		int lineHeight = fontHeight + 2;
 		int x = 20;
 		int y = 20;
-		int listStartY = y;
 		char name[128];
 
 		if (!gotController)
@@ -105,16 +107,30 @@ int main()
 		else
 		{
 			s3eDebugPrint(x, y, "Please mash controller 1!", 1);
-			y += lineHeight * 2;
+			y += lineHeight;
 
 			s3eAndroidControllerStartFrame();
 
-			y += lineHeight;
-			s3eDebugPrintf(x, y, 1, "Controllers found: %d", s3eAndroidControllerGetPlayerCount());
-	
-			listStartY = y;
+			int numControllers = s3eAndroidControllerGetPlayerCount();
 
-			y = listStartY;
+			s3eDebugPrintf(x, y, 1, "Controllers found: %d", numControllers);
+			y += lineHeight;
+
+			bool gotController = false;
+			int n = 0;
+			do
+			{
+				n++;
+				gotController = s3eAndroidControllerSelectControllerByPlayer(n);
+			}
+			while(!gotController && n < S3E_ANDROID_CONTROLLER_MAX_PLAYERS);
+			
+			if (gotController)
+				s3eDebugPrintf(x, y, 1, "Using controller for player: %d", n);
+			else
+				s3eDebugPrintf(x, y, 1, "Could not get a player to use :(");
+
+			y += lineHeight*2;
 			x = 20;
 
 			// Display state of each axis
@@ -123,7 +139,7 @@ int main()
 			y += lineHeight;
 			for (int i = 0; i < S3E_ANDROID_CONTROLLER_AXIS_COUNT; i++)
 			{
-				if (s3eAndroidControllerGetButtonDisplayName(name, g_Axes[i], S3E_TRUE) == S3E_RESULT_ERROR)
+				if (s3eAndroidControllerGetAxisDisplayName(name, g_Axes[i], S3E_TRUE) == S3E_RESULT_ERROR)
 					strcpy(name, "error");
 
 				s3eDebugPrintf(x, y, 1, "Axis: %s (%d) = %f", name, g_Axes[i], s3eAndroidControllerGetAxisValue(g_Axes[i]));
@@ -135,7 +151,7 @@ int main()
 			x = 20;
 
 			// Display state of each controller button
-			s3eDebugPrint(x, y, "Controller keys pressed:", 0);
+			s3eDebugPrint(x, y, "Controller buttons pressed:", 0);
 			x += 20;
 			y += lineHeight;
 			for (int i = 0; i < S3E_ANDROID_CONTROLLER_BUTTON_COUNT; i++)
@@ -151,7 +167,7 @@ int main()
 		// ----------------- Normal keys states for comparison ---------------------
 
 		y += lineHeight;
-		listStartY = y;
+		int listStartY = y;
 		x = 20;
 
 		// Display last few keys that were pressed down

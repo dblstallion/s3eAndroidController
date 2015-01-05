@@ -56,5 +56,7 @@ s3eResult s3eAndroidControllerGetButtonDisplayName_platform(char* dst, int butto
 
 s3eResult s3eAndroidControllerGetAxisDisplayName_platform(char* dst, int axis, s3eBool terminateString);
 
+void s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool propagate);
+
 
 #endif /* !S3EANDROIDCONTROLLER_INTERNAL_H */

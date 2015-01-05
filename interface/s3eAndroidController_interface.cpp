@@ -29,6 +29,7 @@ typedef       bool(*s3eAndroidControllerGetButtonState_t)(int button);
 typedef      float(*s3eAndroidControllerGetAxisValue_t)(int axis);
 typedef  s3eResult(*s3eAndroidControllerGetButtonDisplayName_t)(char* dst, int button, s3eBool terminateString);
 typedef  s3eResult(*s3eAndroidControllerGetAxisDisplayName_t)(char* dst, int axis, s3eBool terminateString);
+typedef       void(*s3eAndroidControllerSetPropagateButtonsToKeyboard_t)(bool propagate);
 
 /**
  * struct that gets filled in by s3eAndroidControllerRegister
@@ -42,6 +43,7 @@ typedef struct s3eAndroidControllerFuncs
     s3eAndroidControllerGetAxisValue_t m_s3eAndroidControllerGetAxisValue;
     s3eAndroidControllerGetButtonDisplayName_t m_s3eAndroidControllerGetButtonDisplayName;
     s3eAndroidControllerGetAxisDisplayName_t m_s3eAndroidControllerGetAxisDisplayName;
+    s3eAndroidControllerSetPropagateButtonsToKeyboard_t m_s3eAndroidControllerSetPropagateButtonsToKeyboard;
 } s3eAndroidControllerFuncs;
 
 static s3eAndroidControllerFuncs g_Ext;
@@ -225,4 +227,24 @@ s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool te
 #endif
 
     return ret;
+}
+
+void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
+{
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[7] func: s3eAndroidControllerSetPropagateButtonsToKeyboard"));
+
+    if (!_extLoad())
+        return;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    g_Ext.m_s3eAndroidControllerSetPropagateButtonsToKeyboard(propagate);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return;
 }

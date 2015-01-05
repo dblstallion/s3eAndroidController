@@ -26,14 +26,19 @@ import com.ideaworks3d.marmalade.LoaderActivity;
 public class s3eAndroidController
 {
 	GameController m_SelectedController = null;
+    static boolean s_pollingSupported = false;
     
     public void s3eAndroidControllerStartFrame()
     {
-        GameController.startFrame();
+        if (s_pollingSupported)
+            GameController.startFrame();
     }
     
     public boolean s3eAndroidControllerSelectControllerByPlayer(int player)
     {
+        if (!s_pollingSupported)
+            return false;
+        
         try
         {
             m_SelectedController = GameController.getControllerByPlayer(player);
@@ -82,10 +87,25 @@ public class s3eAndroidController
         }
     }
     
-    public static boolean isAmazonFireTVDevice()
+    public void s3eAndroidControllerSetPropagateButtonsToKeyboard(boolean propagate)
     {
-        return true;
-        //return android.os.Build.MANUFACTURER.equals("Amazon") &&
-        //    android.os.Build.MODEL.substring(0, 3).equals("AFT");
+        s3eAndroidControllerActivity.m_propagateButtonEvents = propagate;
     }
+    
+    public static void setPollingSupported(boolean supported)
+    {
+        s_pollingSupported = supported;
+    }
+    
+    public static boolean isPollingSupported()
+    {
+        return s_pollingSupported;
+    }
+    
+    // We were using this to check for Fire TV explicitly but not currently used...
+    /*public static boolean isAmazonFireTVDevice()
+    {
+        return android.os.Build.MANUFACTURER.equals("Amazon") &&
+            android.os.Build.MODEL.substring(0, 3).equals("AFT");
+    }*/
 }

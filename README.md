@@ -2,15 +2,22 @@ s3eAndroidController
 ====================
 
 This is an Android gamepad/controller extension API for the Marmalade C++ SDK.
-It's a polling based API (not event driven) that uses Amazon's GameController
-API from their Fire TV SDK (see https://developer.amazon.com/appsandservices/solutions/devices/fire-tv/docs/gamecontroller-api)
 
-Based on s3eFireTV extension by dblstallion
+Currently, it is only supported on Amazon FireTV and is a polling based API
+(not event driven). Those are because it just uses Amazon's GameController.
+GameController.jar is in the extension but is just a stub that relies on device
+libs which are only on the Fire TV. Currently the extension fails to initialise
+(safely) on other Android devices by checking for the lib existing (catches
+expected exception).
+
+Amazon's API is from their Fire TV SDK (see https://developer.amazon.com/appsandservices/solutions/devices/fire-tv/docs/gamecontroller-api)
+
+This extensions is based on s3eFireTV extension by dblstallion
 https://github.com/dblstallion/s3eFireTV
 
-Mostly this is just renamed atm, ready to be pulled into a Quick generic
-controller API. Im planning to integrate this into a cross-platform controller
-module for C++ Marmalade at some point.
+Mostly this is just renamed atm and tidied up but I'm planning to add generic android
+controller event support and later integrate this into a cross-platform controller
+module for C++ plus a Marmalade Quick wrapper.
 
 Functions
 --------
@@ -37,6 +44,12 @@ Functions
 
 - Get value from -1 to 1 indicating how far stick/pad is pressed along an axis.
   -1 is left/bottom, 0 centered and 1 is right/top.
+
+* void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)*
+
+- If set true, on controller button presses, regular s3eKeyboard events/states
+  for the pressed button will still occur. If set false, no s3eKeyboard event
+  will happen. Default is true.
 
 
 Button and axis values

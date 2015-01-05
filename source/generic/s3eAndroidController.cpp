@@ -151,3 +151,8 @@ s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool te
     
 	return S3E_RESULT_SUCCESS;
 }
+
+void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
+{
+    s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(propagate);
+}

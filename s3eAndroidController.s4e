@@ -31,10 +31,11 @@ include:
 
 functions:
 
-void    s3eAndroidControllerStartFrame()
-bool    s3eAndroidControllerSelectControllerByPlayer(int player) false
-int     s3eAndroidControllerGetPlayerCount() 0
-bool    s3eAndroidControllerGetButtonState(int button) false
-float   s3eAndroidControllerGetAxisValue(int axis) 0
+void      s3eAndroidControllerStartFrame()
+bool      s3eAndroidControllerSelectControllerByPlayer(int player) false
+int       s3eAndroidControllerGetPlayerCount() 0
+bool      s3eAndroidControllerGetButtonState(int button) false
+float     s3eAndroidControllerGetAxisValue(int axis) 0
 s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBool terminateString S3E_DEFAULT(S3E_TRUE)) S3E_RESULT_ERROR
 s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool terminateString S3E_DEFAULT(S3E_TRUE)) S3E_RESULT_ERROR
+void      s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)

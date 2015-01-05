@@ -15,3 +15,7 @@
 #
 # Some conditional operations are also permitted, see the
 # S3E documentation for details.
+
+[Trace]
+ANDROIDCONTROLLER_VERBOSE=0
+ANDROIDCONTROLLER=1
