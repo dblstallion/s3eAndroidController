@@ -45,7 +45,7 @@ Functions
 - Get value from -1 to 1 indicating how far stick/pad is pressed along an axis.
   -1 is left/bottom, 0 centered and 1 is right/top.
 
-* void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)*
+*void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)*
 
 - If set true, on controller button presses, regular s3eKeyboard events/states
   for the pressed button will still occur. If set false, no s3eKeyboard event
