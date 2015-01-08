@@ -154,7 +154,7 @@ else
     lblSupported.text = "Controller API NOT available!"
 end
 
-lblNumPlayers = director:createLabel({x=10, y=appHeight-110, w=(appWidth-20)/fontScale, vAlignment="bottom", text="Number of controlers found: " .. numControllers, color=color.white})
+lblNumPlayers = director:createLabel({x=10, y=appHeight-110, w=(appWidth-20)/fontScale, vAlignment="bottom", text="Number of controllers found: " .. numControllers, color=color.white})
 
 lblPlayerSelected = director:createLabel({x=10, y=appHeight-140, w=(appWidth-20)/fontScale, vAlignment="bottom", text="Controller selected for player: " .. playerSelected, color=color.white})
 
