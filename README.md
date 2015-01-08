@@ -101,8 +101,7 @@ Buttons for querying s3eAndroidControllerGetButtonState:
 Quick Wrapper
 -------------
 
-Prerequisits
-~~~~~~~~~~~~
+### Prerequisites
 
 1. Marmalade SDK 7.4 or newer is needed for Quick extension improvemenmts.
    
@@ -113,8 +112,7 @@ Prerequisits
    root *quick* folder in the SDK.
 
 
-Setup: Add and build this wrapper into Quick
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Setup: Add and build this wrapper into Quick
 
 3. Edit quick/quickuser_tolua.pkg and add this new line:
 
@@ -142,7 +140,15 @@ Setup: Add and build this wrapper into Quick
 6. Rebuild the Quick binaries by running the scripts (build_quick_prebuilt.bat
    etc.)
 
-7. If updating an existing project, you'll likely need to delete the project's
+### Use the wrapper in your project
+
+1. Add s3eAndroidController to the subprojects block of you app's mkb as well.
+   This makes the required libraries get bundled in the package.
+   
+2. Add android-custom-activity='com.s3eAndroidController.s3eAndroidControllerActivity'
+   to the deployments block of your app's mkb.
+
+2. If updating an existing project, you'll likely need to delete the project's
    'build_temp' folder. This is so that the Hub will regenerate all the
    necessary deployment scripts and include the new extension.
 
