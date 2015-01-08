@@ -1,0 +1,62 @@
+#!/usr/bin/env mkb
+
+# Quick Project
+
+if {{ option use_prebuilt }}
+{
+    subproject "$MARMALADE_ROOT/quick/quick_prebuilt"
+}
+else
+{
+    subproject "$MARMALADE_ROOT/quick/quick"
+}
+
+options
+{
+    s3e-data-dir = resources
+    app-icf = 'resources/common.icf,resources/app.icf'
+    builddir = build_temp
+}
+
+files
+{
+    (resources)
+    app.icf
+    main.lua
+}
+
+assets
+{
+    (resources)
+        .
+}
+
+subprojects
+{
+    #Needed so that java libs etc for the controller get packaged
+    s3eAndroidController
+}
+
+deployment
+{
+    #Needed to pick up controls. If already using another custom main activity,
+    #you will need to edit one of the extensions to daisy-chain off the other as
+    #only one per app is allowed
+	android-custom-activity='com.s3eAndroidController.s3eAndroidControllerActivity'
+    
+    icon="controllericon.png"
+
+    ["Windows"]
+    win32
+    arch=x86
+
+    ["Mac OS X"]
+    osx
+    arch=x86
+
+    # Ensure subsequent options set on "Default" configuration
+    ["Default"]
+    
+    # App ID for Facebook apps
+    android-extra-strings='(app_id,fb_app_id)'
+}

@@ -11,3 +11,4 @@ build_*
 **/project_*
 **development.icf
 **/stamp/**
+**iwtrace.txt
