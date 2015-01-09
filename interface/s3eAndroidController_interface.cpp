@@ -22,6 +22,8 @@
 /**
  * Definitions for functions types passed to/from s3eExt interface
  */
+typedef  s3eResult(*s3eAndroidControllerRegister_t)(s3eAndroidControllerCallback cbid, s3eCallback fn, void* userData);
+typedef  s3eResult(*s3eAndroidControllerUnRegister_t)(s3eAndroidControllerCallback cbid, s3eCallback fn);
 typedef       void(*s3eAndroidControllerStartFrame_t)();
 typedef       bool(*s3eAndroidControllerSelectControllerByPlayer_t)(int player);
 typedef        int(*s3eAndroidControllerGetPlayerCount_t)();
@@ -36,6 +38,8 @@ typedef       void(*s3eAndroidControllerSetPropagateButtonsToKeyboard_t)(bool pr
  */
 typedef struct s3eAndroidControllerFuncs
 {
+    s3eAndroidControllerRegister_t m_s3eAndroidControllerRegister;
+    s3eAndroidControllerUnRegister_t m_s3eAndroidControllerUnRegister;
     s3eAndroidControllerStartFrame_t m_s3eAndroidControllerStartFrame;
     s3eAndroidControllerSelectControllerByPlayer_t m_s3eAndroidControllerSelectControllerByPlayer;
     s3eAndroidControllerGetPlayerCount_t m_s3eAndroidControllerGetPlayerCount;
@@ -89,9 +93,49 @@ s3eBool s3eAndroidControllerAvailable()
     return g_GotExt ? S3E_TRUE : S3E_FALSE;
 }
 
+s3eResult s3eAndroidControllerRegister(s3eAndroidControllerCallback cbid, s3eCallback fn, void* userData)
+{
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[0] func: s3eAndroidControllerRegister"));
+
+    if (!_extLoad())
+        return S3E_RESULT_ERROR;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eResult ret = g_Ext.m_s3eAndroidControllerRegister(cbid, fn, userData);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+s3eResult s3eAndroidControllerUnRegister(s3eAndroidControllerCallback cbid, s3eCallback fn)
+{
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[1] func: s3eAndroidControllerUnRegister"));
+
+    if (!_extLoad())
+        return S3E_RESULT_ERROR;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eResult ret = g_Ext.m_s3eAndroidControllerUnRegister(cbid, fn);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
 void s3eAndroidControllerStartFrame()
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[0] func: s3eAndroidControllerStartFrame"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[2] func: s3eAndroidControllerStartFrame"));
 
     if (!_extLoad())
         return;
@@ -111,7 +155,7 @@ void s3eAndroidControllerStartFrame()
 
 bool s3eAndroidControllerSelectControllerByPlayer(int player)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[1] func: s3eAndroidControllerSelectControllerByPlayer"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[3] func: s3eAndroidControllerSelectControllerByPlayer"));
 
     if (!_extLoad())
         return false;
@@ -131,7 +175,7 @@ bool s3eAndroidControllerSelectControllerByPlayer(int player)
 
 int s3eAndroidControllerGetPlayerCount()
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[2] func: s3eAndroidControllerGetPlayerCount"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[4] func: s3eAndroidControllerGetPlayerCount"));
 
     if (!_extLoad())
         return 0;
@@ -151,7 +195,7 @@ int s3eAndroidControllerGetPlayerCount()
 
 bool s3eAndroidControllerGetButtonState(int button)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[3] func: s3eAndroidControllerGetButtonState"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[5] func: s3eAndroidControllerGetButtonState"));
 
     if (!_extLoad())
         return false;
@@ -171,7 +215,7 @@ bool s3eAndroidControllerGetButtonState(int button)
 
 float s3eAndroidControllerGetAxisValue(int axis)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[4] func: s3eAndroidControllerGetAxisValue"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[6] func: s3eAndroidControllerGetAxisValue"));
 
     if (!_extLoad())
         return 0;
@@ -191,7 +235,7 @@ float s3eAndroidControllerGetAxisValue(int axis)
 
 s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBool terminateString)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[5] func: s3eAndroidControllerGetButtonDisplayName"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[7] func: s3eAndroidControllerGetButtonDisplayName"));
 
     if (!_extLoad())
         return S3E_RESULT_ERROR;
@@ -211,7 +255,7 @@ s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBoo
 
 s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool terminateString)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[6] func: s3eAndroidControllerGetAxisDisplayName"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[8] func: s3eAndroidControllerGetAxisDisplayName"));
 
     if (!_extLoad())
         return S3E_RESULT_ERROR;
@@ -231,7 +275,7 @@ s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool te
 
 void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[7] func: s3eAndroidControllerSetPropagateButtonsToKeyboard"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[9] func: s3eAndroidControllerSetPropagateButtonsToKeyboard"));
 
     if (!_extLoad())
         return;

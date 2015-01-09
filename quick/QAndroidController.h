@@ -53,6 +53,7 @@ float getAxisValue(int axis);
 char* getButtonDisplayName(int button);
 char* getAxisDisplayName(int axis);
 void setPropagateButtonsToKeyboard(bool propagate);
+void useButtonEvents(bool enabled);
 
 }
 

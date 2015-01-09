@@ -18,23 +18,35 @@ extern s3eResult s3eAndroidControllerInit();
 extern void s3eAndroidControllerTerminate();
 
 
+s3eResult s3eAndroidControllerRegister(s3eAndroidControllerCallback cbid, s3eCallback fn, void* pData)
+{
+    return s3eEdkCallbacksRegister(S3E_EXT_ANDROIDCONTROLLER_HASH, S3E_ANDROIDCONTROLLER_CALLBACK_MAX, cbid, fn, pData, 0);
+};
+
+s3eResult s3eAndroidControllerUnRegister(s3eAndroidControllerCallback cbid, s3eCallback fn)
+{
+    return s3eEdkCallbacksUnRegister(S3E_EXT_ANDROIDCONTROLLER_HASH, S3E_ANDROIDCONTROLLER_CALLBACK_MAX, cbid, fn);
+}
+
 void s3eAndroidControllerRegisterExt()
 {
     /* fill in the function pointer struct for this extension */
-    void* funcPtrs[8];
-    funcPtrs[0] = (void*)s3eAndroidControllerStartFrame;
-    funcPtrs[1] = (void*)s3eAndroidControllerSelectControllerByPlayer;
-    funcPtrs[2] = (void*)s3eAndroidControllerGetPlayerCount;
-    funcPtrs[3] = (void*)s3eAndroidControllerGetButtonState;
-    funcPtrs[4] = (void*)s3eAndroidControllerGetAxisValue;
-    funcPtrs[5] = (void*)s3eAndroidControllerGetButtonDisplayName;
-    funcPtrs[6] = (void*)s3eAndroidControllerGetAxisDisplayName;
-    funcPtrs[7] = (void*)s3eAndroidControllerSetPropagateButtonsToKeyboard;
+    void* funcPtrs[10];
+    funcPtrs[0] = (void*)s3eAndroidControllerRegister;
+    funcPtrs[1] = (void*)s3eAndroidControllerUnRegister;
+    funcPtrs[2] = (void*)s3eAndroidControllerStartFrame;
+    funcPtrs[3] = (void*)s3eAndroidControllerSelectControllerByPlayer;
+    funcPtrs[4] = (void*)s3eAndroidControllerGetPlayerCount;
+    funcPtrs[5] = (void*)s3eAndroidControllerGetButtonState;
+    funcPtrs[6] = (void*)s3eAndroidControllerGetAxisValue;
+    funcPtrs[7] = (void*)s3eAndroidControllerGetButtonDisplayName;
+    funcPtrs[8] = (void*)s3eAndroidControllerGetAxisDisplayName;
+    funcPtrs[9] = (void*)s3eAndroidControllerSetPropagateButtonsToKeyboard;
 
     /*
      * Flags that specify the extension's use of locking and stackswitching
      */
-    int flags[8] = { 0 };
+    int flags[10] = { 0 };
 
     /*
      * Register the extension

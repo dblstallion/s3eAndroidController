@@ -23,12 +23,19 @@
 #define S3E_ANDROID_CONTROLLER_AXIS_COUNT                6
 #define S3E_ANDROID_CONTROLLER_BUTTON_COUNT              15
 
+/**
+ * Using int defines for axis and buttons rather than enums
+ * and keeping the original android values. This means no error
+ * occurs if Android or a controller returns unexpected values.
+ * User can use just those values if they know what they are :)
+ */
 #define S3E_ANDROID_CONTROLLER_AXIS_STICK_LEFT_X         0
 #define S3E_ANDROID_CONTROLLER_AXIS_STICK_LEFT_Y         1
 #define S3E_ANDROID_CONTROLLER_AXIS_STICK_RIGHT_X        11
 #define S3E_ANDROID_CONTROLLER_AXIS_STICK_RIGHT_Y        14
 #define S3E_ANDROID_CONTROLLER_AXIS_TRIGGER_LEFT         23
 #define S3E_ANDROID_CONTROLLER_AXIS_TRIGGER_RIGHT        22
+
 #define S3E_ANDROID_CONTROLLER_BUTTON_A                  96
 #define S3E_ANDROID_CONTROLLER_BUTTON_B                  97
 #define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_CENTER        23
@@ -44,6 +51,32 @@
 #define S3E_ANDROID_CONTROLLER_BUTTON_TRIGGER_RIGHT      105
 #define S3E_ANDROID_CONTROLLER_BUTTON_X                  99
 #define S3E_ANDROID_CONTROLLER_BUTTON_Y                  100
+
+typedef enum s3eAndroidControllerCallback
+{
+    /**
+     * Called when a controller button is pressed or released.
+     * systemData is an s3eAndroidControllerButtonEvent*
+     */
+    S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON = 0,
+
+    S3E_ANDROIDCONTROLLER_CALLBACK_MAX
+} s3eAndroidControllerCallback;
+
+/**
+ * Info passed as systemData when S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON
+ * is fired. Note that currently device and player are always the same value.
+ * Player ID only guaranteed to be correct on fire TV atm. On other devices
+ * any detected controller will fire events and player/device ID will always
+ * be 1.
+ */
+typedef struct s3eAndroidControllerButtonEvent
+{
+    int m_Device;             ///< Device ID - currently always set to 1
+    int m_Player;             ///< Player ID - currently always set to 1
+    int m_Button;             ///< Button ID
+    int m_Pressed;            ///< New state of the button (1) pressed/down, (0)released/up
+} s3eAndroidControllerButtonEvent;
 // \cond HIDDEN_DEFINES
 S3E_BEGIN_C_DECL
 // \endcond
@@ -52,6 +85,37 @@ S3E_BEGIN_C_DECL
  * Returns S3E_TRUE if the AndroidController extension is available.
  */
 s3eBool s3eAndroidControllerAvailable();
+
+/**
+ * Registers a callback to be called for an operating system event.
+ *
+ * The available callback types are listed in @ref s3eAndroidControllerCallback.
+ * @param cbid ID of the event for which to register.
+ * @param fn callback function.
+ * @param userdata Value to pass to the @e userdata parameter of @e NotifyFunc.
+ * @return
+ *  - @ref S3E_RESULT_SUCCESS if no error occurred.
+ *  - @ref S3E_RESULT_ERROR if the operation failed.\n
+ *
+ * @see s3eAndroidControllerUnRegister
+ * @note For more information on the system data passed as a parameter to the callback
+ * registered using this function, see the @ref s3eAndroidControllerCallback enum.
+ */
+s3eResult s3eAndroidControllerRegister(s3eAndroidControllerCallback cbid, s3eCallback fn, void* userData);
+
+/**
+ * Unregister a callback for a given event.
+ * @param cbid ID of the callback to unregister.
+ * @param fn Callback Function.
+ * @return
+ * - @ref S3E_RESULT_SUCCESS if no error occurred.
+ * - @ref S3E_RESULT_ERROR if the operation failed.\n
+ * @note For more information on the systemData passed as a parameter to the callback
+ * registered using this function, see the s3eAndroidControllerCallback enum.
+ * @note It is not necessary to define a return value for any registered callback.
+ * @see s3eAndroidControllerRegister
+ */
+s3eResult s3eAndroidControllerUnRegister(s3eAndroidControllerCallback cbid, s3eCallback fn);
 
 void s3eAndroidControllerStartFrame();
 

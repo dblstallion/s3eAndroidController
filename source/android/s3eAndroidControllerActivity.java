@@ -9,13 +9,15 @@ These functions are called via JNI from native code.
  * NOTE: This file was originally written by the extension builder, but will not
  * be overwritten (unless --force is specified) and is intended to be modified.
  */
- 
+
+//TODO change to com.nickchops.s3eAndroidController;
 package com.s3eAndroidController;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.InputDevice;
 import com.amazon.device.gamecontroller.GameController;
 import com.amazon.device.gamecontroller.GameController.DeviceNotFoundException;
 import com.amazon.device.gamecontroller.GameController.PlayerNumberNotFoundException;
@@ -41,6 +43,10 @@ public class s3eAndroidControllerActivity extends LoaderActivity
 {
     static boolean m_propagateButtonEvents = true;
     
+    // callbacks
+    private static native void native_ButtonCallback(int button, int state); //TODO: pass controller/player IDs when supported
+    //TODO: array to track state of keys for generic polling support
+    
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -62,21 +68,29 @@ public class s3eAndroidControllerActivity extends LoaderActivity
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         Log.d("ANDROIDCONTROLLER", "onKeyDown");
+        boolean handled = false;
+        
+        if (((event.getSource() & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD) && (event.getRepeatCount() == 0)) {
+            // we don't remap the android values - they already match the extension's defined
+            // ones we don't map will just be undocumented ints - at least the user can use/ignore them as they wish
+            Log.d("ANDROIDCONTROLLER", "sending button down event");
+            native_ButtonCallback(keyCode, 1);
+            handled = true;
+        }
+
         if (s3eAndroidController.isPollingSupported())
         {
             Log.d("ANDROIDCONTROLLER", "polling is supported");
-            boolean handled = false;
+            handled = false;
             try {
                 handled = GameController.onKeyDown(keyCode, event);
             }
             catch (DeviceNotFoundException e) {
-                Log.d("ANDROIDCONTROLLER", "exception in onKeeyDown");
+                Log.d("ANDROIDCONTROLLER", "GameController not found in onKeyDown");
             }
-            
-            return (!m_propagateButtonEvents && handled) || super.onKeyDown(keyCode, event);
         }
         
-        return super.onKeyDown(keyCode, event);
+        return (!m_propagateButtonEvents && handled) || super.onKeyDown(keyCode, event);
     }
     
     //Forward key up events to GameController so it can manage state
@@ -84,18 +98,26 @@ public class s3eAndroidControllerActivity extends LoaderActivity
     public boolean onKeyUp(int keyCode, KeyEvent event)
     {
         Log.d("ANDROIDCONTROLLER", "onKeyUp");
+        boolean handled = false;
+        
+        if ((event.getSource() & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD) {
+            Log.d("ANDROIDCONTROLLER", "sending button up event");
+            native_ButtonCallback(keyCode, 0);
+            handled = true;
+        }
+
         if (s3eAndroidController.isPollingSupported())
         {
-            boolean handled = false;
+            handled = false;
             try {
                 handled = GameController.onKeyUp(keyCode, event);
             }
             catch (DeviceNotFoundException e) {
+                Log.d("ANDROIDCONTROLLER", "GameController not found in onKeyDown");
             }
-            return (!m_propagateButtonEvents && handled) || super.onKeyUp(keyCode, event);
         }
         
-        return super.onKeyUp(keyCode, event);
+        return (!m_propagateButtonEvents && handled) || super.onKeyDown(keyCode, event);
     }
     
     //Forward motion events to GameController so it can manage state
@@ -110,7 +132,7 @@ public class s3eAndroidControllerActivity extends LoaderActivity
             }
             catch (DeviceNotFoundException e) {
             }
-            return (!m_propagateButtonEvents && handled) || super.onGenericMotionEvent(event);
+            return handled || super.onGenericMotionEvent(event);
         }
         
         return super.onGenericMotionEvent(event);

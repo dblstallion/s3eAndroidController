@@ -1,6 +1,6 @@
 Archive member included because of file (symbol)
 
-C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
                               release\s3eAndroidController_platform.os (s3eEdkThreadRunOnOS)
 
 Discarded input sections
@@ -28,18 +28,18 @@ Discarded input sections
  .data          0x00000000        0x0 release\s3eAndroidController_register.os
  .bss           0x00000000        0x0 release\s3eAndroidController_register.os
  .text._Z31s3eAndroidControllerRegisterExtv
-                0x00000000       0xfc release\s3eAndroidController_register.os
+                0x00000000      0x124 release\s3eAndroidController_register.os
  .note.GNU-stack
                 0x00000000        0x0 release\s3eAndroidController_register.os
- .text          0x00000000        0x0 C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
- .data          0x00000000        0x0 C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
- .bss           0x00000000        0x0 C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .text          0x00000000        0x0 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .data          0x00000000        0x0 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+ .bss           0x00000000        0x0 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
  .text.s3eEdkErrorSetString
-                0x00000000       0x30 C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00000000       0x30 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
  .text.s3eEdkThreadRunOnOSAsync
-                0x00000000       0x30 C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00000000       0x30 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
  .note.GNU-stack
-                0x00000000        0x0 C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00000000        0x0 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
  .text          0x00000000        0x0 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
  .data          0x00000000        0x0 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
  .bss           0x00000000        0x0 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
@@ -56,128 +56,140 @@ Memory map
 .interp         0x00000114       0x13
  ** fill        0x00000114       0x13
 
-.dynsym         0x00000128       0xd0
- ** dynsym      0x00000128       0xd0
+.dynsym         0x00000128      0x100
+ ** dynsym      0x00000128      0x100
 
-.dynstr         0x000001f8       0xf2
+.dynstr         0x00000228      0x13b
  ** string table
-                0x000001f8       0xf2
+                0x00000228      0x13b
 
-.hash           0x000002ec       0x48
- ** hash        0x000002ec       0x48
+.hash           0x00000364       0x54
+ ** hash        0x00000364       0x54
 
-.rel.dyn        0x00000334       0x58
+.rel.dyn        0x000003b8       0x70
  ** dynamic relocs
-                0x00000334       0x58
+                0x000003b8       0x70
 
-.rel.plt        0x0000038c       0x28
+.rel.plt        0x00000428       0x40
  ** dynamic relocs
-                0x0000038c       0x28
+                0x00000428       0x40
 
-.plt            0x000003b4       0x50
- ** PLT         0x000003b4       0x50
+.plt            0x00000468       0x74
+ ** PLT         0x00000468       0x74
 
-.text           0x00000404      0xc70
- .text.exit     0x00000404       0x10 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
-                0x00000404                __on_dlclose
+.text           0x000004dc      0xd5c
+ .text.exit     0x000004dc       0x10 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x000004dc                __on_dlclose
+ .text._Z21native_buttonCallbackP7_JNIEnvP8_jobjectii
+                0x000004ec       0x4c release\s3eAndroidController_platform.os
+                0x000004ec                native_buttonCallback(_JNIEnv*, _jobject*, int, int)
  .text._ZL27s3eEdkAndroidFindClass_realPKc
-                0x00000414       0xb8 release\s3eAndroidController_platform.os
+                0x00000538       0xb8 release\s3eAndroidController_platform.os
  .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
-                0x000004cc       0x38 release\s3eAndroidController_platform.os
-                0x000004cc                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+                0x000005f0       0x38 release\s3eAndroidController_platform.os
+                0x000005f0                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
  .text._ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
-                0x00000504       0x38 release\s3eAndroidController_platform.os
-                0x00000504                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+                0x00000628       0x38 release\s3eAndroidController_platform.os
+                0x00000628                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
-                0x0000053c       0x38 release\s3eAndroidController_platform.os
-                0x0000053c                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
+                0x00000660       0x38 release\s3eAndroidController_platform.os
+                0x00000660                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv15CallFloatMethodEP8_jobjectP10_jmethodIDz
-                0x00000574       0x38 release\s3eAndroidController_platform.os
-                0x00000574                _JNIEnv::CallFloatMethod(_jobject*, _jmethodID*, ...)
+                0x00000698       0x38 release\s3eAndroidController_platform.os
+                0x00000698                _JNIEnv::CallFloatMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
-                0x000005ac       0x38 release\s3eAndroidController_platform.os
-                0x000005ac                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+                0x000006d0       0x38 release\s3eAndroidController_platform.os
+                0x000006d0                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv23CallStaticBooleanMethodEP7_jclassP10_jmethodIDz
-                0x000005e4       0x38 release\s3eAndroidController_platform.os
-                0x000005e4                _JNIEnv::CallStaticBooleanMethod(_jclass*, _jmethodID*, ...)
+                0x00000708       0x38 release\s3eAndroidController_platform.os
+                0x00000708                _JNIEnv::CallStaticBooleanMethod(_jclass*, _jmethodID*, ...)
  .text._Z33s3eAndroidControllerInit_platformv
-                0x0000061c      0x2e0 release\s3eAndroidController_platform.os
-                0x0000061c                s3eAndroidControllerInit_platform()
+                0x00000740      0x2f8 release\s3eAndroidController_platform.os
+                0x00000740                s3eAndroidControllerInit_platform()
  .text._Z38s3eAndroidControllerTerminate_platformv
-                0x000008fc        0x4 release\s3eAndroidController_platform.os
-                0x000008fc                s3eAndroidControllerTerminate_platform()
+                0x00000a38        0x4 release\s3eAndroidController_platform.os
+                0x00000a38                s3eAndroidControllerTerminate_platform()
  .text._Z39s3eAndroidControllerStartFrame_platformv
-                0x00000900       0x50 release\s3eAndroidController_platform.os
-                0x00000900                s3eAndroidControllerStartFrame_platform()
+                0x00000a3c       0x50 release\s3eAndroidController_platform.os
+                0x00000a3c                s3eAndroidControllerStartFrame_platform()
  .text._Z53s3eAndroidControllerSelectControllerByPlayer_platformi
-                0x00000950       0x60 release\s3eAndroidController_platform.os
-                0x00000950                s3eAndroidControllerSelectControllerByPlayer_platform(int)
+                0x00000a8c       0x60 release\s3eAndroidController_platform.os
+                0x00000a8c                s3eAndroidControllerSelectControllerByPlayer_platform(int)
  .text._Z43s3eAndroidControllerGetPlayerCount_platformv
-                0x000009b0       0x50 release\s3eAndroidController_platform.os
-                0x000009b0                s3eAndroidControllerGetPlayerCount_platform()
+                0x00000aec       0x50 release\s3eAndroidController_platform.os
+                0x00000aec                s3eAndroidControllerGetPlayerCount_platform()
  .text._Z43s3eAndroidControllerGetButtonState_platformi
-                0x00000a00       0x60 release\s3eAndroidController_platform.os
-                0x00000a00                s3eAndroidControllerGetButtonState_platform(int)
+                0x00000b3c       0x60 release\s3eAndroidController_platform.os
+                0x00000b3c                s3eAndroidControllerGetButtonState_platform(int)
  .text._Z41s3eAndroidControllerGetAxisValue_platformi
-                0x00000a60       0x58 release\s3eAndroidController_platform.os
-                0x00000a60                s3eAndroidControllerGetAxisValue_platform(int)
+                0x00000b9c       0x58 release\s3eAndroidController_platform.os
+                0x00000b9c                s3eAndroidControllerGetAxisValue_platform(int)
  .text._Z58s3eAndroidControllerSetPropagateButtonsToKeyboard_platformb
-                0x00000ab8       0x58 release\s3eAndroidController_platform.os
-                0x00000ab8                s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool)
+                0x00000bf4       0x58 release\s3eAndroidController_platform.os
+                0x00000bf4                s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool)
  .text._Z24s3eAndroidControllerInitv
-                0x00000b10        0x4 release\s3eAndroidController.os
-                0x00000b10                s3eAndroidControllerInit()
+                0x00000c4c        0x4 release\s3eAndroidController.os
+                0x00000c4c                s3eAndroidControllerInit()
  .text._Z29s3eAndroidControllerTerminatev
-                0x00000b14        0x4 release\s3eAndroidController.os
-                0x00000b14                s3eAndroidControllerTerminate()
+                0x00000c50        0x4 release\s3eAndroidController.os
+                0x00000c50                s3eAndroidControllerTerminate()
  .text.s3eAndroidControllerStartFrame
-                0x00000b18        0x4 release\s3eAndroidController.os
-                0x00000b18                s3eAndroidControllerStartFrame
+                0x00000c54        0x4 release\s3eAndroidController.os
+                0x00000c54                s3eAndroidControllerStartFrame
  .text.s3eAndroidControllerSelectControllerByPlayer
-                0x00000b1c        0x4 release\s3eAndroidController.os
-                0x00000b1c                s3eAndroidControllerSelectControllerByPlayer
+                0x00000c58        0x4 release\s3eAndroidController.os
+                0x00000c58                s3eAndroidControllerSelectControllerByPlayer
  .text.s3eAndroidControllerGetPlayerCount
-                0x00000b20        0x4 release\s3eAndroidController.os
-                0x00000b20                s3eAndroidControllerGetPlayerCount
+                0x00000c5c        0x4 release\s3eAndroidController.os
+                0x00000c5c                s3eAndroidControllerGetPlayerCount
  .text.s3eAndroidControllerGetButtonState
-                0x00000b24        0x4 release\s3eAndroidController.os
-                0x00000b24                s3eAndroidControllerGetButtonState
+                0x00000c60        0x4 release\s3eAndroidController.os
+                0x00000c60                s3eAndroidControllerGetButtonState
  .text.s3eAndroidControllerGetAxisValue
-                0x00000b28        0x4 release\s3eAndroidController.os
-                0x00000b28                s3eAndroidControllerGetAxisValue
+                0x00000c64        0x4 release\s3eAndroidController.os
+                0x00000c64                s3eAndroidControllerGetAxisValue
  .text.s3eAndroidControllerGetButtonDisplayName
-                0x00000b2c      0x2fc release\s3eAndroidController.os
-                0x00000b2c                s3eAndroidControllerGetButtonDisplayName
+                0x00000c68      0x2fc release\s3eAndroidController.os
+                0x00000c68                s3eAndroidControllerGetButtonDisplayName
  .text.s3eAndroidControllerGetAxisDisplayName
-                0x00000e28      0x11c release\s3eAndroidController.os
-                0x00000e28                s3eAndroidControllerGetAxisDisplayName
+                0x00000f64      0x11c release\s3eAndroidController.os
+                0x00000f64                s3eAndroidControllerGetAxisDisplayName
  .text.s3eAndroidControllerSetPropagateButtonsToKeyboard
-                0x00000f44        0x4 release\s3eAndroidController.os
-                0x00000f44                s3eAndroidControllerSetPropagateButtonsToKeyboard
+                0x00001080        0x4 release\s3eAndroidController.os
+                0x00001080                s3eAndroidControllerSetPropagateButtonsToKeyboard
+ .text.s3eAndroidControllerRegister
+                0x00001084       0x30 release\s3eAndroidController_register.os
+                0x00001084                s3eAndroidControllerRegister
+ .text.s3eAndroidControllerUnRegister
+                0x000010b4       0x30 release\s3eAndroidController_register.os
+                0x000010b4                s3eAndroidControllerUnRegister
  .text.RegisterExt
-                0x00000f48       0xfc release\s3eAndroidController_register.os
-                0x00000f48                RegisterExt
+                0x000010e4      0x124 release\s3eAndroidController_register.os
+                0x000010e4                RegisterExt
  .text.s3eEdkThreadRunOnOS
-                0xffffffffffffffff       0x30 C:\marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
-                0x00001044                s3eEdkThreadRunOnOS
+                0xffffffffffffffff       0x30 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00001208                s3eEdkThreadRunOnOS
 
-.rodata         0x00001074      0x235
+.rodata         0x00001238      0x275
  ** merge strings
-                0x00001074      0x235
+                0x00001238      0x275
 
-.fini_array     0x00002ecc        0x8
- .fini_array    0x00002ecc        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
- .fini_array    0x00002ed0        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+.fini_array     0x00002eb4        0x8
+ .fini_array    0x00002eb4        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00002eb8        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
 
-.init_array     0x00002ed4        0x4
- .init_array    0x00002ed4        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+.data.rel.ro    0x00002ebc        0xc
+ .data.rel.ro   0x00002ebc        0xc release\s3eAndroidController_platform.os
 
-.dynamic        0x00002ed8       0xe0
- ** dynamic     0x00002ed8       0xe0
+.init_array     0x00002ec8        0x4
+ .init_array    0x00002ec8        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
 
-.got            0x00002fb8       0x48
- ** GOT         0x00002fb8       0x28
- ** GOT PLT     0x00002fe0       0x20
+.dynamic        0x00002ecc       0xe0
+ ** dynamic     0x00002ecc       0xe0
+
+.got            0x00002fac       0x54
+ ** GOT         0x00002fac       0x28
+ ** GOT PLT     0x00002fd4       0x2c
 
 .data           0x00003000        0x4
  .data          0x00003000        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o

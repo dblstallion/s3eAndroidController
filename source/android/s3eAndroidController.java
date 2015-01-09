@@ -10,6 +10,7 @@ These functions are called via JNI from native code.
  * be overwritten (unless --force is specified) and is intended to be modified.
  */
  
+//TODO: change to com.nickchops.s3eAndroidController
 package com.s3eAndroidController;
 
 import android.os.Build;
@@ -71,6 +72,7 @@ public class s3eAndroidController
         }
         else
         {
+            //todo: return cached key state here
             return false;
         }
     }
@@ -83,6 +85,7 @@ public class s3eAndroidController
         }
         else
         {
+            //todo: return cached axis position here
             return 0.0f;
         }
     }

@@ -31,32 +31,64 @@ static int g_Axes[S3E_ANDROID_CONTROLLER_AXIS_COUNT] = {
 //Based on s3eKeyboard example. We're displaying keyboard keys as well
 //as controller for comparison.
 
+	// Last 5 controller button presses
+#define NUM_EVENTS_TO_SHOW 5
+static int g_ButtonsPresesed[NUM_EVENTS_TO_SHOW];
+static int g_NumButtons = 0;
+static int g_ButtonsReleased[NUM_EVENTS_TO_SHOW];
+static int g_NumButtonsReleased = 0;
+
 // Last 5 generic key presses
-#define NUM_CHARS 5
-static s3eKey g_Keys[NUM_CHARS];
+static s3eKey g_Keys[NUM_EVENTS_TO_SHOW];
 static int g_NumKeys = 0;
-static s3eKey g_KeysReleased[NUM_CHARS];
+static s3eKey g_KeysReleased[NUM_EVENTS_TO_SHOW];
 static int g_NumKeysReleased = 0;
 
-static int32 handler(void* sys, void*)
+
+static int32 controllerHandler(void* sys, void*)
+{
+    s3eAndroidControllerButtonEvent* event = (s3eAndroidControllerButtonEvent*)sys;
+
+    if (event->m_Pressed) // a key state changed from up to down
+    {
+        if (g_NumButtons < NUM_EVENTS_TO_SHOW)
+            g_NumButtons++;
+
+        // Move previous entries down through the array and add new one at end
+        memmove(g_ButtonsPresesed+1, g_ButtonsPresesed, (NUM_EVENTS_TO_SHOW - 1) * sizeof(int));
+        g_ButtonsPresesed[0] = event->m_Button;
+    }
+    else // state changed from down to up
+    {
+        if (g_NumButtonsReleased < NUM_EVENTS_TO_SHOW)
+            g_NumButtonsReleased++;
+
+        memmove(g_ButtonsReleased+1, g_ButtonsReleased, (NUM_EVENTS_TO_SHOW - 1) * sizeof(int));
+        g_ButtonsReleased[0] = event->m_Button;
+    }
+
+    return 0;
+}
+
+static int32 keyHandler(void* sys, void*)
 {
     s3eKeyboardEvent* event = (s3eKeyboardEvent*)sys;
 
     if (event->m_Pressed) // a key state changed from up to down
     {
-        if (g_NumKeys < NUM_CHARS)
+        if (g_NumKeys < NUM_EVENTS_TO_SHOW)
             g_NumKeys++;
 
         // Move previous entries down through the array and add new one at end
-        memmove(g_Keys+1, g_Keys, (NUM_CHARS - 1) * sizeof(s3eKey));
+        memmove(g_Keys+1, g_Keys, (NUM_EVENTS_TO_SHOW - 1) * sizeof(s3eKey));
         g_Keys[0] = event->m_Key;
     }
     else // state changed from down to up
     {
-        if (g_NumKeysReleased < NUM_CHARS)
+        if (g_NumKeysReleased < NUM_EVENTS_TO_SHOW)
             g_NumKeysReleased++;
 
-        memmove(g_KeysReleased+1, g_KeysReleased, (NUM_CHARS - 1) * sizeof(s3eKey));
+        memmove(g_KeysReleased+1, g_KeysReleased, (NUM_EVENTS_TO_SHOW - 1) * sizeof(s3eKey));
         g_KeysReleased[0] = event->m_Key;
     }
 
@@ -77,7 +109,8 @@ int main()
     int fontScale = scale > 1 ? scale-1 : 1;
     s3eDebugSetInt(S3E_DEBUG_FONT_SCALE, fontScale);
 
-    s3eKeyboardRegister(S3E_KEYBOARD_KEY_EVENT, handler, NULL);
+	s3eAndroidControllerRegister(S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON, controllerHandler,  NULL);
+    s3eKeyboardRegister(S3E_KEYBOARD_KEY_EVENT, keyHandler, NULL);
 
 
 	bool gotController = s3eAndroidControllerAvailable();
@@ -164,10 +197,46 @@ int main()
 				y += lineHeight;
 			}
 		}
-		// ----------------- Normal keys states for comparison ---------------------
+		// ----------------- Controller button states from event/callbacks not polling ---------------------
 
 		y += lineHeight;
 		int listStartY = y;
+		x = 20;
+
+		// Display last few Buttons that were pressed down
+		s3eDebugPrint(x, y, "Buttons pressed:", 0);
+		x += 20;
+		y += lineHeight;
+		for (int j = g_NumButtons-1; j >= 0; j--)
+		{
+			int button = g_ButtonsPresesed[j];
+			s3eAndroidControllerGetButtonDisplayName(name, button);
+			s3eDebugPrintf(x, y, 1, "Button: %s (%d)", name, button);
+
+			y += lineHeight;
+		}
+
+		y = listStartY;
+		x = s3eSurfaceGetInt(S3E_SURFACE_WIDTH)/2 + 20;
+
+		// Display last few Buttons that were released
+		s3eDebugPrint(x, y, "Buttons released:", 0);
+		x += 20;
+		y += lineHeight;
+		for (int k = g_NumButtonsReleased-1; k >= 0; k--)
+		{
+			int button = g_ButtonsReleased[k];
+			s3eAndroidControllerGetButtonDisplayName(name, button);
+
+			s3eDebugPrintf(x, y, 1, "Button: %s (%d)", name, button);
+
+			y += lineHeight;
+		}
+
+		// ----------------- Normal keys states for comparison ---------------------
+
+		y += lineHeight;
+		listStartY = y;
 		x = 20;
 
 		// Display last few keys that were pressed down
@@ -206,7 +275,6 @@ int main()
 
 			y += lineHeight;
 		}
-
 
 		s3eSurfaceShow();
 
