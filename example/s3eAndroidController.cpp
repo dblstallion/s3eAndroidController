@@ -197,11 +197,15 @@ int main()
 				y += lineHeight;
 			}
 		}
-		// ----------------- Controller button states from event/callbacks not polling ---------------------
 
-		y += lineHeight;
-		int listStartY = y;
-		x = 20;
+        int listStartY;
+        int maxY;
+        
+		// ----------------- Controller button states from event/callbacks not polling ---------------------
+        
+        y += lineHeight;
+        listStartY = y;
+        x = 20;
 
 		// Display last few Buttons that were pressed down
 		s3eDebugPrint(x, y, "Buttons pressed:", 0);
@@ -215,6 +219,9 @@ int main()
 
 			y += lineHeight;
 		}
+        y += lineHeight;
+		
+        maxY = y;
 
 		y = listStartY;
 		x = s3eSurfaceGetInt(S3E_SURFACE_WIDTH)/2 + 20;
@@ -232,10 +239,13 @@ int main()
 
 			y += lineHeight;
 		}
+        y += lineHeight;
+		
+        if (y > maxY) maxY = y;
 
 		// ----------------- Normal keys states for comparison ---------------------
 
-		y += lineHeight;
+		y = maxY;
 		listStartY = y;
 		x = 20;
 

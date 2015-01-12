@@ -9,10 +9,10 @@ These functions are called via JNI from native code.
  * NOTE: This file was originally written by the extension builder, but will not
  * be overwritten (unless --force is specified) and is intended to be modified.
  */
- 
-//TODO: change to com.nickchops.s3eAndroidController
-package com.s3eAndroidController;
 
+package com.nickchops.s3eAndroidController;
+
+import java.util.HashMap;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,11 +23,23 @@ import com.amazon.device.gamecontroller.GameController.DeviceNotFoundException;
 import com.amazon.device.gamecontroller.GameController.PlayerNumberNotFoundException;
 import com.ideaworks3d.marmalade.LoaderAPI;
 import com.ideaworks3d.marmalade.LoaderActivity;
+//import android.hardware.input.InputManager;
+//import android.content.Context;
 
 public class s3eAndroidController
 {
 	GameController m_SelectedController = null;
     static boolean s_pollingSupported = false;
+    
+    public static HashMap<Integer, Boolean> s_keyStates;
+    public static float s_axisStickLeftX;
+    public static float s_axisStickLeftY;
+    public static float s_axisStickRightX;
+    public static float s_axisStickRightY;
+    public static float s_axisTriggerLeft;
+    public static float s_axisTriggerRight;
+    
+    //public enum controllerType { amazonGameController = 0 };
     
     public void s3eAndroidControllerStartFrame()
     {
@@ -60,7 +72,24 @@ public class s3eAndroidController
         }
         else
         {
+            /* Need API 16 for generic input manager checks. just return 1 for now!
+            // Fallback code just returning 1 if any devices exist (as we only handle one device atm)
+            // or zero for none.
+            ImputManager manager = Context.getSystemService(INPUT_SERVICE);
+            int[] deviceIds = manager.getInputDeviceIds();
+            for (int deviceId : deviceIds)
+            {
+                InputDevice dev = InputDevice.getDevice(deviceId);
+                int sources = dev.getSources();
+
+                // Verify that the device has gamepad buttons, control sticks, or both.
+                if (((sources & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD)
+                        || ((sources & InputDevice.SOURCE_JOYSTICK)  == InputDevice.SOURCE_JOYSTICK))
+                    return 1;
+            }
             return 0;
+            */
+            return 1;
         }
     }
     
@@ -72,8 +101,7 @@ public class s3eAndroidController
         }
         else
         {
-            //todo: return cached key state here
-            return false;
+            return s_keyStates.containsKey(button) ? s_keyStates.get(button) : false;
         }
     }
     
@@ -85,8 +113,23 @@ public class s3eAndroidController
         }
         else
         {
-            //todo: return cached axis position here
-            return 0.0f;
+            switch(axis)
+            {
+                case android.view.MotionEvent.AXIS_X:
+                    return s_axisStickLeftX;
+                case android.view.MotionEvent.AXIS_Y:
+                    return s_axisStickLeftY;
+                case android.view.MotionEvent.AXIS_Z:
+                    return s_axisStickRightX;
+                case android.view.MotionEvent.AXIS_RZ:
+                    return s_axisStickRightY;
+                case android.view.MotionEvent.AXIS_BRAKE:
+                    return s_axisTriggerLeft;
+                case android.view.MotionEvent.AXIS_GAS:
+                    return s_axisTriggerRight;
+                default:
+                    return 0.0f;
+            }
         }
     }
     
@@ -95,20 +138,13 @@ public class s3eAndroidController
         s3eAndroidControllerActivity.m_propagateButtonEvents = propagate;
     }
     
-    public static void setPollingSupported(boolean supported)
+    /*public static void setControllerTypeSupported(controllerType type)
     {
-        s_pollingSupported = supported;
+        s_controllerTypeSupported = type;
     }
     
-    public static boolean isPollingSupported()
+    public static boolean getControllerTypeSupported()
     {
-        return s_pollingSupported;
-    }
-    
-    // We were using this to check for Fire TV explicitly but not currently used...
-    /*public static boolean isAmazonFireTVDevice()
-    {
-        return android.os.Build.MANUFACTURER.equals("Amazon") &&
-            android.os.Build.MODEL.substring(0, 3).equals("AFT");
+        return s_controllerTypeSupported;
     }*/
 }

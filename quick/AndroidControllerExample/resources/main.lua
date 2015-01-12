@@ -52,7 +52,7 @@ function update(event)
     rightPad:setTopAsFraction(rx,ry)
     
     lblStickDbgL.text = string.format("Left Stick: (%.5f,%.5f)", lx, ly)
-    lblStickDbgR.text = string.format("Right Stick: (%.5f,%.5f)", lx, ly)
+    lblStickDbgR.text = string.format("Right Stick: (%.5f,%.5f)", rx, ry)
     
     btnA:setState(androidController.getButtonState(androidController.buttonA))
     btnB:setState(androidController.getButtonState(androidController.buttonB))

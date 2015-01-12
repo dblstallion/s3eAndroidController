@@ -14,7 +14,7 @@ namespace androidController {
         
         s3eAndroidControllerButtonEvent* data = static_cast<s3eAndroidControllerButtonEvent*>(systemData);
 
-        if (data == NULLL)
+        if (data == NULL)
         {
             QTrace("onButtonEvent error: callback data is NULL.");
             return 1;
@@ -26,7 +26,7 @@ namespace androidController {
         // Could have reused the "key" event but decided not to to avoid potential
         // clashes in future updates
         LUA_EVENT_PREPARE("controller");
-        LUA_EVENT_SET_STRING("keyCode", data->m_Button);
+        LUA_EVENT_SET_INTEGER("keyCode", data->m_Button);
         if (data->m_Pressed)
         {
             LUA_EVENT_SET_STRING("phase", "pressed");
@@ -35,7 +35,7 @@ namespace androidController {
         {
             LUA_EVENT_SET_STRING("phase", "released");
         }
-        LUA_EVENT_SET_STRING("device", data->m_Device);
+        LUA_EVENT_SET_INTEGER("device", data->m_Device);
         LUA_EVENT_SET_INTEGER("player", data->m_Player);
         
         LUA_EVENT_SEND();
@@ -100,7 +100,7 @@ namespace androidController {
         }
         else
         {
-            s3eAndroidControllerUnregister(S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON, onButtonEvent,  NULL);
+            s3eAndroidControllerUnRegister(S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON, onButtonEvent);
         }
     }
     
