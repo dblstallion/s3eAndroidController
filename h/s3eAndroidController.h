@@ -63,6 +63,13 @@ typedef enum s3eAndroidControllerCallback
     S3E_ANDROIDCONTROLLER_CALLBACK_MAX
 } s3eAndroidControllerCallback;
 
+typedef enum s3eAndroidControllerType
+{
+    S3E_ANDROIDCONTROLLER_TYPE_GENERIC = 0,
+    S3E_ANDROIDCONTROLLER_TYPE_OUYA_EVERYWHERE,
+    S3E_ANDROIDCONTROLLER_TYPE_AMAZON
+} s3eAndroidControllerType;
+
 /**
  * Info passed as systemData when S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON
  * is fired. Note that currently device and player are always the same value.
@@ -132,6 +139,12 @@ s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBoo
 s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool terminateString S3E_DEFAULT(S3E_TRUE));
 
 void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate);
+
+bool s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type);
+
+s3eResult s3eAndroidControllerSetType(s3eAndroidControllerType type);
+
+s3eAndroidControllerType s3eAndroidControllerGetType();
 
 S3E_END_C_DECL
 

@@ -156,3 +156,18 @@ void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
 {
     s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(propagate);
 }
+
+bool s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type)
+{
+    return s3eAndroidControllerIsTypeSupported_platform(type);
+}
+
+s3eResult s3eAndroidControllerSetType(s3eAndroidControllerType type)
+{
+    return s3eAndroidControllerSetType_platform(type);
+}
+
+s3eAndroidControllerType s3eAndroidControllerGetType()
+{
+    return s3eAndroidControllerGetType_platform();
+}

@@ -29,7 +29,6 @@ import com.ideaworks3d.marmalade.LoaderActivity;
 public class s3eAndroidController
 {
 	GameController m_SelectedController = null;
-    static boolean s_pollingSupported = false;
     
     public static HashMap<Integer, Boolean> s_keyStates;
     public static float s_axisStickLeftX;
@@ -43,13 +42,13 @@ public class s3eAndroidController
     
     public void s3eAndroidControllerStartFrame()
     {
-        if (s_pollingSupported)
+        if (s3eAndroidControllerActivity.s_useAmazonGameController)
             GameController.startFrame();
     }
     
     public boolean s3eAndroidControllerSelectControllerByPlayer(int player)
     {
-        if (!s_pollingSupported)
+        if (!s3eAndroidControllerActivity.s_useAmazonGameController)
             return false;
         
         try
@@ -138,13 +137,5 @@ public class s3eAndroidController
         s3eAndroidControllerActivity.m_propagateButtonEvents = propagate;
     }
     
-    /*public static void setControllerTypeSupported(controllerType type)
-    {
-        s_controllerTypeSupported = type;
-    }
-    
-    public static boolean getControllerTypeSupported()
-    {
-        return s_controllerTypeSupported;
-    }*/
+    // TODO: check/get/set controller type here`
 }

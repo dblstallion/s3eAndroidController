@@ -162,259 +162,277 @@ Memory map
 .hash           0x00000dbc      0x280
  ** hash        0x00000dbc      0x280
 
-.rel.dyn        0x0000103c       0xb0
+.rel.dyn        0x0000103c       0xc8
  ** dynamic relocs
-                0x0000103c       0xb0
+                0x0000103c       0xc8
 
-.rel.plt        0x000010ec       0xc8
+.rel.plt        0x00001104       0xc8
  ** dynamic relocs
-                0x000010ec       0xc8
+                0x00001104       0xc8
 
-.plt            0x000011b4      0x140
- ** PLT         0x000011b4      0x140
+.plt            0x000011cc      0x140
+ ** PLT         0x000011cc      0x140
 
-.text           0x000012f4     0x37bc
- .text.exit     0x000012f4       0x10 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
-                0x000012f4                __on_dlclose
+.text           0x0000130c     0x38a8
+ .text.exit     0x0000130c       0x10 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x0000130c                __on_dlclose
  .text.startup._GLOBAL__sub_I_IwDebug.cpp
-                0x00001304       0x88 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x0000131c       0x88 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
  .text._ZN7_JNIEnv9FindClassEPKc
-                0x0000138c       0x38 debug\s3eAndroidController_platform.os
-                0x0000138c                _JNIEnv::FindClass(char const*)
+                0x000013a4       0x38 debug\s3eAndroidController_platform.os
+                0x000013a4                _JNIEnv::FindClass(char const*)
  .text._ZN7_JNIEnv17ExceptionOccurredEv
-                0x000013c4       0x30 debug\s3eAndroidController_platform.os
-                0x000013c4                _JNIEnv::ExceptionOccurred()
+                0x000013dc       0x30 debug\s3eAndroidController_platform.os
+                0x000013dc                _JNIEnv::ExceptionOccurred()
  .text._ZN7_JNIEnv17ExceptionDescribeEv
-                0x000013f4       0x28 debug\s3eAndroidController_platform.os
-                0x000013f4                _JNIEnv::ExceptionDescribe()
+                0x0000140c       0x28 debug\s3eAndroidController_platform.os
+                0x0000140c                _JNIEnv::ExceptionDescribe()
  .text._ZN7_JNIEnv14ExceptionClearEv
-                0x0000141c       0x28 debug\s3eAndroidController_platform.os
-                0x0000141c                _JNIEnv::ExceptionClear()
+                0x00001434       0x28 debug\s3eAndroidController_platform.os
+                0x00001434                _JNIEnv::ExceptionClear()
  .text._ZN7_JNIEnv12NewGlobalRefEP8_jobject
-                0x00001444       0x38 debug\s3eAndroidController_platform.os
-                0x00001444                _JNIEnv::NewGlobalRef(_jobject*)
+                0x0000145c       0x38 debug\s3eAndroidController_platform.os
+                0x0000145c                _JNIEnv::NewGlobalRef(_jobject*)
  .text._ZN7_JNIEnv15DeleteGlobalRefEP8_jobject
-                0x0000147c       0x30 debug\s3eAndroidController_platform.os
-                0x0000147c                _JNIEnv::DeleteGlobalRef(_jobject*)
+                0x00001494       0x30 debug\s3eAndroidController_platform.os
+                0x00001494                _JNIEnv::DeleteGlobalRef(_jobject*)
  .text._ZN7_JNIEnv14DeleteLocalRefEP8_jobject
-                0x000014ac       0x30 debug\s3eAndroidController_platform.os
-                0x000014ac                _JNIEnv::DeleteLocalRef(_jobject*)
+                0x000014c4       0x30 debug\s3eAndroidController_platform.os
+                0x000014c4                _JNIEnv::DeleteLocalRef(_jobject*)
  .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
-                0x000014dc       0x58 debug\s3eAndroidController_platform.os
-                0x000014dc                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+                0x000014f4       0x58 debug\s3eAndroidController_platform.os
+                0x000014f4                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
  .text._ZN7_JNIEnv11GetMethodIDEP7_jclassPKcS3_
-                0x00001534       0x48 debug\s3eAndroidController_platform.os
-                0x00001534                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
+                0x0000154c       0x48 debug\s3eAndroidController_platform.os
+                0x0000154c                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
  .text._ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
-                0x0000157c       0x5c debug\s3eAndroidController_platform.os
-                0x0000157c                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+                0x00001594       0x5c debug\s3eAndroidController_platform.os
+                0x00001594                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
-                0x000015d8       0x58 debug\s3eAndroidController_platform.os
-                0x000015d8                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
+                0x000015f0       0x58 debug\s3eAndroidController_platform.os
+                0x000015f0                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv15CallFloatMethodEP8_jobjectP10_jmethodIDz
-                0x00001630       0x58 debug\s3eAndroidController_platform.os
-                0x00001630                _JNIEnv::CallFloatMethod(_jobject*, _jmethodID*, ...)
+                0x00001648       0x58 debug\s3eAndroidController_platform.os
+                0x00001648                _JNIEnv::CallFloatMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
-                0x00001688       0x4c debug\s3eAndroidController_platform.os
-                0x00001688                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+                0x000016a0       0x4c debug\s3eAndroidController_platform.os
+                0x000016a0                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv15RegisterNativesEP7_jclassPK15JNINativeMethodi
-                0x000016d4       0x48 debug\s3eAndroidController_platform.os
-                0x000016d4                _JNIEnv::RegisterNatives(_jclass*, JNINativeMethod const*, int)
+                0x000016ec       0x48 debug\s3eAndroidController_platform.os
+                0x000016ec                _JNIEnv::RegisterNatives(_jclass*, JNINativeMethod const*, int)
  .text._ZN7_JavaVM6GetEnvEPPvi
-                0x0000171c       0x40 debug\s3eAndroidController_platform.os
-                0x0000171c                _JavaVM::GetEnv(void**, int)
+                0x00001734       0x40 debug\s3eAndroidController_platform.os
+                0x00001734                _JavaVM::GetEnv(void**, int)
  .text._ZL15s3eEdkJNIGetEnvv
-                0x0000175c       0x40 debug\s3eAndroidController_platform.os
+                0x00001774       0x40 debug\s3eAndroidController_platform.os
  .text._ZL27s3eEdkAndroidFindClass_realPKc
-                0x0000179c       0x8c debug\s3eAndroidController_platform.os
+                0x000017b4       0x8c debug\s3eAndroidController_platform.os
  .text._ZL22s3eEdkAndroidFindClassPKc
-                0x00001828       0x38 debug\s3eAndroidController_platform.os
+                0x00001840       0x38 debug\s3eAndroidController_platform.os
  .text._Z21native_ButtonCallbackP7_JNIEnvP8_jobjectii
-                0x00001860       0xdc debug\s3eAndroidController_platform.os
-                0x00001860                native_ButtonCallback(_JNIEnv*, _jobject*, int, int)
+                0x00001878       0xdc debug\s3eAndroidController_platform.os
+                0x00001878                native_ButtonCallback(_JNIEnv*, _jobject*, int, int)
  .text._Z33s3eAndroidControllerInit_platformv
-                0x0000193c      0x4a0 debug\s3eAndroidController_platform.os
-                0x0000193c                s3eAndroidControllerInit_platform()
+                0x00001954      0x4a0 debug\s3eAndroidController_platform.os
+                0x00001954                s3eAndroidControllerInit_platform()
  .text._Z38s3eAndroidControllerTerminate_platformv
-                0x00001ddc        0x4 debug\s3eAndroidController_platform.os
-                0x00001ddc                s3eAndroidControllerTerminate_platform()
+                0x00001df4        0x4 debug\s3eAndroidController_platform.os
+                0x00001df4                s3eAndroidControllerTerminate_platform()
  .text._Z39s3eAndroidControllerStartFrame_platformv
-                0x00001de0       0x48 debug\s3eAndroidController_platform.os
-                0x00001de0                s3eAndroidControllerStartFrame_platform()
+                0x00001df8       0x48 debug\s3eAndroidController_platform.os
+                0x00001df8                s3eAndroidControllerStartFrame_platform()
  .text._Z53s3eAndroidControllerSelectControllerByPlayer_platformi
-                0x00001e28       0x68 debug\s3eAndroidController_platform.os
-                0x00001e28                s3eAndroidControllerSelectControllerByPlayer_platform(int)
+                0x00001e40       0x68 debug\s3eAndroidController_platform.os
+                0x00001e40                s3eAndroidControllerSelectControllerByPlayer_platform(int)
  .text._Z43s3eAndroidControllerGetPlayerCount_platformv
-                0x00001e90       0x50 debug\s3eAndroidController_platform.os
-                0x00001e90                s3eAndroidControllerGetPlayerCount_platform()
+                0x00001ea8       0x50 debug\s3eAndroidController_platform.os
+                0x00001ea8                s3eAndroidControllerGetPlayerCount_platform()
  .text._Z43s3eAndroidControllerGetButtonState_platformi
-                0x00001ee0       0x68 debug\s3eAndroidController_platform.os
-                0x00001ee0                s3eAndroidControllerGetButtonState_platform(int)
+                0x00001ef8       0x68 debug\s3eAndroidController_platform.os
+                0x00001ef8                s3eAndroidControllerGetButtonState_platform(int)
  .text._Z41s3eAndroidControllerGetAxisValue_platformi
-                0x00001f48       0x58 debug\s3eAndroidController_platform.os
-                0x00001f48                s3eAndroidControllerGetAxisValue_platform(int)
+                0x00001f60       0x58 debug\s3eAndroidController_platform.os
+                0x00001f60                s3eAndroidControllerGetAxisValue_platform(int)
  .text._Z58s3eAndroidControllerSetPropagateButtonsToKeyboard_platformb
-                0x00001fa0       0x4c debug\s3eAndroidController_platform.os
-                0x00001fa0                s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool)
+                0x00001fb8       0x4c debug\s3eAndroidController_platform.os
+                0x00001fb8                s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool)
+ .text._Z44s3eAndroidControllerIsTypeSupported_platform24s3eAndroidControllerType
+                0x00002004       0x18 debug\s3eAndroidController_platform.os
+                0x00002004                s3eAndroidControllerIsTypeSupported_platform(s3eAndroidControllerType)
+ .text._Z36s3eAndroidControllerSetType_platform24s3eAndroidControllerType
+                0x0000201c       0x18 debug\s3eAndroidController_platform.os
+                0x0000201c                s3eAndroidControllerSetType_platform(s3eAndroidControllerType)
+ .text._Z36s3eAndroidControllerGetType_platformv
+                0x00002034        0xc debug\s3eAndroidController_platform.os
+                0x00002034                s3eAndroidControllerGetType_platform()
  .text._Z24s3eAndroidControllerInitv
-                0x00001fec       0x14 debug\s3eAndroidController.os
-                0x00001fec                s3eAndroidControllerInit()
+                0x00002040       0x14 debug\s3eAndroidController.os
+                0x00002040                s3eAndroidControllerInit()
  .text._Z29s3eAndroidControllerTerminatev
-                0x00002000        0xc debug\s3eAndroidController.os
-                0x00002000                s3eAndroidControllerTerminate()
+                0x00002054        0xc debug\s3eAndroidController.os
+                0x00002054                s3eAndroidControllerTerminate()
  .text.s3eAndroidControllerStartFrame
-                0x0000200c        0xc debug\s3eAndroidController.os
-                0x0000200c                s3eAndroidControllerStartFrame
+                0x00002060        0xc debug\s3eAndroidController.os
+                0x00002060                s3eAndroidControllerStartFrame
  .text.s3eAndroidControllerSelectControllerByPlayer
-                0x00002018       0x24 debug\s3eAndroidController.os
-                0x00002018                s3eAndroidControllerSelectControllerByPlayer
+                0x0000206c       0x24 debug\s3eAndroidController.os
+                0x0000206c                s3eAndroidControllerSelectControllerByPlayer
  .text.s3eAndroidControllerGetPlayerCount
-                0x0000203c       0x14 debug\s3eAndroidController.os
-                0x0000203c                s3eAndroidControllerGetPlayerCount
+                0x00002090       0x14 debug\s3eAndroidController.os
+                0x00002090                s3eAndroidControllerGetPlayerCount
  .text.s3eAndroidControllerGetButtonState
-                0x00002050       0x24 debug\s3eAndroidController.os
-                0x00002050                s3eAndroidControllerGetButtonState
+                0x000020a4       0x24 debug\s3eAndroidController.os
+                0x000020a4                s3eAndroidControllerGetButtonState
  .text.s3eAndroidControllerGetAxisValue
-                0x00002074       0x24 debug\s3eAndroidController.os
-                0x00002074                s3eAndroidControllerGetAxisValue
+                0x000020c8       0x24 debug\s3eAndroidController.os
+                0x000020c8                s3eAndroidControllerGetAxisValue
  .text.s3eAndroidControllerGetButtonDisplayName
-                0x00002098      0x310 debug\s3eAndroidController.os
-                0x00002098                s3eAndroidControllerGetButtonDisplayName
+                0x000020ec      0x310 debug\s3eAndroidController.os
+                0x000020ec                s3eAndroidControllerGetButtonDisplayName
  .text.s3eAndroidControllerGetAxisDisplayName
-                0x000023a8      0x154 debug\s3eAndroidController.os
-                0x000023a8                s3eAndroidControllerGetAxisDisplayName
+                0x000023fc      0x154 debug\s3eAndroidController.os
+                0x000023fc                s3eAndroidControllerGetAxisDisplayName
  .text.s3eAndroidControllerSetPropagateButtonsToKeyboard
-                0x000024fc       0x24 debug\s3eAndroidController.os
-                0x000024fc                s3eAndroidControllerSetPropagateButtonsToKeyboard
+                0x00002550       0x24 debug\s3eAndroidController.os
+                0x00002550                s3eAndroidControllerSetPropagateButtonsToKeyboard
+ .text.s3eAndroidControllerIsTypeSupported
+                0x00002574       0x24 debug\s3eAndroidController.os
+                0x00002574                s3eAndroidControllerIsTypeSupported
+ .text.s3eAndroidControllerSetType
+                0x00002598       0x24 debug\s3eAndroidController.os
+                0x00002598                s3eAndroidControllerSetType
+ .text.s3eAndroidControllerGetType
+                0x000025bc       0x14 debug\s3eAndroidController.os
+                0x000025bc                s3eAndroidControllerGetType
  .text.s3eAndroidControllerRegister
-                0x00002520       0x50 debug\s3eAndroidController_register.os
-                0x00002520                s3eAndroidControllerRegister
+                0x000025d0       0x50 debug\s3eAndroidController_register.os
+                0x000025d0                s3eAndroidControllerRegister
  .text.s3eAndroidControllerUnRegister
-                0x00002570       0x44 debug\s3eAndroidController_register.os
-                0x00002570                s3eAndroidControllerUnRegister
+                0x00002620       0x44 debug\s3eAndroidController_register.os
+                0x00002620                s3eAndroidControllerUnRegister
  .text._Z31s3eAndroidControllerRegisterExtv
-                0x000025b4      0x180 debug\s3eAndroidController_register.os
-                0x000025b4                s3eAndroidControllerRegisterExt()
+                0x00002664      0x1d4 debug\s3eAndroidController_register.os
+                0x00002664                s3eAndroidControllerRegisterExt()
  .text.RegisterExt
-                0x00002734        0xc debug\s3eAndroidController_register.os
-                0x00002734                RegisterExt
+                0x00002838        0xc debug\s3eAndroidController_register.os
+                0x00002838                RegisterExt
  .text.IwDebugTraceIsChannelOn
-                0x00002740      0x27c C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x00002740                IwDebugTraceIsChannelOn
+                0x00002844      0x27c C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00002844                IwDebugTraceIsChannelOn
  .text.IwDebugTraceSetTraceChannel
-                0x000029bc       0x1c C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x000029bc                IwDebugTraceSetTraceChannel
+                0x00002ac0       0x1c C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00002ac0                IwDebugTraceSetTraceChannel
  .text.IwDebugTraceLineVPrintf
-                0x000029d8       0xfc C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x000029d8                IwDebugTraceLineVPrintf
+                0x00002adc       0xfc C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00002adc                IwDebugTraceLineVPrintf
  .text.IwDebugTraceLinePrintf
-                0x00002ad4       0x30 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
-                0x00002ad4                IwDebugTraceLinePrintf
+                0x00002bd8       0x30 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
+                0x00002bd8                IwDebugTraceLinePrintf
  .text.s3eEdkThreadRunOnOS
-                0x00002b04       0x30 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
-                0x00002b04                s3eEdkThreadRunOnOS
- .text          0x00002b34       0x44 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
-                0x00002b34                __aeabi_ldivmod
- .text          0x00002b78       0x10 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
-                0x00002b78                __aeabi_idiv0
-                0x00002b78                __aeabi_ldiv0
- .text          0x00002b88       0x78 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
-                0x00002b88                __gnu_ldivmod_helper
-                0x00002bc4                __gnu_uldivmod_helper
- .text          0x00002c00      0xf20 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
-                0x000037b0                __aeabi_unwind_cpp_pr0
-                0x000037b8                __aeabi_unwind_cpp_pr1
-                0x000037c0                __aeabi_unwind_cpp_pr2
-                0x00003044                _Unwind_GetCFA
-                0x0000304c                __gnu_Unwind_RaiseException
-                0x000030f0                __gnu_Unwind_ForcedUnwind
-                0x0000310c                __gnu_Unwind_Resume
-                0x00003180                __gnu_Unwind_Resume_or_Rethrow
-                0x000031a0                _Unwind_Complete
-                0x000031a4                _Unwind_DeleteException
-                0x000031c4                _Unwind_VRS_Get
-                0x00003248                _Unwind_VRS_Set
-                0x000032d0                __gnu_Unwind_Backtrace
-                0x000037c8                _Unwind_VRS_Pop
- .text          0x00003b20      0x1a8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
-                0x00003b20                __restore_core_regs
-                0x00003b20                restore_core_regs
-                0x00003b34                __gnu_Unwind_Restore_VFP
-                0x00003b3c                __gnu_Unwind_Save_VFP
-                0x00003b44                __gnu_Unwind_Restore_VFP_D
-                0x00003b4c                __gnu_Unwind_Save_VFP_D
-                0x00003b54                __gnu_Unwind_Restore_VFP_D_16_to_31
-                0x00003b5c                __gnu_Unwind_Save_VFP_D_16_to_31
-                0x00003b64                __gnu_Unwind_Restore_WMMXD
-                0x00003ba8                __gnu_Unwind_Save_WMMXD
-                0x00003bec                __gnu_Unwind_Restore_WMMXC
-                0x00003c00                __gnu_Unwind_Save_WMMXC
-                0x00003c14                ___Unwind_RaiseException
-                0x00003c14                _Unwind_RaiseException
-                0x00003c38                ___Unwind_Resume
-                0x00003c38                _Unwind_Resume
-                0x00003c5c                ___Unwind_Resume_or_Rethrow
-                0x00003c5c                _Unwind_Resume_or_Rethrow
-                0x00003c80                ___Unwind_ForcedUnwind
-                0x00003c80                _Unwind_ForcedUnwind
-                0x00003ca4                ___Unwind_Backtrace
-                0x00003ca4                _Unwind_Backtrace
- .text          0x00003cc8      0x484 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
-                0x00003d54                __gnu_unwind_execute
-                0x000040d0                __gnu_unwind_frame
-                0x00004110                _Unwind_GetRegionStart
-                0x00004120                _Unwind_GetLanguageSpecificData
-                0x0000413c                _Unwind_GetDataRelBase
-                0x00004144                _Unwind_GetTextRelBase
- .text          0x0000414c      0x498 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
-                0x0000414c                __divdi3
- .text          0x000045e4      0x404 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
-                0x000045e4                __udivdi3
+                0x00002c08       0x30 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(edk_helpers.o)
+                0x00002c08                s3eEdkThreadRunOnOS
+ .text          0x00002c38       0x44 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_aeabi_ldivmod.o)
+                0x00002c38                __aeabi_ldivmod
+ .text          0x00002c7c       0x10 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+                0x00002c7c                __aeabi_idiv0
+                0x00002c7c                __aeabi_ldiv0
+ .text          0x00002c8c       0x78 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
+                0x00002c8c                __gnu_ldivmod_helper
+                0x00002cc8                __gnu_uldivmod_helper
+ .text          0x00002d04      0xf20 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+                0x000038b4                __aeabi_unwind_cpp_pr0
+                0x000038bc                __aeabi_unwind_cpp_pr1
+                0x000038c4                __aeabi_unwind_cpp_pr2
+                0x00003148                _Unwind_GetCFA
+                0x00003150                __gnu_Unwind_RaiseException
+                0x000031f4                __gnu_Unwind_ForcedUnwind
+                0x00003210                __gnu_Unwind_Resume
+                0x00003284                __gnu_Unwind_Resume_or_Rethrow
+                0x000032a4                _Unwind_Complete
+                0x000032a8                _Unwind_DeleteException
+                0x000032c8                _Unwind_VRS_Get
+                0x0000334c                _Unwind_VRS_Set
+                0x000033d4                __gnu_Unwind_Backtrace
+                0x000038cc                _Unwind_VRS_Pop
+ .text          0x00003c24      0x1a8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(libunwind.o)
+                0x00003c24                __restore_core_regs
+                0x00003c24                restore_core_regs
+                0x00003c38                __gnu_Unwind_Restore_VFP
+                0x00003c40                __gnu_Unwind_Save_VFP
+                0x00003c48                __gnu_Unwind_Restore_VFP_D
+                0x00003c50                __gnu_Unwind_Save_VFP_D
+                0x00003c58                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00003c60                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00003c68                __gnu_Unwind_Restore_WMMXD
+                0x00003cac                __gnu_Unwind_Save_WMMXD
+                0x00003cf0                __gnu_Unwind_Restore_WMMXC
+                0x00003d04                __gnu_Unwind_Save_WMMXC
+                0x00003d18                ___Unwind_RaiseException
+                0x00003d18                _Unwind_RaiseException
+                0x00003d3c                ___Unwind_Resume
+                0x00003d3c                _Unwind_Resume
+                0x00003d60                ___Unwind_Resume_or_Rethrow
+                0x00003d60                _Unwind_Resume_or_Rethrow
+                0x00003d84                ___Unwind_ForcedUnwind
+                0x00003d84                _Unwind_ForcedUnwind
+                0x00003da8                ___Unwind_Backtrace
+                0x00003da8                _Unwind_Backtrace
+ .text          0x00003dcc      0x484 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+                0x00003e58                __gnu_unwind_execute
+                0x000041d4                __gnu_unwind_frame
+                0x00004214                _Unwind_GetRegionStart
+                0x00004224                _Unwind_GetLanguageSpecificData
+                0x00004240                _Unwind_GetDataRelBase
+                0x00004248                _Unwind_GetTextRelBase
+ .text          0x00004250      0x498 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+                0x00004250                __divdi3
+ .text          0x000046e8      0x404 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                0x000046e8                __udivdi3
  .text          0xffffffffffffffff       0xc8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivsi3.o)
-                0x000049e8                __udivsi3
-                0x000049e8                __aeabi_uidiv
-                0x00004a90                __aeabi_uidivmod
+                0x00004aec                __udivsi3
+                0x00004aec                __aeabi_uidiv
+                0x00004b94                __aeabi_uidivmod
 
-.rodata         0x00004ab0      0x466
- .rodata        0x00004ab0      0x274 debug\s3eAndroidController_platform.os
- .rodata        0x00004d24       0xc0 debug\s3eAndroidController.os
- .rodata        0x00004de4       0x18 debug\s3eAndroidController_register.os
+.rodata         0x00004bb4      0x466
+ .rodata        0x00004bb4      0x274 debug\s3eAndroidController_platform.os
+ .rodata        0x00004e28       0xc0 debug\s3eAndroidController.os
+ .rodata        0x00004ee8       0x18 debug\s3eAndroidController_register.os
  ** merge strings
-                0x00004dfc      0x11a
+                0x00004f00      0x11a
 
-.ARM.extab      0x00004f18       0x48
- .ARM.extab     0x00004f18        0xc c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
- .ARM.extab     0x00004f24        0xc c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
- .ARM.extab     0x00004f30       0x30 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+.ARM.extab      0x0000501c       0x48
+ .ARM.extab     0x0000501c        0xc c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+ .ARM.extab     0x00005028        0xc c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
+ .ARM.extab     0x00005034       0x30 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
 
-.ARM.exidx      0x00004f60      0x128
- .ARM.exidx     0x00004f60        0x8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
+.ARM.exidx      0x00005064      0x128
+ .ARM.exidx     0x00005064        0x8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_dvmd_lnx.o)
  .ARM.exidx     0xffffffffffffffff       0x10 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(bpabi.o)
  .ARM.exidx     0xffffffffffffffff       0xd8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(unwind-arm.o)
  ** ARM cantunwind
-                0x00005020        0x8
- .ARM.exidx     0x00005028       0x48 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
- .ARM.exidx     0x00005070        0x8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
- .ARM.exidx     0x00005078        0x8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
+                0x00005124        0x8
+ .ARM.exidx     0x0000512c       0x48 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(pr-support.o)
+ .ARM.exidx     0x00005174        0x8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_divdi3.o)
+ .ARM.exidx     0x0000517c        0x8 c:/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.8/libgcc.a(_udivdi3.o)
  ** ARM cantunwind
-                0x00005080        0x8
+                0x00005184        0x8
 
-.fini_array     0x00006e50        0x8
- .fini_array    0x00006e50        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
- .fini_array    0x00006e54        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+.fini_array     0x00006e44        0x8
+ .fini_array    0x00006e44        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00006e48        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
 
-.data.rel.ro    0x00006e58        0xc
- .data.rel.ro   0x00006e58        0xc debug\s3eAndroidController_platform.os
+.data.rel.ro    0x00006e4c        0xc
+ .data.rel.ro   0x00006e4c        0xc debug\s3eAndroidController_platform.os
 
-.init_array     0x00006e64        0x8
- .init_array    0x00006e64        0x4 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
- .init_array    0x00006e68        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+.init_array     0x00006e58        0x8
+ .init_array    0x00006e58        0x4 C:\Marmalade\7.4.2\s3e\edk\lib\android/libedk.a(IwDebug.o)
+ .init_array    0x00006e5c        0x4 C:/Android/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
 
-.dynamic        0x00006e6c       0xe0
- ** dynamic     0x00006e6c       0xe0
+.dynamic        0x00006e60       0xe0
+ ** dynamic     0x00006e60       0xe0
 
-.got            0x00006f4c       0xb4
- ** GOT         0x00006f4c       0x44
+.got            0x00006f40       0xc0
+ ** GOT         0x00006f40       0x50
  ** GOT PLT     0x00006f90       0x70
 
 .data           0x00007000        0x4

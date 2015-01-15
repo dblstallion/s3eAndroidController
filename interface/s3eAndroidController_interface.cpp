@@ -32,6 +32,9 @@ typedef      float(*s3eAndroidControllerGetAxisValue_t)(int axis);
 typedef  s3eResult(*s3eAndroidControllerGetButtonDisplayName_t)(char* dst, int button, s3eBool terminateString);
 typedef  s3eResult(*s3eAndroidControllerGetAxisDisplayName_t)(char* dst, int axis, s3eBool terminateString);
 typedef       void(*s3eAndroidControllerSetPropagateButtonsToKeyboard_t)(bool propagate);
+typedef       bool(*s3eAndroidControllerIsTypeSupported_t)(s3eAndroidControllerType type);
+typedef  s3eResult(*s3eAndroidControllerSetType_t)(s3eAndroidControllerType type);
+typedef s3eAndroidControllerType(*s3eAndroidControllerGetType_t)();
 
 /**
  * struct that gets filled in by s3eAndroidControllerRegister
@@ -48,6 +51,9 @@ typedef struct s3eAndroidControllerFuncs
     s3eAndroidControllerGetButtonDisplayName_t m_s3eAndroidControllerGetButtonDisplayName;
     s3eAndroidControllerGetAxisDisplayName_t m_s3eAndroidControllerGetAxisDisplayName;
     s3eAndroidControllerSetPropagateButtonsToKeyboard_t m_s3eAndroidControllerSetPropagateButtonsToKeyboard;
+    s3eAndroidControllerIsTypeSupported_t m_s3eAndroidControllerIsTypeSupported;
+    s3eAndroidControllerSetType_t m_s3eAndroidControllerSetType;
+    s3eAndroidControllerGetType_t m_s3eAndroidControllerGetType;
 } s3eAndroidControllerFuncs;
 
 static s3eAndroidControllerFuncs g_Ext;
@@ -291,4 +297,64 @@ void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
 #endif
 
     return;
+}
+
+bool s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type)
+{
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[10] func: s3eAndroidControllerIsTypeSupported"));
+
+    if (!_extLoad())
+        return false;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    bool ret = g_Ext.m_s3eAndroidControllerIsTypeSupported(type);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+s3eResult s3eAndroidControllerSetType(s3eAndroidControllerType type)
+{
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[11] func: s3eAndroidControllerSetType"));
+
+    if (!_extLoad())
+        return S3E_RESULT_ERROR;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eResult ret = g_Ext.m_s3eAndroidControllerSetType(type);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+s3eAndroidControllerType s3eAndroidControllerGetType()
+{
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[12] func: s3eAndroidControllerGetType"));
+
+    if (!_extLoad())
+        return S3E_ANDROIDCONTROLLER_TYPE_GENERIC;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eAndroidControllerType ret = g_Ext.m_s3eAndroidControllerGetType();
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
 }

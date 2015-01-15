@@ -46,6 +46,7 @@ public class s3eAndroidControllerActivity extends LoaderActivity
     //TODO: array to track state of keys for generic polling support
     
     static boolean m_propagateButtonEvents = true;
+    static boolean s_supportsAmazonGameController = false;
     static boolean s_useAmazonGameController = false;
     
     @Override
@@ -56,6 +57,7 @@ public class s3eAndroidControllerActivity extends LoaderActivity
         try {
             //Initialize GameController with the context to attach to the game controller service
             GameController.init(this);
+            s_supportsAmazonGameController = true;
             s_useAmazonGameController = true;
         }
         catch (RuntimeException e) {

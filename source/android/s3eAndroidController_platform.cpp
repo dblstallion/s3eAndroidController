@@ -168,3 +168,21 @@ void s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool propagate)
     JNIEnv* env = s3eEdkJNIGetEnv();
     env->CallVoidMethod(g_Obj, g_s3eAndroidControllerSetPropagateButtonsToKeyboard, propagate);
 }
+
+bool s3eAndroidControllerIsTypeSupported_platform(s3eAndroidControllerType type)
+{
+    //TODO: implement
+    return true;
+}
+
+s3eResult s3eAndroidControllerSetType_platform(s3eAndroidControllerType type)
+{
+    //TODO: implement
+    return S3E_RESULT_SUCCESS;
+}
+
+s3eAndroidControllerType s3eAndroidControllerGetType_platform()
+{
+    //TODO: implement
+    return S3E_ANDROIDCONTROLLER_TYPE_GENERIC;
+}
