@@ -4,24 +4,39 @@ s3eAndroidController
 This is an Android gamepad/controller extension API for the Marmalade C++ and
 Marmalade Quick SDKs.
 
-Currently, it is only supported on Amazon FireTV and is a polling based API
-(not event driven). Those are because it just uses Amazon's GameController lib.
-GameController.jar is in the extension but is just a stub that relies on device
-libs which are only on the Fire TV. Currently the extension fails to initialise
-(safely) on other Android devices by checking for the lib existing (catches
-expected exception).
+Currently, it supports:
+- Up to 4 controllers on Amazon FireTV
+- 1 conroller on other Android devices
+- Polling API for buttons and analog sticks
+- Event API for buttons (not sticks)
+
+On Fire TV, it uses Amazon's GameController lib. GameController.jar is in the
+extension but is just a stub that relies on device libs which are only on the
+Fire TV. On other devices it uses some custom code.
 
 Amazon's API is from their Fire TV SDK (see https://developer.amazon.com/appsandservices/solutions/devices/fire-tv/docs/gamecontroller-api)
 
 C++ extension is based on s3eFireTV extension by dblstallion
 https://github.com/dblstallion/s3eFireTV
 
-Mostly this is just renamed atm and tidied up but I'm planning to add generic
-Android controller event support and later integrate this into a cross-platform
-controller module for C++.
+Compared to s3eFireTV, s3eAndroidController adds:
+- Generic android support for 1 controller
+- Callbacks/events for button presses
+- Quick/Lua wrapper
+- C++ and Lua example app projects
 
 The Quick API is a simple wrapper around the C++ one, with the usual shortened
-naming scheme. The plan is to later integrate into Quicks event system.
+naming scheme. Quick version supports all the C++ features.
+
+### IwGameController
+
+I've recently created 
+That wraps this extension and other ones and also provides a Quick wrapper.
+IwGameController is not well tested yet but will be the preferred API
+rather than using this directly. The quick APIs are almost identical
+(you could just define androidController to gameController or vice-versa,
+so easy to try one and swap!)
+
 
 Custom activity requirement
 ---------------------------
