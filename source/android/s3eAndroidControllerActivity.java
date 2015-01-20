@@ -48,6 +48,8 @@ public class s3eAndroidControllerActivity extends LoaderActivity
     static boolean m_propagateButtonEvents = true;
     static boolean s_supportsAmazonGameController = false;
     static boolean s_useAmazonGameController = false;
+    //static boolean s_created = false; //todo: can use this to check activity creation worked and 
+    //fail extension init without it and print relevant error.
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -71,6 +73,7 @@ public class s3eAndroidControllerActivity extends LoaderActivity
             s3eAndroidController.s_axisTriggerRight = 0;
         }
         //s3eAndroidController.setControllerTypeSupported(s3eAndroidController.amazonGameController);
+        //s_created = true;
     }
     
     //Forward key down events to GameController so it can manage state

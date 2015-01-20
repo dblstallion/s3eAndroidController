@@ -12,3 +12,4 @@ build_*
 **development.icf
 **/stamp/**
 **iwtrace.txt
+*.bak
