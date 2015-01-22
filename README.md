@@ -6,8 +6,8 @@ Marmalade Quick SDKs.
 
 Currently, it supports:
 - Up to 4 controllers on Amazon FireTV
-- 1 conroller on other Android devices
-- Polling API for buttons and analog sticks
+- 1 controller on other Android devices
+- Polling API for buttons and analogue sticks
 - Event API for buttons (not sticks)
 
 On Fire TV, it uses Amazon's GameController lib. GameController.jar is in the
@@ -20,36 +20,104 @@ C++ extension is based on s3eFireTV extension by dblstallion
 https://github.com/dblstallion/s3eFireTV
 
 Compared to s3eFireTV, s3eAndroidController adds:
-- Generic android support for 1 controller
+- Generic android (non Fire TV) support for 1 controller
 - Callbacks/events for button presses
 - Quick/Lua wrapper
 - C++ and Lua example app projects
+- Smarter checking for Fire TV lib
 
 The Quick API is a simple wrapper around the C++ one, with the usual shortened
 naming scheme. Quick version supports all the C++ features.
 
-### IwGameController
+### Why not use IwGameController instead?!
 
-I've recently created 
-That wraps this extension and other ones and also provides a Quick wrapper.
-IwGameController is not well tested yet but will be the preferred API
-rather than using this directly. The quick APIs are almost identical
-(you could just define androidController to gameController or vice-versa,
-so easy to try one and swap!)
-
-
-Custom activity requirement
----------------------------
-
-The extension requires that a custom main activity is set in your C++ or
-Quick project. This is needed in order to catch key and axis events.
-You must add the following to the deployments section of your MKB::
-
-        android-custom-activity='com.s3eAndroidController.s3eAndroidControllerActivity'
+I've recently created https://github.com/nickchops/IwGameController
+That wraps this extension and also supports controller on other platforms.
+It has a quick API that's are almost identical to QAndroidController,
+so for Quick you could just pick one to use and define androidController to
+gameController etc. or vice-versa - fairly easy to try one and swap!
+Using IwGameController means you can also test on desktop Simulator...
 
 
-C++ Functions
--------------
+Requirements and setup for C++ and Quick
+----------------------------------------
+
+### Add the extension to your Marmalade search path
+
+You can either add s3eAndroidController to
+default paths or keep it in your github project folder and add that to
+your Marmalade search paths. The later is recommended so that you don't
+have to do this every time you install a new Marmalade version and can
+get Github updates easier.
+
+To add your github root to global search, put the following in
+< marmalade-root >/s3e/s3e-default.mkf:
+
+        options { module_paths="path/to/my/github/projects/root" }
+
+Alternatively, copy s3eAndroidController to < marmalade-root >/extensions.
+
+
+Additional setup for Quick only
+-------------------------------
+
+### Prerequisites for Quick only
+
+- Marmalade SDK 7.4 or newer is needed for Quick extension improvements.
+
+- You need scripts for rebuilding Quick binaries. Get these from
+  https://github.com/nickchops/MarmaladeQuickRebuildScripts Copy those to the
+  root *quick* folder in the SDK.
+
+
+### You must rebuild binaries to embed the extension in Quick
+
+For Quick, you need to make changes to two quick config files and then
+rebuild the Quick binaries. Paths here refer to < marmalade-root >/quick.
+
+1. Edit quick/quickuser_tolua.pkg and add this new line:
+
+        $cfile "path/to/projects/s3eAndroidController/quick/QAndroidController.h"
+
+2. Edit quick/quickuser.mkf and add the following to the 'subprojects' block:
+
+        subprojects
+        {
+            s3eAndroidController/quick/QAndroidController
+        }
+
+   Make sure the parent folder of IwGameController is in global paths
+
+3. Run quick/quickuser_tolua.bat to generate Lua bindings.
+
+4. Rebuild the Quick binaries by running the scripts (build_quick_prebuilt.bat
+   etc.)
+
+
+Add the module to your C++ or Quick project
+-------------------------------------------
+
+You must add the following to your app project's MKB file:
+
+        subprojects
+        {
+            s3eAndroidController
+        }
+   
+        deployments
+        {
+            android-custom-activity='com.s3eAndroidController.s3eAndroidController'
+        }
+
+
+### NB: Custom activity requirement on Android!
+
+Note that we have to set a custom main activity as shown above.
+This is needed in order to catch key and axis events.
+
+
+Using the C++ API
+-----------------
 
 *void    s3eAndroidControllerStartFrame()*
 
@@ -81,8 +149,7 @@ C++ Functions
   will happen. Default is true.
 
 
-Button and axis values
-----------------------
+### Button and axis values
 
 The Marmalade values here are just mapped directly to the equivalents in the Amazon Game Controller Java API
 
@@ -113,59 +180,32 @@ Buttons for querying s3eAndroidControllerGetButtonState:
 - S3E_ANDROID_CONTROLLER_BUTTON_X                  99
 - S3E_ANDROID_CONTROLLER_BUTTON_Y                  100
 
-Quick Wrapper
--------------
 
-### Prerequisites
+Using the Quick API
+-------------------
 
-1. Marmalade SDK 7.4 or newer is needed for Quick extension improvemenmts.
-   
-2. Place the whole s3eAndroidController folder in sdk/extensions
-   
-2. You need scripts for rebuilding Quick binaries. Get these from
-   https://github.com/nickchops/MarmaladeQuickRebuildScripts Copy those to the
-   root *quick* folder in the SDK.
+NB: If adding the extension to an existing project, you'll likely need to
+delete the project's 'build_temp' folder. This is so that the Hub will
+regenerate all the necessary deployment scripts and include the new extension.
 
+Quick functions behave like their similarly-named C++ versions:
 
-### Setup: Add and build this wrapper into Quick
+        androidController.isAvailable()
+        androidController.startFrame()
+        androidController.selectControllerByPlayer(player)
+        androidController.getMaxControllers()
+        androidController.getPlayerCount()
+        androidController.getButtonState(button)
+        androidController.getAxisValue(axis)
 
-3. Edit quick/quickuser_tolua.pkg and add this new line:
+See QAndroidController.h for types, axes and buttons. Use like this:
 
-        $cfile "../extensions/s3eAndroidController/quick/QAndroidController.h"
+        androidController.getAxisValue(androidController.axisStickLeftX)
+        androidController.getButtonState(androidController.buttonA)
+        etc.
 
-4. Edit quick/quickuser.mkf and add the following to the 'files' block so that
-   the wrappers can be built into the Quick binaries::
-
-        ("$MARMALADE_ROOT/extensions/s3eAndroidController/quick")
-        QAndroidController.h
-        QAndroidController.cpp
-
-5. In quickuser.mkf, also add s3eAndroidController to the 'subprojects' block:
-
-        subprojects
-        {
-            s3eAndroidController
-        }
-        
-   This allows C++ parts of the actual extension to be built into Quick's
-   binaries.
-   
-5. Run quick/quickuser_tolua.bat to generate Lua bindings.
-
-6. Rebuild the Quick binaries by running the scripts (build_quick_prebuilt.bat
-   etc.)
-
-### Use the wrapper in your project
-
-1. Add s3eAndroidController to the subprojects block of you app's mkb as well.
-   This makes the required libraries get bundled in the package.
-   
-2. Add android-custom-activity='com.s3eAndroidController.s3eAndroidControllerActivity'
-   to the deployments block of your app's mkb.
-
-2. If updating an existing project, you'll likely need to delete the project's
-   'build_temp' folder. This is so that the Hub will regenerate all the
-   necessary deployment scripts and include the new extension.
+TODO: I'll probably change these to strings "a" "stickLeftX" etc.
+since Lua can do fast string compares (compares object addresses).
 
 
 Issues with clashing custom activities
