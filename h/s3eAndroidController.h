@@ -146,6 +146,8 @@ s3eResult s3eAndroidControllerSetType(s3eAndroidControllerType type);
 
 s3eAndroidControllerType s3eAndroidControllerGetType();
 
+// \cond HIDDEN_DEFINES
 S3E_END_C_DECL
+// \endcond
 
 #endif /* !S3E_EXT_ANDROIDCONTROLLER_H */

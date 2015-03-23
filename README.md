@@ -58,6 +58,49 @@ To add your github root to global search, put the following in
 Alternatively, copy s3eAndroidController to < marmalade-root >/extensions.
 
 
+### Custom activity requirement on Android
+
+You need to use s3eAndroidUserActivity and set that up to call some functions:
+
+1) Grab www.github.com/nickchops/s3eAndroidUserActivity
+
+2) In that, edit source/android/s3eAndroidUserActivity.java:
+
+   - Above the class definition, add this:
+   
+        import com.nickchops.s3eAndroidController.s3eAndroidControllerActivity;
+
+   - In the class, add/edit so that it includes:
+   
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            s3eAndroidControllerActivity.onCreate(savedInstanceState);
+        }
+        
+        @Override
+        public boolean onKeyDown(int keyCode, KeyEvent event) {
+            return s3eAndroidControllerActivity.onKeyDown(keyCode, event) ? true : super.onKeyDown(keyCode, event);
+        }
+        
+        @Override
+        public boolean onKeyUp(int keyCode, KeyEvent event) {
+            return s3eAndroidControllerActivity.onKeyUp(keyCode, event) ? true : super.onKeyUp(keyCode, event);
+        }
+        
+        @Override
+        public boolean onGenericMotionEvent(MotionEvent event) {
+            return s3eAndroidControllerActivity.onGenericMotionEvent(event) ? true : super.onGenericMotionEvent(event);
+        }
+
+3) Edit s3eAndroidUserActivity_android_java.mkb to include:
+
+        librarypath "../s3eAndroidController/lib/android/s3eAndroidController.jar"
+        
+4) Rebuild that by running s3eAndroidUserActivity_android_java.mkb
+    (no additional tools, or Android SDK needed to build that)
+
+
 Additional setup for Quick only
 -------------------------------
 
@@ -103,17 +146,6 @@ You must add the following to your app project's MKB file:
         {
             s3eAndroidController
         }
-   
-        deployments
-        {
-            android-custom-activity='com.s3eAndroidController.s3eAndroidController'
-        }
-
-
-### NB: Custom activity requirement on Android!
-
-Note that we have to set a custom main activity as shown above.
-This is needed in order to catch key and axis events.
 
 
 Using the C++ API

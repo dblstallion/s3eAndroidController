@@ -9,8 +9,3 @@ subprojects
     iwutil
     s3eAndroidController
 }
-
-deployment
-{
-	android-custom-activity='com.nickchops.s3eAndroidController.s3eAndroidControllerActivity'
-}

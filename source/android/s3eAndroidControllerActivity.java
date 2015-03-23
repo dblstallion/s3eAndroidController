@@ -24,9 +24,7 @@ import com.amazon.device.gamecontroller.GameController.PlayerNumberNotFoundExcep
 import com.ideaworks3d.marmalade.LoaderAPI;
 import com.ideaworks3d.marmalade.LoaderActivity;
 
-// Extend loader activity to override key events.
-// Need to include android-custom-activity='com.s3eAndroidController.s3eAndroidControllerActivity'
-// in project deployment options for this to work.
+// You need to extend loader activity via github.com/nickchops/s3eAndroidUserActivity
 
 // Currently, we're using Amazon's GameCrontroller lib from Fire TV SDK.
 // This is a stub jar file with implementations on the actual devices, iOS style!
@@ -39,7 +37,7 @@ import com.ideaworks3d.marmalade.LoaderActivity;
 // For now, extension just fails to initialise due to polling supported being false
 // on non-fire tv devices.
 
-public class s3eAndroidControllerActivity extends LoaderActivity
+public class s3eAndroidControllerActivity //not an actual activity, must be called from s3eAndroidUserActivity
 {
     // callbacks
     private static native void native_ButtonCallback(int button, int state); //TODO: pass controller/player IDs when supported
@@ -51,14 +49,12 @@ public class s3eAndroidControllerActivity extends LoaderActivity
     //static boolean s_created = false; //todo: can use this to check activity creation worked and 
     //fail extension init without it and print relevant error.
     
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
+    // Edit s3eAndroidUserActivity to call this.
+    public static void onCreate(Bundle savedInstanceState, LoaderActivity activity)
     {
-        super.onCreate(savedInstanceState);
-        
         try {
             //Initialize GameController with the context to attach to the game controller service
-            GameController.init(this);
+            GameController.init(activity);
             s_supportsAmazonGameController = true;
             s_useAmazonGameController = true;
         }
@@ -77,8 +73,7 @@ public class s3eAndroidControllerActivity extends LoaderActivity
     }
     
     //Forward key down events to GameController so it can manage state
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)
+    public static boolean onKeyDown(int keyCode, KeyEvent event)
     {
         Log.d("ANDROIDCONTROLLER", "onKeyDown");
         boolean handled = false;
@@ -114,12 +109,11 @@ public class s3eAndroidControllerActivity extends LoaderActivity
         if (!m_propagateButtonEvents && handled)
             return true;
         
-        return super.onKeyDown(keyCode, event);
+        return false;
     }
     
     //Forward key up events to GameController so it can manage state
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event)
+    public static boolean onKeyUp(int keyCode, KeyEvent event)
     {
         Log.d("ANDROIDCONTROLLER", "onKeyUp");
         boolean handled = false;
@@ -151,12 +145,11 @@ public class s3eAndroidControllerActivity extends LoaderActivity
         if (!m_propagateButtonEvents && handled)
             return true;
         
-        return super.onKeyUp(keyCode, event);
+        return false;
     }
     
     //Forward motion events to GameController so it can manage state
-    @Override
-    public boolean onGenericMotionEvent(MotionEvent event)
+    public static boolean onGenericMotionEvent(MotionEvent event)
     {
         if (s_useAmazonGameController)
         {
@@ -191,6 +184,6 @@ public class s3eAndroidControllerActivity extends LoaderActivity
             return true;
         }
         
-        return super.onGenericMotionEvent(event);
+        return false;
     }
 }

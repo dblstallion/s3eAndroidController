@@ -39,11 +39,6 @@ subprojects
 
 deployment
 {
-    #Needed to pick up controls. If already using another custom main activity,
-    #you will need to edit one of the extensions to daisy-chain off the other as
-    #only one per app is allowed
-	android-custom-activity='com.nickchops.s3eAndroidController.s3eAndroidControllerActivity'
-    
     icon="controllericon.png"
 
     ["Windows"]

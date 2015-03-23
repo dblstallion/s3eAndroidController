@@ -41,3 +41,7 @@ deployments
     android-external-jars="lib/android/gamecontroller.jar"
     android-so="lib/android/libs3eAndroidController.so"
 }
+
+#You need to include this extension in s3eAndroidUserActivity
+#is it needs to override the main activity
+subproject s3eAndroidUserActivity
