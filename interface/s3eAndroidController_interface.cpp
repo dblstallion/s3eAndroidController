@@ -11,50 +11,17 @@
 #include "s3eAndroidController.h"
 
 
+// Define S3E_EXT_SKIP_LOADER_CALL_LOCK on the user-side to skip LoaderCallStart/LoaderCallDone()-entry.
+// e.g. in s3eNUI this is used for generic user-side IwUI-based implementation.
 #ifndef S3E_EXT_SKIP_LOADER_CALL_LOCK
-// For MIPs (and WP8) platform we do not have asm code for stack switching
-// implemented. So we make LoaderCallStart call manually to set GlobalLock
-#if defined __mips || defined S3E_ANDROID_X86 || (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP))
+#if defined I3D_ARCH_MIPS || defined S3E_ANDROID_X86 || (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP)) || defined I3D_ARCH_NACLX86_64
+// For platforms missing stack-switching (MIPS, WP8, Android-x86, NaCl, etc.) make loader-entry via LoaderCallStart/LoaderCallDone() on the user-side.
 #define LOADER_CALL_LOCK
 #endif
 #endif
 
-/**
- * Definitions for functions types passed to/from s3eExt interface
- */
-typedef  s3eResult(*s3eAndroidControllerRegister_t)(s3eAndroidControllerCallback cbid, s3eCallback fn, void* userData);
-typedef  s3eResult(*s3eAndroidControllerUnRegister_t)(s3eAndroidControllerCallback cbid, s3eCallback fn);
-typedef       void(*s3eAndroidControllerStartFrame_t)();
-typedef       bool(*s3eAndroidControllerSelectControllerByPlayer_t)(int player);
-typedef        int(*s3eAndroidControllerGetPlayerCount_t)();
-typedef       bool(*s3eAndroidControllerGetButtonState_t)(int button);
-typedef      float(*s3eAndroidControllerGetAxisValue_t)(int axis);
-typedef  s3eResult(*s3eAndroidControllerGetButtonDisplayName_t)(char* dst, int button, s3eBool terminateString);
-typedef  s3eResult(*s3eAndroidControllerGetAxisDisplayName_t)(char* dst, int axis, s3eBool terminateString);
-typedef       void(*s3eAndroidControllerSetPropagateButtonsToKeyboard_t)(bool propagate);
-typedef       bool(*s3eAndroidControllerIsTypeSupported_t)(s3eAndroidControllerType type);
-typedef  s3eResult(*s3eAndroidControllerSetType_t)(s3eAndroidControllerType type);
-typedef s3eAndroidControllerType(*s3eAndroidControllerGetType_t)();
 
-/**
- * struct that gets filled in by s3eAndroidControllerRegister
- */
-typedef struct s3eAndroidControllerFuncs
-{
-    s3eAndroidControllerRegister_t m_s3eAndroidControllerRegister;
-    s3eAndroidControllerUnRegister_t m_s3eAndroidControllerUnRegister;
-    s3eAndroidControllerStartFrame_t m_s3eAndroidControllerStartFrame;
-    s3eAndroidControllerSelectControllerByPlayer_t m_s3eAndroidControllerSelectControllerByPlayer;
-    s3eAndroidControllerGetPlayerCount_t m_s3eAndroidControllerGetPlayerCount;
-    s3eAndroidControllerGetButtonState_t m_s3eAndroidControllerGetButtonState;
-    s3eAndroidControllerGetAxisValue_t m_s3eAndroidControllerGetAxisValue;
-    s3eAndroidControllerGetButtonDisplayName_t m_s3eAndroidControllerGetButtonDisplayName;
-    s3eAndroidControllerGetAxisDisplayName_t m_s3eAndroidControllerGetAxisDisplayName;
-    s3eAndroidControllerSetPropagateButtonsToKeyboard_t m_s3eAndroidControllerSetPropagateButtonsToKeyboard;
-    s3eAndroidControllerIsTypeSupported_t m_s3eAndroidControllerIsTypeSupported;
-    s3eAndroidControllerSetType_t m_s3eAndroidControllerSetType;
-    s3eAndroidControllerGetType_t m_s3eAndroidControllerGetType;
-} s3eAndroidControllerFuncs;
+#include "s3eAndroidController_interface.h"
 
 static s3eAndroidControllerFuncs g_Ext;
 static bool g_GotExt = false;
@@ -107,13 +74,13 @@ s3eResult s3eAndroidControllerRegister(s3eAndroidControllerCallback cbid, s3eCal
         return S3E_RESULT_ERROR;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerRegister);
 #endif
 
     s3eResult ret = g_Ext.m_s3eAndroidControllerRegister(cbid, fn, userData);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerRegister);
 #endif
 
     return ret;
@@ -127,13 +94,13 @@ s3eResult s3eAndroidControllerUnRegister(s3eAndroidControllerCallback cbid, s3eC
         return S3E_RESULT_ERROR;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerUnRegister);
 #endif
 
     s3eResult ret = g_Ext.m_s3eAndroidControllerUnRegister(cbid, fn);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerUnRegister);
 #endif
 
     return ret;
@@ -147,13 +114,13 @@ void s3eAndroidControllerStartFrame()
         return;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerStartFrame);
 #endif
 
     g_Ext.m_s3eAndroidControllerStartFrame();
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerStartFrame);
 #endif
 
     return;
@@ -167,13 +134,13 @@ bool s3eAndroidControllerSelectControllerByPlayer(int player)
         return false;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerSelectControllerByPlayer);
 #endif
 
     bool ret = g_Ext.m_s3eAndroidControllerSelectControllerByPlayer(player);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerSelectControllerByPlayer);
 #endif
 
     return ret;
@@ -187,13 +154,13 @@ int s3eAndroidControllerGetPlayerCount()
         return 0;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetPlayerCount);
 #endif
 
     int ret = g_Ext.m_s3eAndroidControllerGetPlayerCount();
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetPlayerCount);
 #endif
 
     return ret;
@@ -207,13 +174,13 @@ bool s3eAndroidControllerGetButtonState(int button)
         return false;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetButtonState);
 #endif
 
     bool ret = g_Ext.m_s3eAndroidControllerGetButtonState(button);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetButtonState);
 #endif
 
     return ret;
@@ -227,13 +194,13 @@ float s3eAndroidControllerGetAxisValue(int axis)
         return 0;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetAxisValue);
 #endif
 
     float ret = g_Ext.m_s3eAndroidControllerGetAxisValue(axis);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetAxisValue);
 #endif
 
     return ret;
@@ -247,13 +214,13 @@ s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBoo
         return S3E_RESULT_ERROR;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetButtonDisplayName);
 #endif
 
     s3eResult ret = g_Ext.m_s3eAndroidControllerGetButtonDisplayName(dst, button, terminateString);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetButtonDisplayName);
 #endif
 
     return ret;
@@ -267,13 +234,13 @@ s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool te
         return S3E_RESULT_ERROR;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetAxisDisplayName);
 #endif
 
     s3eResult ret = g_Ext.m_s3eAndroidControllerGetAxisDisplayName(dst, axis, terminateString);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetAxisDisplayName);
 #endif
 
     return ret;
@@ -287,13 +254,13 @@ void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
         return;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerSetPropagateButtonsToKeyboard);
 #endif
 
     g_Ext.m_s3eAndroidControllerSetPropagateButtonsToKeyboard(propagate);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerSetPropagateButtonsToKeyboard);
 #endif
 
     return;
@@ -307,13 +274,13 @@ bool s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type)
         return false;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerIsTypeSupported);
 #endif
 
     bool ret = g_Ext.m_s3eAndroidControllerIsTypeSupported(type);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerIsTypeSupported);
 #endif
 
     return ret;
@@ -327,13 +294,13 @@ s3eResult s3eAndroidControllerSetType(s3eAndroidControllerType type)
         return S3E_RESULT_ERROR;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerSetType);
 #endif
 
     s3eResult ret = g_Ext.m_s3eAndroidControllerSetType(type);
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerSetType);
 #endif
 
     return ret;
@@ -347,13 +314,13 @@ s3eAndroidControllerType s3eAndroidControllerGetType()
         return S3E_ANDROIDCONTROLLER_TYPE_GENERIC;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetType);
 #endif
 
     s3eAndroidControllerType ret = g_Ext.m_s3eAndroidControllerGetType();
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetType);
 #endif
 
     return ret;
