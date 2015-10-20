@@ -31,7 +31,7 @@ s3eResult s3eAndroidControllerUnRegister(s3eAndroidControllerCallback cbid, s3eC
 void s3eAndroidControllerRegisterExt()
 {
     /* fill in the function pointer struct for this extension */
-    void* funcPtrs[13];
+    void* funcPtrs[14];
     funcPtrs[0] = (void*)s3eAndroidControllerRegister;
     funcPtrs[1] = (void*)s3eAndroidControllerUnRegister;
     funcPtrs[2] = (void*)s3eAndroidControllerStartFrame;
@@ -42,14 +42,15 @@ void s3eAndroidControllerRegisterExt()
     funcPtrs[7] = (void*)s3eAndroidControllerGetButtonDisplayName;
     funcPtrs[8] = (void*)s3eAndroidControllerGetAxisDisplayName;
     funcPtrs[9] = (void*)s3eAndroidControllerSetPropagateButtonsToKeyboard;
-    funcPtrs[10] = (void*)s3eAndroidControllerIsTypeSupported;
-    funcPtrs[11] = (void*)s3eAndroidControllerSetType;
-    funcPtrs[12] = (void*)s3eAndroidControllerGetType;
+    funcPtrs[10] = (void*)s3eAndroidControllerGetPropagateButtonsToKeyboard;
+    funcPtrs[11] = (void*)s3eAndroidControllerIsTypeSupported;
+    funcPtrs[12] = (void*)s3eAndroidControllerSetType;
+    funcPtrs[13] = (void*)s3eAndroidControllerGetType;
 
     /*
      * Flags that specify the extension's use of locking and stackswitching
      */
-    int flags[13] = { 0 };
+    int flags[14] = { 0 };
 
     /*
      * Register the extension

@@ -89,7 +89,8 @@ S3E_BEGIN_C_DECL
 // \endcond
 
 /**
- * Returns S3E_TRUE if the AndroidController extension is available.
+ * Report if the AndroidController extension is available.
+ * @return S3E_TRUE if the AndroidController extension is available. S3E_FALSE otherwise.
  */
 s3eBool s3eAndroidControllerAvailable();
 
@@ -99,7 +100,7 @@ s3eBool s3eAndroidControllerAvailable();
  * The available callback types are listed in @ref s3eAndroidControllerCallback.
  * @param cbid ID of the event for which to register.
  * @param fn callback function.
- * @param userdata Value to pass to the @e userdata parameter of @e NotifyFunc.
+ * @param userData Value to pass to the @e userData parameter of @e NotifyFunc.
  * @return
  *  - @ref S3E_RESULT_SUCCESS if no error occurred.
  *  - @ref S3E_RESULT_ERROR if the operation failed.\n
@@ -139,6 +140,8 @@ s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBoo
 s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool terminateString S3E_DEFAULT(S3E_TRUE));
 
 void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate);
+
+bool s3eAndroidControllerGetPropagateButtonsToKeyboard();
 
 bool s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type);
 

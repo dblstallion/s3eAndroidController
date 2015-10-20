@@ -15,6 +15,7 @@ typedef      float(*s3eAndroidControllerGetAxisValue_t)(int axis);
 typedef  s3eResult(*s3eAndroidControllerGetButtonDisplayName_t)(char* dst, int button, s3eBool terminateString);
 typedef  s3eResult(*s3eAndroidControllerGetAxisDisplayName_t)(char* dst, int axis, s3eBool terminateString);
 typedef       void(*s3eAndroidControllerSetPropagateButtonsToKeyboard_t)(bool propagate);
+typedef       bool(*s3eAndroidControllerGetPropagateButtonsToKeyboard_t)();
 typedef       bool(*s3eAndroidControllerIsTypeSupported_t)(s3eAndroidControllerType type);
 typedef  s3eResult(*s3eAndroidControllerSetType_t)(s3eAndroidControllerType type);
 typedef s3eAndroidControllerType(*s3eAndroidControllerGetType_t)();
@@ -34,6 +35,7 @@ typedef struct s3eAndroidControllerFuncs
     s3eAndroidControllerGetButtonDisplayName_t m_s3eAndroidControllerGetButtonDisplayName;
     s3eAndroidControllerGetAxisDisplayName_t m_s3eAndroidControllerGetAxisDisplayName;
     s3eAndroidControllerSetPropagateButtonsToKeyboard_t m_s3eAndroidControllerSetPropagateButtonsToKeyboard;
+    s3eAndroidControllerGetPropagateButtonsToKeyboard_t m_s3eAndroidControllerGetPropagateButtonsToKeyboard;
     s3eAndroidControllerIsTypeSupported_t m_s3eAndroidControllerIsTypeSupported;
     s3eAndroidControllerSetType_t m_s3eAndroidControllerSetType;
     s3eAndroidControllerGetType_t m_s3eAndroidControllerGetType;

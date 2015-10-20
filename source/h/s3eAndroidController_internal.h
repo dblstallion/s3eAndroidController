@@ -58,6 +58,8 @@ s3eResult s3eAndroidControllerGetAxisDisplayName_platform(char* dst, int axis, s
 
 void s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool propagate);
 
+bool s3eAndroidControllerGetPropagateButtonsToKeyboard_platform();
+
 bool s3eAndroidControllerIsTypeSupported_platform(s3eAndroidControllerType type);
 
 s3eResult s3eAndroidControllerSetType_platform(s3eAndroidControllerType type);

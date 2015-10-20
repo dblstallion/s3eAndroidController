@@ -8,4 +8,5 @@ subprojects
 {
     iwutil
     s3eAndroidController
+    s3eAndroidFullScreen
 }

@@ -137,5 +137,10 @@ public class s3eAndroidController
         s3eAndroidControllerActivity.m_propagateButtonEvents = propagate;
     }
     
+    public boolean s3eAndroidControllerGetPropagateButtonsToKeyboard()
+    {
+        return s3eAndroidControllerActivity.m_propagateButtonEvents;
+    }
+    
     // TODO: check/get/set controller type here`
 }

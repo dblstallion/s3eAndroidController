@@ -14,8 +14,8 @@
 // Define S3E_EXT_SKIP_LOADER_CALL_LOCK on the user-side to skip LoaderCallStart/LoaderCallDone()-entry.
 // e.g. in s3eNUI this is used for generic user-side IwUI-based implementation.
 #ifndef S3E_EXT_SKIP_LOADER_CALL_LOCK
-#if defined I3D_ARCH_MIPS || defined S3E_ANDROID_X86 || (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP)) || defined I3D_ARCH_NACLX86_64
-// For platforms missing stack-switching (MIPS, WP8, Android-x86, NaCl, etc.) make loader-entry via LoaderCallStart/LoaderCallDone() on the user-side.
+#if defined I3D_ARCH_MIPS || (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP)) || defined I3D_ARCH_NACLX86_64
+// For platforms missing stack-switching (MIPS, WP8, NaCl, etc.) make loader-entry via LoaderCallStart/LoaderCallDone() on the user-side.
 #define LOADER_CALL_LOCK
 #endif
 #endif
@@ -266,9 +266,29 @@ void s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
     return;
 }
 
+bool s3eAndroidControllerGetPropagateButtonsToKeyboard()
+{
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[10] func: s3eAndroidControllerGetPropagateButtonsToKeyboard"));
+
+    if (!_extLoad())
+        return false;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetPropagateButtonsToKeyboard);
+#endif
+
+    bool ret = g_Ext.m_s3eAndroidControllerGetPropagateButtonsToKeyboard();
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_s3eAndroidControllerGetPropagateButtonsToKeyboard);
+#endif
+
+    return ret;
+}
+
 bool s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[10] func: s3eAndroidControllerIsTypeSupported"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[11] func: s3eAndroidControllerIsTypeSupported"));
 
     if (!_extLoad())
         return false;
@@ -288,7 +308,7 @@ bool s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type)
 
 s3eResult s3eAndroidControllerSetType(s3eAndroidControllerType type)
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[11] func: s3eAndroidControllerSetType"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[12] func: s3eAndroidControllerSetType"));
 
     if (!_extLoad())
         return S3E_RESULT_ERROR;
@@ -308,7 +328,7 @@ s3eResult s3eAndroidControllerSetType(s3eAndroidControllerType type)
 
 s3eAndroidControllerType s3eAndroidControllerGetType()
 {
-    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[12] func: s3eAndroidControllerGetType"));
+    IwTrace(ANDROIDCONTROLLER_VERBOSE, ("calling s3eAndroidController[13] func: s3eAndroidControllerGetType"));
 
     if (!_extLoad())
         return S3E_ANDROIDCONTROLLER_TYPE_GENERIC;
