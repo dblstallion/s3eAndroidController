@@ -1,0 +1,86 @@
+callbacks
+
+include:
+#include <s3eTypes.h>
+
+#define S3E_ANDROID_CONTROLLER_MAX_PLAYERS               4
+
+#define S3E_ANDROID_CONTROLLER_AXIS_COUNT                6
+#define S3E_ANDROID_CONTROLLER_BUTTON_COUNT              15
+
+/**
+ * Using int defines for axis and buttons rather than enums
+ * and keeping the original android values. This means no error
+ * occurs if Android or a controller returns unexpected values.
+ * User can use just those values if they know what they are :)
+ */
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_LEFT_X         0
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_LEFT_Y         1
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_RIGHT_X        11
+#define S3E_ANDROID_CONTROLLER_AXIS_STICK_RIGHT_Y        14
+#define S3E_ANDROID_CONTROLLER_AXIS_TRIGGER_LEFT         23
+#define S3E_ANDROID_CONTROLLER_AXIS_TRIGGER_RIGHT        22
+
+#define S3E_ANDROID_CONTROLLER_BUTTON_A                  96
+#define S3E_ANDROID_CONTROLLER_BUTTON_B                  97
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_CENTER        23
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_DOWN          20
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_LEFT          21
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_RIGHT         22
+#define S3E_ANDROID_CONTROLLER_BUTTON_DPAD_UP            19
+#define S3E_ANDROID_CONTROLLER_BUTTON_SHOULDER_LEFT      102
+#define S3E_ANDROID_CONTROLLER_BUTTON_SHOULDER_RIGHT     103
+#define S3E_ANDROID_CONTROLLER_BUTTON_STICK_LEFT         106
+#define S3E_ANDROID_CONTROLLER_BUTTON_STICK_RIGHT        107
+#define S3E_ANDROID_CONTROLLER_BUTTON_TRIGGER_LEFT       104
+#define S3E_ANDROID_CONTROLLER_BUTTON_TRIGGER_RIGHT      105
+#define S3E_ANDROID_CONTROLLER_BUTTON_X                  99
+#define S3E_ANDROID_CONTROLLER_BUTTON_Y                  100
+
+typedef enum s3eAndroidControllerCallback
+{
+    /**
+     * Called when a controller button is pressed or released.
+     * systemData is an s3eAndroidControllerButtonEvent*
+     */
+    S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON = 0,
+
+    S3E_ANDROIDCONTROLLER_CALLBACK_MAX
+} s3eAndroidControllerCallback;
+
+typedef enum s3eAndroidControllerType
+{
+    S3E_ANDROIDCONTROLLER_TYPE_GENERIC = 0,
+    S3E_ANDROIDCONTROLLER_TYPE_OUYA_EVERYWHERE,
+    S3E_ANDROIDCONTROLLER_TYPE_AMAZON
+} s3eAndroidControllerType;
+
+/**
+ * Info passed as systemData when S3E_ANDROIDCONTROLLER_CALLBACK_BUTTON
+ * is fired. Note that currently device and player are always the same value.
+ * Player ID only guaranteed to be correct on fire TV atm. On other devices
+ * any detected controller will fire events and player/device ID will always
+ * be 1.
+ */
+typedef struct s3eAndroidControllerButtonEvent
+{
+    int m_Device;             ///< Device ID - currently always set to 1
+    int m_Player;             ///< Player ID - currently always set to 1
+    int m_Button;             ///< Button ID
+    int m_Pressed;            ///< New state of the button (1) pressed/down, (0)released/up
+} s3eAndroidControllerButtonEvent;
+
+functions:
+
+void      s3eAndroidControllerStartFrame()
+bool      s3eAndroidControllerSelectControllerByPlayer(int player) false
+int       s3eAndroidControllerGetPlayerCount() 0
+bool      s3eAndroidControllerGetButtonState(int button) false
+float     s3eAndroidControllerGetAxisValue(int axis) 0
+s3eResult s3eAndroidControllerGetButtonDisplayName(char* dst, int button, s3eBool terminateString S3E_DEFAULT(S3E_TRUE)) S3E_RESULT_ERROR
+s3eResult s3eAndroidControllerGetAxisDisplayName(char* dst, int axis, s3eBool terminateString S3E_DEFAULT(S3E_TRUE)) S3E_RESULT_ERROR
+void      s3eAndroidControllerSetPropagateButtonsToKeyboard(bool propagate)
+bool      s3eAndroidControllerGetPropagateButtonsToKeyboard() false
+bool      s3eAndroidControllerIsTypeSupported(s3eAndroidControllerType type) false
+s3eResult      s3eAndroidControllerSetType(s3eAndroidControllerType type) S3E_RESULT_ERROR
+s3eAndroidControllerType      s3eAndroidControllerGetType() S3E_ANDROIDCONTROLLER_TYPE_GENERIC

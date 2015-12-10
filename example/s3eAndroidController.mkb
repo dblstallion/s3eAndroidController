@@ -1,0 +1,12 @@
+#!/usr/bin/env mkb
+files
+{
+    s3eAndroidController.cpp
+}
+
+subprojects
+{
+    iwutil
+    s3eAndroidController
+    s3eAndroidFullScreen
+}

@@ -1,0 +1,606 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+                              release\s3eAndroidController_platform.os (s3eEdkThreadRunOnOS)
+C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+                              (libplaceholderplaceholderplaceholderplaceholderplaceholder)
+
+As-needed library included to satisfy reference by file (symbol)
+
+libs3e_android.so             release\s3eAndroidController_register.os (s3eEdkRegister)
+libc.so                       C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o (__cxa_atexit)
+
+Discarded input sections
+
+ .text          0x0000000000000000       0x34 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x0000000000000000        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .group         0x0000000000000000        0x8 release\s3eAndroidController_platform.os
+ .group         0x0000000000000000        0x8 release\s3eAndroidController_platform.os
+ .group         0x0000000000000000        0x8 release\s3eAndroidController_platform.os
+ .group         0x0000000000000000        0x8 release\s3eAndroidController_platform.os
+ .group         0x0000000000000000        0x8 release\s3eAndroidController_platform.os
+ .text          0x0000000000000000        0x0 release\s3eAndroidController_platform.os
+ .data          0x0000000000000000        0x0 release\s3eAndroidController_platform.os
+ .note.GNU-stack
+                0x0000000000000000        0x0 release\s3eAndroidController_platform.os
+ .text          0x0000000000000000        0x0 release\s3eAndroidController.os
+ .data          0x0000000000000000        0x0 release\s3eAndroidController.os
+ .bss           0x0000000000000000        0x0 release\s3eAndroidController.os
+ .note.GNU-stack
+                0x0000000000000000        0x0 release\s3eAndroidController.os
+ .text          0x0000000000000000        0x0 release\s3eAndroidController_register.os
+ .data          0x0000000000000000        0x0 release\s3eAndroidController_register.os
+ .bss           0x0000000000000000        0x0 release\s3eAndroidController_register.os
+ .text._Z31s3eAndroidControllerRegisterExtv
+                0x0000000000000000      0x174 release\s3eAndroidController_register.os
+ .note.GNU-stack
+                0x0000000000000000        0x0 release\s3eAndroidController_register.os
+ .text          0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .data          0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .bss           0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .text.s3eEdkErrorSetString
+                0x0000000000000000       0x30 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .text.s3eEdkThreadRunOnOSAsync
+                0x0000000000000000       0x30 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .text          0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+ .data          0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+ .bss           0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+ .text          0x0000000000000000        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+ .data          0x0000000000000000        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+ .bss           0x0000000000000000        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+LOAD release\s3eAndroidController_platform.os
+LOAD release\s3eAndroidController.os
+LOAD release\s3eAndroidController_register.os
+LOAD C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a
+LOAD C:\marmalade\7.10.0p2\s3e\edk\lib\android/libs3e_android.so
+LOAD C:\Android\android-ndk-r10e\platforms\android-14\arch-arm\usr\lib/liblog.so
+LOAD C:\Android\android-ndk-r10e\sources\cxx-stl\gnu-libstdc++\4.9\libs\armeabi\libgnustl_static.a
+LOAD c:/android/android-ndk-r10e/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9\libgcc.a
+LOAD C:\Android\android-ndk-r10e\platforms\android-14\arch-arm\usr\lib/libstdc++.so
+LOAD C:\Android\android-ndk-r10e\platforms\android-14\arch-arm\usr\lib/libm.so
+LOAD C:\Android\android-ndk-r10e\platforms\android-14\arch-arm\usr\lib/libc.so
+LOAD c:/android/android-ndk-r10e/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9\libgcc.a
+LOAD C:\Android\android-ndk-r10e\platforms\android-14\arch-arm\usr\lib/libc.so
+LOAD C:\Android\android-ndk-r10e\platforms\android-14\arch-arm\usr\lib/libdl.so
+LOAD c:/android/android-ndk-r10e/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9\libgcc.a
+LOAD C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+                0x00000000000000d4                . = (0x0 + SIZEOF_HEADERS)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash           0x00000000000000d4       0x9c
+ *(.hash)
+ .hash          0x00000000000000d4       0x9c C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym         0x0000000000000170      0x140
+ *(.dynsym)
+ .dynsym        0x0000000000000170      0x140 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.dynstr         0x00000000000002b0      0x12f
+ *(.dynstr)
+ .dynstr        0x00000000000002b0      0x12f C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.gnu.version    0x00000000000003e0        0x0
+ *(.gnu.version)
+ .gnu.version   0x00000000000003e0        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.gnu.version_d  0x00000000000003e0        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x00000000000003e0        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.gnu.version_r  0x00000000000003e0        0x0
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00000000000003e0        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.rel.dyn        0x00000000000003e0       0x90
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text._Z31s3eAndroidControllerRegisterExtv
+                0x00000000000003e0        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .rel.text.RegisterExt
+                0x00000000000003e0        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ .rel.data.rel.ro.local
+                0x00000000000003e0       0x18 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x00000000000003f8       0x70 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rel.iplt)
+ .rel.iplt      0x0000000000000468        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .rel.fini_array
+                0x0000000000000468        0x8 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.rela.dyn
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rela.iplt)
+
+.rel.plt        0x0000000000000470       0x40
+ *(.rel.plt)
+ .rel.plt       0x0000000000000470       0x40 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT(.init))
+
+.plt            0x00000000000004b0       0x74
+ *(.plt)
+ .plt           0x00000000000004b0       0x74 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.iplt           0x0000000000000524        0x0
+ *(.iplt)
+ .iplt          0x0000000000000524        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+
+.text           0x0000000000000524      0xe20
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ .text.exit     0x0000000000000524       0x10 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x0000000000000524                __on_dlclose
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text._Z21native_ButtonCallbackP7_JNIEnvP8_jobjectii
+                0x0000000000000534       0x4c release\s3eAndroidController_platform.os
+                0x0000000000000534                native_ButtonCallback(_JNIEnv*, _jobject*, int, int)
+ .text._ZL27s3eEdkAndroidFindClass_realPKc
+                0x0000000000000580       0xb8 release\s3eAndroidController_platform.os
+ .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
+                0x0000000000000638       0x38 release\s3eAndroidController_platform.os
+                0x0000000000000638                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
+                0x0000000000000670       0x38 release\s3eAndroidController_platform.os
+                0x0000000000000670                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
+                0x00000000000006a8       0x38 release\s3eAndroidController_platform.os
+                0x00000000000006a8                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv15CallFloatMethodEP8_jobjectP10_jmethodIDz
+                0x00000000000006e0       0x38 release\s3eAndroidController_platform.os
+                0x00000000000006e0                _JNIEnv::CallFloatMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
+                0x0000000000000718       0x38 release\s3eAndroidController_platform.os
+                0x0000000000000718                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+ .text._Z33s3eAndroidControllerInit_platformv
+                0x0000000000000750      0x318 release\s3eAndroidController_platform.os
+                0x0000000000000750                s3eAndroidControllerInit_platform()
+ .text._Z38s3eAndroidControllerTerminate_platformv
+                0x0000000000000a68        0x4 release\s3eAndroidController_platform.os
+                0x0000000000000a68                s3eAndroidControllerTerminate_platform()
+ .text._Z39s3eAndroidControllerStartFrame_platformv
+                0x0000000000000a6c       0x50 release\s3eAndroidController_platform.os
+                0x0000000000000a6c                s3eAndroidControllerStartFrame_platform()
+ .text._Z53s3eAndroidControllerSelectControllerByPlayer_platformi
+                0x0000000000000abc       0x60 release\s3eAndroidController_platform.os
+                0x0000000000000abc                s3eAndroidControllerSelectControllerByPlayer_platform(int)
+ .text._Z43s3eAndroidControllerGetPlayerCount_platformv
+                0x0000000000000b1c       0x50 release\s3eAndroidController_platform.os
+                0x0000000000000b1c                s3eAndroidControllerGetPlayerCount_platform()
+ .text._Z43s3eAndroidControllerGetButtonState_platformi
+                0x0000000000000b6c       0x60 release\s3eAndroidController_platform.os
+                0x0000000000000b6c                s3eAndroidControllerGetButtonState_platform(int)
+ .text._Z41s3eAndroidControllerGetAxisValue_platformi
+                0x0000000000000bcc       0x58 release\s3eAndroidController_platform.os
+                0x0000000000000bcc                s3eAndroidControllerGetAxisValue_platform(int)
+ .text._Z58s3eAndroidControllerSetPropagateButtonsToKeyboard_platformb
+                0x0000000000000c24       0x58 release\s3eAndroidController_platform.os
+                0x0000000000000c24                s3eAndroidControllerSetPropagateButtonsToKeyboard_platform(bool)
+ .text._Z58s3eAndroidControllerGetPropagateButtonsToKeyboard_platformv
+                0x0000000000000c7c       0x58 release\s3eAndroidController_platform.os
+                0x0000000000000c7c                s3eAndroidControllerGetPropagateButtonsToKeyboard_platform()
+ .text._Z49s3eAndroidControllerGetButtonDisplayName_platformPcih
+                0x0000000000000cd4      0x2fc release\s3eAndroidController_platform.os
+                0x0000000000000cd4                s3eAndroidControllerGetButtonDisplayName_platform(char*, int, unsigned char)
+ .text._Z47s3eAndroidControllerGetAxisDisplayName_platformPcih
+                0x0000000000000fd0      0x11c release\s3eAndroidController_platform.os
+                0x0000000000000fd0                s3eAndroidControllerGetAxisDisplayName_platform(char*, int, unsigned char)
+ .text._Z44s3eAndroidControllerIsTypeSupported_platform24s3eAndroidControllerType
+                0x00000000000010ec        0x8 release\s3eAndroidController_platform.os
+                0x00000000000010ec                s3eAndroidControllerIsTypeSupported_platform(s3eAndroidControllerType)
+ .text._Z36s3eAndroidControllerSetType_platform24s3eAndroidControllerType
+                0x00000000000010f4        0x8 release\s3eAndroidController_platform.os
+                0x00000000000010f4                s3eAndroidControllerSetType_platform(s3eAndroidControllerType)
+ .text._Z36s3eAndroidControllerGetType_platformv
+                0x00000000000010fc        0x8 release\s3eAndroidController_platform.os
+                0x00000000000010fc                s3eAndroidControllerGetType_platform()
+ .text._Z24s3eAndroidControllerInitv
+                0x0000000000001104        0x4 release\s3eAndroidController.os
+                0x0000000000001104                s3eAndroidControllerInit()
+ .text._Z29s3eAndroidControllerTerminatev
+                0x0000000000001108        0x4 release\s3eAndroidController.os
+                0x0000000000001108                s3eAndroidControllerTerminate()
+ .text.s3eAndroidControllerStartFrame
+                0x000000000000110c        0x4 release\s3eAndroidController.os
+                0x000000000000110c                s3eAndroidControllerStartFrame
+ .text.s3eAndroidControllerSelectControllerByPlayer
+                0x0000000000001110        0x4 release\s3eAndroidController.os
+                0x0000000000001110                s3eAndroidControllerSelectControllerByPlayer
+ .text.s3eAndroidControllerGetPlayerCount
+                0x0000000000001114        0x4 release\s3eAndroidController.os
+                0x0000000000001114                s3eAndroidControllerGetPlayerCount
+ .text.s3eAndroidControllerGetButtonState
+                0x0000000000001118        0x4 release\s3eAndroidController.os
+                0x0000000000001118                s3eAndroidControllerGetButtonState
+ .text.s3eAndroidControllerGetAxisValue
+                0x000000000000111c        0x4 release\s3eAndroidController.os
+                0x000000000000111c                s3eAndroidControllerGetAxisValue
+ .text.s3eAndroidControllerGetButtonDisplayName
+                0x0000000000001120        0x4 release\s3eAndroidController.os
+                0x0000000000001120                s3eAndroidControllerGetButtonDisplayName
+ .text.s3eAndroidControllerGetAxisDisplayName
+                0x0000000000001124        0x4 release\s3eAndroidController.os
+                0x0000000000001124                s3eAndroidControllerGetAxisDisplayName
+ .text.s3eAndroidControllerSetPropagateButtonsToKeyboard
+                0x0000000000001128        0x4 release\s3eAndroidController.os
+                0x0000000000001128                s3eAndroidControllerSetPropagateButtonsToKeyboard
+ .text.s3eAndroidControllerGetPropagateButtonsToKeyboard
+                0x000000000000112c        0x4 release\s3eAndroidController.os
+                0x000000000000112c                s3eAndroidControllerGetPropagateButtonsToKeyboard
+ .text.s3eAndroidControllerIsTypeSupported
+                0x0000000000001130        0x4 release\s3eAndroidController.os
+                0x0000000000001130                s3eAndroidControllerIsTypeSupported
+ .text.s3eAndroidControllerSetType
+                0x0000000000001134        0x4 release\s3eAndroidController.os
+                0x0000000000001134                s3eAndroidControllerSetType
+ .text.s3eAndroidControllerGetType
+                0x0000000000001138        0x4 release\s3eAndroidController.os
+                0x0000000000001138                s3eAndroidControllerGetType
+ .text.s3eAndroidControllerRegister
+                0x000000000000113c       0x30 release\s3eAndroidController_register.os
+                0x000000000000113c                s3eAndroidControllerRegister
+ .text.s3eAndroidControllerUnRegister
+                0x000000000000116c       0x30 release\s3eAndroidController_register.os
+                0x000000000000116c                s3eAndroidControllerUnRegister
+ .text.RegisterExt
+                0x000000000000119c      0x174 release\s3eAndroidController_register.os
+                0x000000000000119c                RegisterExt
+ .text.s3eEdkThreadRunOnOS
+                0x0000000000001310       0x30 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+                0x0000000000001310                s3eEdkThreadRunOnOS
+ .text.libplaceholderplaceholderplaceholderplaceholderplaceholder
+                0x0000000000001340        0x4 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+                0x0000000000001340                libplaceholderplaceholderplaceholderplaceholderplaceholder
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x0000000000001344        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x0000000000001344        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x0000000000001344        0x0 linker stubs
+ *(.v4_bx)
+ .v4_bx         0x0000000000001344        0x0 linker stubs
+
+.fini
+ *(SORT(.fini))
+                0x0000000000001344                PROVIDE (__etext, .)
+                0x0000000000001344                PROVIDE (_etext, .)
+                0x0000000000001344                PROVIDE (etext, .)
+
+.rodata         0x0000000000001344      0x2c0
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x0000000000001344      0x2a6 release\s3eAndroidController_platform.os
+                                        0x2a8 (size before relaxing)
+ *fill*         0x00000000000015ea        0x2 
+ .rodata.str1.4
+                0x00000000000015ec       0x18 release\s3eAndroidController_register.os
+
+.rodata1
+ *(.rodata1)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x0000000000001604                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x0000000000001604                PROVIDE (__exidx_end, .)
+
+.eh_frame_hdr   0x0000000000001604        0x0
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x0000000000001604        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000000000010000                . = ALIGN (0x10000)
+                0x0000000000010eac                . = DATA_SEGMENT_ALIGN (0x10000, 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+                0x0000000000010eac                . = ALIGN (0x4)
+
+.preinit_array
+ *(.preinit_array)
+
+.init_array     0x0000000000010eac        0x4
+ *crtbegin*.o(.init_array)
+ *(SORT(.init_array.*) SORT(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend*.o *crtend.o *crtbegin*.o *crtbegin.o) .ctors)
+ .init_array    0x0000000000010eac        0x4 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.fini_array     0x0000000000010eb0        0x8
+ *crtbegin*.o(.fini_array)
+ .fini_array    0x0000000000010eb0        0x4 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ *(SORT(.fini_array.*) SORT(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend*.o *crtend.o *crtbegin*.o *crtbegin.o) .dtors)
+ .fini_array    0x0000000000010eb4        0x4 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin*.o(.ctors)
+ *(EXCLUDE_FILE(*crtend*.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin*.o(.dtors)
+ *(EXCLUDE_FILE(*crtend*.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro    0x0000000000010eb8        0xc
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ .data.rel.ro.local
+                0x0000000000010eb8        0xc release\s3eAndroidController_platform.os
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0000000000010ec4       0xd8
+ *(.dynamic)
+ .dynamic       0x0000000000010ec4       0xd8 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x0000000000010ec4                _DYNAMIC
+
+.got            0x0000000000010f9c       0x64
+ *(.got.plt)
+ .got.plt       0x0000000000010f9c       0x2c C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x0000000000010f9c                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ .igot.plt      0x0000000000010fc8        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ *(.got)
+ .got           0x0000000000010fc8       0x38 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ *(.igot)
+                0x0000000000011000                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000000011000        0x4
+                0x0000000000011000                PROVIDE (__data_start, .)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000011000        0x4 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x0000000000011000                __dso_handle
+
+.data1
+ *(.data1)
+                0x0000000000011004                _edata = .
+                0x0000000000011004                PROVIDE (edata, .)
+                0x0000000000011004                . = .
+                0x0000000000011004                __bss_start = .
+                0x0000000000011004                __bss_start__ = .
+
+.bss            0x0000000000011004       0x20
+ *(.dynbss)
+ .dynbss        0x0000000000011004        0x0 C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000011004       0x20 release\s3eAndroidController_platform.os
+ *(COMMON)
+                0x0000000000011024                . = ALIGN (0x4)
+                0x0000000000011024                _bss_end__ = .
+                0x0000000000011024                __bss_end__ = .
+                0x0000000000011024                . = ALIGN (0x4)
+                0x0000000000011024                . = SEGMENT_START ("ldata-segment", .)
+                0x0000000000011024                . = ALIGN (0x4)
+                0x0000000000011024                __end__ = .
+                0x0000000000011024                _end = .
+                0x0000000000011024                _bss_end__ = .
+                0x0000000000011024                __bss_end__ = .
+                0x0000000000011024                __end__ = .
+                0x0000000000011024                PROVIDE (end, .)
+                0x0000000000011024                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x34
+ *(.comment)
+ .comment       0x0000000000000000        0xf C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f       0x25 release\s3eAndroidController_platform.os
+                                         0x26 (size before relaxing)
+ .comment       0x0000000000000034       0x26 release\s3eAndroidController.os
+ .comment       0x0000000000000034       0x26 release\s3eAndroidController_register.os
+ .comment       0x0000000000000034       0x26 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .comment       0x0000000000000034       0x26 C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+
+.ARM.attributes
+                0x0000000000000000       0x2d
+ .ARM.attributes
+                0x0000000000000000       0x2b C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .ARM.attributes
+                0x000000000000002b       0x2f release\s3eAndroidController_platform.os
+ .ARM.attributes
+                0x000000000000005a       0x2f release\s3eAndroidController.os
+ .ARM.attributes
+                0x0000000000000089       0x2f release\s3eAndroidController_register.os
+ .ARM.attributes
+                0x00000000000000b8       0x2f C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+ .ARM.attributes
+                0x00000000000000e7       0x2f C:\marmalade\7.10.0p2\s3e\edk\lib\android\libedk.a(android_edk_marker.o)
+ .ARM.attributes
+                0x0000000000000116       0x1d C:/Android/android-ndk-r10e/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x180
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0xc0 release\s3eAndroidController_platform.os
+ .debug_aranges
+                0x00000000000000c0       0x88 release\s3eAndroidController.os
+ .debug_aranges
+                0x0000000000000148       0x38 release\s3eAndroidController_register.os
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x721f
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000     0x6972 release\s3eAndroidController_platform.os
+ .debug_info    0x0000000000006972      0x4f4 release\s3eAndroidController.os
+ .debug_info    0x0000000000006e66      0x3b9 release\s3eAndroidController_register.os
+
+.debug_abbrev   0x0000000000000000      0x7a9
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x4a3 release\s3eAndroidController_platform.os
+ .debug_abbrev  0x00000000000004a3      0x173 release\s3eAndroidController.os
+ .debug_abbrev  0x0000000000000616      0x193 release\s3eAndroidController_register.os
+
+.debug_line     0x0000000000000000      0xa2d
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x630 release\s3eAndroidController_platform.os
+ .debug_line    0x0000000000000630      0x222 release\s3eAndroidController.os
+ .debug_line    0x0000000000000852      0x1db release\s3eAndroidController_register.os
+
+.debug_frame    0x0000000000000000      0x428
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x2b0 release\s3eAndroidController_platform.os
+ .debug_frame   0x00000000000002b0       0xf0 release\s3eAndroidController.os
+ .debug_frame   0x00000000000003a0       0x88 release\s3eAndroidController_register.os
+
+.debug_str      0x0000000000000000     0x5421
+ *(.debug_str)
+ .debug_str     0x0000000000000000     0x514a release\s3eAndroidController_platform.os
+                                       0x52f1 (size before relaxing)
+ .debug_str     0x000000000000514a      0x178 release\s3eAndroidController.os
+                                        0xad4 (size before relaxing)
+ .debug_str     0x00000000000052c2      0x15f release\s3eAndroidController_register.os
+                                        0x45c (size before relaxing)
+
+.debug_loc      0x0000000000000000      0xcc4
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0xa5b release\s3eAndroidController_platform.os
+ .debug_loc     0x0000000000000a5b      0x18c release\s3eAndroidController.os
+ .debug_loc     0x0000000000000be7       0xdd release\s3eAndroidController_register.os
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000      0x288
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000      0x1b8 release\s3eAndroidController_platform.os
+ .debug_ranges  0x00000000000001b8       0x78 release\s3eAndroidController.os
+ .debug_ranges  0x0000000000000230       0x58 release\s3eAndroidController_register.os
+
+.debug_macro
+ *(.debug_macro)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+ *(.mdebug.*)
+OUTPUT(C:\Users\Nick\projects\s3eAndroidController\lib\android\libs3eAndroidController.so elf32-littlearm)

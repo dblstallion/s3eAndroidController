@@ -1,1 +1,0 @@
-python %S3E_DIR%\edk\builder\edk_build.py s3eFireTV.s4e --platform=android
