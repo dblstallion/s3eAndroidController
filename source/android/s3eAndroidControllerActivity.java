@@ -40,7 +40,7 @@ import com.ideaworks3d.marmalade.LoaderActivity;
 public class s3eAndroidControllerActivity //not an actual activity, must be called from s3eAndroidUserActivity
 {
     // callbacks
-    private static native void native_ButtonCallback(int button, int state); //TODO: pass controller/player IDs when supported
+    //private static native void native_ButtonCallback(int button, int state); //TODO: pass controller/player IDs when supported
     //TODO: array to track state of keys for generic polling support
     
     static boolean m_propagateButtonEvents = true;
@@ -99,11 +99,11 @@ public class s3eAndroidControllerActivity //not an actual activity, must be call
                 s3eAndroidController.s_keyStates.put(keyCode, true);
             }
             
-            if (handled)
-            {
-                Log.d("ANDROIDCONTROLLER", "sending button down event: " + keyCode);
-                native_ButtonCallback(keyCode, 1);
-            }
+            //if (handled)
+            //{
+            //    Log.d("ANDROIDCONTROLLER", "sending button down event: " + keyCode);
+            //    native_ButtonCallback(keyCode, 1);
+            //}
         }
         
         if (!m_propagateButtonEvents && handled)
@@ -135,11 +135,11 @@ public class s3eAndroidControllerActivity //not an actual activity, must be call
                 s3eAndroidController.s_keyStates.put(keyCode, false);
             }
 
-            if (handled)
-            {
-                Log.d("ANDROIDCONTROLLER", "sending button up event");
-                native_ButtonCallback(keyCode, 0);
-            }
+            //if (handled)
+            //{
+            //    Log.d("ANDROIDCONTROLLER", "sending button up event");
+            //    native_ButtonCallback(keyCode, 0);
+            //}
         }
         
         if (!m_propagateButtonEvents && handled)
