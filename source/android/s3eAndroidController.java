@@ -31,6 +31,8 @@ public class s3eAndroidController
 	GameController m_SelectedController = null;
     
     public static HashMap<Integer, Boolean> s_keyStates;
+	public static float s_axisHatX;
+	public static float s_axisHatY;
     public static float s_axisStickLeftX;
     public static float s_axisStickLeftY;
     public static float s_axisStickRightX;
@@ -114,6 +116,10 @@ public class s3eAndroidController
         {
             switch(axis)
             {
+				case android.view.MotionEvent.AXIS_HAT_X:
+                    return s_axisHatX;
+                case android.view.MotionEvent.AXIS_HAT_Y:
+                    return s_axisHatY;
                 case android.view.MotionEvent.AXIS_X:
                     return s_axisStickLeftX;
                 case android.view.MotionEvent.AXIS_Y:

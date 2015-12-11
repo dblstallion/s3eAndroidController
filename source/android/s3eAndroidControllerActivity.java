@@ -61,6 +61,8 @@ public class s3eAndroidControllerActivity //not an actual activity, must be call
         catch (RuntimeException e) {
             Log.d("ANDROIDCONTROLLER", "Amazon GameController library not found on device. s3eAndroidController will fail to initialise");
             s3eAndroidController.s_keyStates = new HashMap<Integer, Boolean>();
+			s3eAndroidController.s_axisHatX = 0;
+            s3eAndroidController.s_axisHatY = 0;
             s3eAndroidController.s_axisStickLeftX = 0;
             s3eAndroidController.s_axisStickLeftY = 0;
             s3eAndroidController.s_axisStickRightX = 0;
@@ -174,6 +176,8 @@ public class s3eAndroidControllerActivity //not an actual activity, must be call
             // Could also force near-centre values to zero using 
             // event.getDevice().getMotionRange(axis, event.getSource()).getFlat()
             
+			s3eAndroidController.s_axisHatX = event.getAxisValue(MotionEvent.AXIS_HAT_X);
+            s3eAndroidController.s_axisHatY = event.getAxisValue(MotionEvent.AXIS_HAT_Y);
             s3eAndroidController.s_axisStickLeftX = event.getAxisValue(MotionEvent.AXIS_X);
             s3eAndroidController.s_axisStickLeftY = event.getAxisValue(MotionEvent.AXIS_Y);
             s3eAndroidController.s_axisStickRightX = event.getAxisValue(MotionEvent.AXIS_Z);
